@@ -20,7 +20,7 @@ def call_gemini_api(prompt: str, language: str, date: str) -> str:
         # ダミーモード: APIキーがなければサンプル記事を返す
         return f"""---\ntitle: {language}入門 ({date})\ndate: {date}\ncategories: [{language}]\ntags: [AI, Gemini, 自動生成]\n---\n\nこの記事はAI（Gemini API/ダミーモード）によって自動生成されています。\n\n# {language}とは？\n\n（ここに{language}の概要や学習ポイントがダミーで生成されます）\n"""
     # TODO: Gemini APIのエンドポイント・パラメータは本番用に調整
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
     headers = {"Content-Type": "application/json"}
     data = {
         "contents": [{
