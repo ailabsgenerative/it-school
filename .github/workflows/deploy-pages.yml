@@ -1,0 +1,37 @@
+# GitHub Pages公開用設定
+
+# 1. public/ ディレクトリをPages公開対象にする
+# 2. .nojekyllファイルをpublic/に配置（Jekyll無効化）
+# 3. GitHub Actionsで自動ビルド・公開
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+          pip install markdown jinja2
+      - name: Build static site
+        run: |
+          python scripts/build_site.py
+          touch public/.nojekyll
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

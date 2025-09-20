@@ -1,0 +1,2 @@
+# Gemini API用の依存パッケージ（本番は適宜追加）
+requests
