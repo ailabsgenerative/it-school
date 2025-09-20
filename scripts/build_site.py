@@ -36,7 +36,7 @@ def setup_templates():
 </html>
 ''', encoding="utf-8")
     # CSS
-    (docs_DIR / "style.css").write_text('''
+    (DOCS_DIR / "style.css").write_text('''
 body { font-family: 'Yu Gothic', 'Meiryo', sans-serif; background: #f7f7f7; color: #222; line-height: 1.8; }
 header, footer { background: #222; color: #fff; padding: 1em; text-align: center; }
 main { max-width: 700px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
@@ -55,7 +55,7 @@ def build():
     setup_templates()
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     template = env.get_template("base.html")
-    docs_DIR.mkdir(exist_ok=True)
+    DOCS_DIR.mkdir(exist_ok=True)
     # 記事ごとにHTML生成
     for mdfile in ARTICLES_DIR.glob("*.md"):
         with open(mdfile, encoding="utf-8") as f:
@@ -72,7 +72,7 @@ def build():
         html = markdown.markdown(mdtext, extensions=["fenced_code", "tables"]) 
         seo = make_seo_meta(meta["title"], meta["description"], meta["tags"])
         out = template.render(title=meta["title"], description=meta["description"], content=html, seo=seo)
-        outname = docs_DIR / (mdfile.stem + ".html")
+        outname = DOCS_DIR / (mdfile.stem + ".html")
         with open(outname, "w", encoding="utf-8") as f:
             f.write(out)
     # index.html生成
@@ -82,7 +82,7 @@ def build():
         index_html += f'<li><a href="{mdfile.stem}.html">{title}</a></li>'
     index_html += "</ul>"
     out = template.render(title="IT学習ブログ", description="IT初心者向け自動生成ブログ", content=index_html, seo="")
-    with open(docs_DIR / "index.html", "w", encoding="utf-8") as f:
+    with open(DOCS_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(out)
 
 if __name__ == "__main__":
