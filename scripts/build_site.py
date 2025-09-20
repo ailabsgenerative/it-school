@@ -1,5 +1,5 @@
 # 静的サイトビルドスクリプト
-# articles/ のMarkdownを public/ にHTML変換し、Qiita/GitHub/Zenn風デザイン・SEO・広告枠を反映
+# articles/ のMarkdownを docs/ にHTML変換し、Qiita/GitHub/Zenn風デザイン・SEO・広告枠を反映
 
 import os
 from pathlib import Path
@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 import shutil
 
 ARTICLES_DIR = Path("articles")
-PUBLIC_DIR = Path("public")
+DOCS_DIR = Path("docs")
 TEMPLATES_DIR = Path("templates")
 
 # テンプレート・CSSのセットアップ（初回のみ）
@@ -36,7 +36,7 @@ def setup_templates():
 </html>
 ''', encoding="utf-8")
     # CSS
-    (PUBLIC_DIR / "style.css").write_text('''
+    (docs_DIR / "style.css").write_text('''
 body { font-family: 'Yu Gothic', 'Meiryo', sans-serif; background: #f7f7f7; color: #222; line-height: 1.8; }
 header, footer { background: #222; color: #fff; padding: 1em; text-align: center; }
 main { max-width: 700px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
@@ -55,7 +55,7 @@ def build():
     setup_templates()
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     template = env.get_template("base.html")
-    PUBLIC_DIR.mkdir(exist_ok=True)
+    docs_DIR.mkdir(exist_ok=True)
     # 記事ごとにHTML生成
     for mdfile in ARTICLES_DIR.glob("*.md"):
         with open(mdfile, encoding="utf-8") as f:
@@ -72,7 +72,7 @@ def build():
         html = markdown.markdown(mdtext, extensions=["fenced_code", "tables"]) 
         seo = make_seo_meta(meta["title"], meta["description"], meta["tags"])
         out = template.render(title=meta["title"], description=meta["description"], content=html, seo=seo)
-        outname = PUBLIC_DIR / (mdfile.stem + ".html")
+        outname = docs_DIR / (mdfile.stem + ".html")
         with open(outname, "w", encoding="utf-8") as f:
             f.write(out)
     # index.html生成
@@ -82,7 +82,7 @@ def build():
         index_html += f'<li><a href="{mdfile.stem}.html">{title}</a></li>'
     index_html += "</ul>"
     out = template.render(title="IT学習ブログ", description="IT初心者向け自動生成ブログ", content=index_html, seo="")
-    with open(PUBLIC_DIR / "index.html", "w", encoding="utf-8") as f:
+    with open(docs_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(out)
 
 if __name__ == "__main__":
