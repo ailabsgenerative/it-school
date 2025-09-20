@@ -23,6 +23,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python scripts/generate_articles.py
+      - name: Build site
+        run: |
+          python scripts/build_site.py
       - name: Commit and push articles
         run: |
           git config --global user.name 'github-actions[bot]'
