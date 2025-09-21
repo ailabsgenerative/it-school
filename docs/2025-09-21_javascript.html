@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="
+## 記事生成の条件
+- **フォーマット**:
+    - タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+    ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="
+## 記事生成の条件
+- **フォーマット**:
+    - タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+    ">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。IT初心者向けの教育ブログ記事を生成するためのGemini API用プロンプト例を作成します。
+このプロンプトは、指定された言語やテーマに関する記事を、ご要望の条件に従って生成するように設計されています。</p>
+<hr />
+<h1>Gemini API用プロンプト例（IT学習ロードマップ記事生成用）</h1>
+<hr />
+<p>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の「記事生成の条件」に従い、「記事の指定情報」で与えられたプログラミング言語やIT分野について、初心者が理解しやすい解説記事をMarkdown形式で作成してください。</p>
+<h2>記事生成の条件</h2>
+<ul>
+<li><strong>フォーマット</strong>:<ul>
+<li>タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。</li>
+<li><code>title</code>: 記事内容に合わせた適切なタイトル</li>
+<li><code>date</code>: 指定された日付（例: YYYY-MM-DD）</li>
+<li><code>categories</code>: 指定されたカテゴリ（例: [Python]）</li>
+<li><code>tags</code>: 指定されたタグ（例: [AI, Gemini, 自動生成, Python, 変数, データ型]）</li>
+</ul>
+</li>
+<li><strong>導入文</strong>: 記事の冒頭で「この記事はAIによって自動生成されています。」と明記してください。</li>
+<li><strong>文章スタイル</strong>: 読みやすく、やさしい日本語で解説し、専門用語には簡単な説明を加えてください。比喩や具体例を多く用いて、直感的な理解を促してください。</li>
+<li><strong>構造</strong>: 大見出し（<code>#</code>）、中見出し（<code>##</code>）、小見出し（<code>###</code>）や箇条書きを効果的に活用し、論理的な構成にしてください。</li>
+<li><strong>具体例</strong>: 具体的な使用例やサンプルコードを必ず含めてください。サンプルコードには簡単なコメントを付けて、何をしているのかを分かりやすく解説してください。</li>
+<li><strong>文字数</strong>: 全体で約1000文字程度の記事になるように調整してください。</li>
+<li><strong>SEO</strong>: 指定された言語とテーマに関連するキーワードを本文中に適度かつ自然に含め、検索エンジンからのアクセスを意識した内容にしてください。</li>
+</ul>
+<h2>記事の指定情報（ここに実際の値を入力してください）</h2>
+<ul>
+<li><strong>言語</strong>: [ここに記事を生成したいプログラミング言語やIT分野名を入力してください。例: Python]</li>
+<li><strong>テーマ</strong>: [ここに記事の具体的なテーマを入力してください。例: 変数とデータ型の基礎]</li>
+<li><strong>日付</strong>: [記事の公開日をYYYY-MM-DD形式で入力してください。例: 2025-09-20]</li>
+<li><strong>カテゴリ</strong>: [記事のカテゴリを配列形式で入力してください。例: [Python]]</li>
+<li><strong>タグ</strong>: [記事のタグを配列形式で入力してください。例: [AI, Gemini, 自動生成, Python, 変数, データ型]]</li>
+</ul>
+<hr />
+<h3>入力例（Gemini APIに渡す際のイメージ）</h3>
+<pre><code class="language-json">{
+  &quot;language&quot;: &quot;Python&quot;,
+  &quot;theme&quot;: &quot;変数とデータ型の基礎&quot;,
+  &quot;date&quot;: &quot;2025-09-20&quot;,
+  &quot;categories&quot;: [&quot;Python&quot;],
+  &quot;tags&quot;: [&quot;AI&quot;, &quot;Gemini&quot;, &quot;自動生成&quot;, &quot;Python&quot;, &quot;変数&quot;, &quot;データ型&quot;]
+}
+</code></pre>
+<h3>出力例（上記入力例に対する期待されるレスポンス）</h3>
+<pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？：プログラミングの「箱」と「中身」を理解しよう！
+
+Pythonを学び始める皆さん、こんにちは！プログラミングの世界へようこそ。
+今回は、Pythonプログラミングの超基本となる「**変数**」と「**データ型**」について、IT初心者の方にも分かりやすく解説していきます。これらをしっかりと理解することで、あなたのプログラムはもっと賢く、便利になり、複雑な処理も自信を持って扱えるようになりますよ！
+
+## 変数ってなんだろう？プログラムの「情報を入れる箱」
+
+変数は、データ（情報）を一時的にしまっておく「**箱**」のようなものです。日常生活で「お菓子箱」や「道具箱」があるように、プログラムの世界にも、数値や文字、真偽などのさまざまな情報を入れておくための箱があります。
+
+例えば、あなたの名前や年齢、好きな食べ物など、色々な情報をこの箱に入れて、必要に応じて取り出したり、中身（値）を入れ替えたりすることができます。
+
+Pythonで変数を使うときは、まず「箱の名前（変数名）」を決め、そこに値を「代入」します。
+
+**例：名前と年齢を変数に入れる**
+```python
+# 名前を変数「user_name」に代入
+user_name = &quot;山田太郎&quot; 
+
+# 年齢を変数「user_age」に代入
+user_age = 30     
+
+# 変数の中身を表示してみよう
+print(user_name) # 出力: 山田太郎
+print(user_age)  # 出力: 30
+</code></pre>
+<p>この例では、<code>user_name</code>と<code>user_age</code>が変数です。<code>=</code>（イコール）記号を使って、右側の値（<code>"山田太郎"</code>や<code>30</code>）を左側の変数に格納しています。この操作を「<strong>代入</strong>」と呼びます。</p>
+<h2>データ型ってなんだろう？「箱の中身の種類」を区別する</h2>
+<p>データ型とは、変数がどんな種類のデータを扱っているかを示すものです。箱の中に入れるものが「リンゴ」なのか「数字」なのかによって、扱い方が変わるのと同じように、プログラミングではデータの種類によって処理方法が変わります。</p>
+<p>Pythonは、代入された値を見て自動的にデータ型を判断してくれるので、初心者にはとても優しい言語です。しかし、どんなデータ型があるのかを知っておくことは、エラーを防ぎ、より効率的なプログラムを書く上で非常に重要です。</p>
+<h3>Pythonの主なデータ型</h3>
+<p>Pythonには、以下のような基本的なデータ型があります。</p>
+<ul>
+<li><strong>整数型 (int)</strong>: 符号付きの整数値を表します。（例: <code>10</code>, <code>-5</code>, <code>0</code>, <code>1000</code>）</li>
+<li><strong>浮動小数点型 (float)</strong>: 小数点以下の値を持つ数値を表します。（例: <code>3.14</code>, <code>-0.5</code>, <code>99.99</code>, <code>1.23e-4</code>）</li>
+<li><strong>文字列型 (str)</strong>: 文字の並び（テキストデータ）を表します。シングルクォート <code>'</code> またはダブルクォート <code>"</code> で囲みます。（例: <code>'こんにちは'</code>, <code>"Pythonを学ぼう！"</code>, <code>'123'</code>）</li>
+<li><strong>真偽値型 (bool)</strong>: <code>True</code>（真）か <code>False</code>（偽）のどちらか一方を表す型です。条件分岐などでよく使われます。</li>
+</ul>
+<p><strong>例：データ型を確認する</strong></p>
+<pre><code class="language-python">price = 150         # 整数型
+pi = 3.14159        # 浮動小数点型
+message = &quot;お疲れ様です！&quot; # 文字列型
+is_learning = True  # 真偽値型
+
+print(type(price))      # 出力: &lt;class 'int'&gt;
+print(type(pi))         # 出力: &lt;class 'float'&gt;
+print(type(message))    # 出力: &lt;class 'str'&gt;
+print(type(is_learning))# 出力: &lt;class 'bool'&gt;
+</code></pre>
+<p><code>type()</code>関数を使うと、変数がどのデータ型であるかを知ることができます。これはデバッグ（プログラムの誤りを見つけて直す作業）の際にも役立つ便利な機能です。</p>
+<h2>なぜ変数とデータ型が大切なの？</h2>
+<p>これらを理解することは、プログラムを正確に、そして効率的に動かすために非常に重要です。</p>
+<ol>
+<li><strong>データの管理と整理</strong>: 複雑なプログラムでもデータを整理して扱えるようになります。</li>
+<li><strong>エラーの防止</strong>: 適切なデータ型を意識することで、例えば「数字ではないものと足し算をしようとした」といった予期せぬエラーを防ぎやすくなります。</li>
+<li><strong>効率的な処理</strong>: データ型によって、コンピュータがデータを効率的に処理する方法が変わるため、プログラムのパフォーマンスにも影響します。</li>
+</ol>
+<h2>まとめ：プログラミングの第一歩を踏み出そう！</h2>
+<p>Pythonの変数とデータ型は、プログラミングの基礎中の基礎であり、すべてのプログラムの土台となる部分です。これらをしっかりとマスターすることで、より複雑なロジックを組み立てたり、Webアプリケーションやデータ分析ツールなど、様々なプログラムを自信を持って書けるようになります。</p>
+<p>まずは実際にコードを書いてみて、いろいろな値を変数に入れて、その型を確認してみてくださいね。試行錯誤がプログラミング上達の鍵です！これからも一緒にPython学習を楽しみましょう！
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
