@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="- タイトル、日付（今日のYYYY-MM-DD形式）、カテゴリ、タグをYAML Front Matterで記載します。
+  - カテゴリとタグは、入力で指定され">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="- タイトル、日付（今日のYYYY-MM-DD形式）、カテゴリ、タグをYAML Front Matterで記載します。
+  - カテゴリとタグは、入力で指定され">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+Gemini APIでIT学習ロードマップ記事を生成するためのプロンプト例を以下に示します。</p>
+<hr />
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- タイトル、日付（今日のYYYY-MM-DD形式）、カテゴリ、タグをYAML Front Matterで記載します。
+  - カテゴリとタグは、入力で指定されたものと、固定タグ「AI, Gemini, 自動生成」を含めます。
+- 導入文で「この記事はAIによって自動生成されています。」と明記します。
+- 読みやすく、やさしい日本語で解説します。
+- 見出しや箇条書きを積極的に活用します。
+- 具体例やサンプルコード（Pythonの場合はコードブロックで）を含めます。
+- 記事全体の文字数は1000文字程度を目安とします。
+- SEOを意識したキーワード（例：IT学習、プログラミング初心者、ロードマップ、[指定言語]学習、[指定テーマ]基礎など）を自然に含めます。
+
+## 入力データ
+言語: {{言語}}
+テーマ: {{テーマ}}
+カテゴリ: {{カテゴリ, 複数指定可}}
+タグ: {{タグ, 複数指定可}}
+
+## 出力例
+---
+title: {{言語}}の{{テーマ}}入門
+date: 2025-09-20
+categories: [{{カテゴリ}}, その他のカテゴリ]
+tags: [AI, Gemini, 自動生成, {{タグ}}, その他のタグ]
+---
+
+この記事はAIによって自動生成されています。
+
+# {{言語}}の{{テーマ}}とは？
+
+（ここに本文が続きます。具体的な解説、見出し、箇条書き、サンプルコードなどを含め、1000文字程度の記事を作成します。）
+</code></pre>
+<hr />
+<p><strong>このプロンプトを使う際の例（Gemini APIへのリクエスト時）:</strong></p>
+<p><strong>ユーザーの入力例:</strong></p>
+<pre><code class="language-json">{
+  &quot;言語&quot;: &quot;Python&quot;,
+  &quot;テーマ&quot;: &quot;変数とデータ型の基礎&quot;,
+  &quot;カテゴリ&quot;: [&quot;Python&quot;, &quot;プログラミング基礎&quot;],
+  &quot;タグ&quot;: [&quot;Python入門&quot;, &quot;プログラミング学習&quot;]
+}
+</code></pre>
+<p><strong>Gemini APIに渡す最終的なプロンプトの構成イメージ:</strong></p>
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- タイトル、日付（今日のYYYY-MM-DD形式）、カテゴリ、タグをYAML Front Matterで記載します。
+  - カテゴリとタグは、入力で指定されたものと、固定タグ「AI, Gemini, 自動生成」を含めます。
+- 導入文で「この記事はAIによって自動生成されています。」と明記します。
+- 読みやすく、やさしい日本語で解説します。
+- 見出しや箇条書きを積極的に活用します。
+- 具体例やサンプルコード（Pythonの場合はコードブロックで）を含めます。
+- 記事全体の文字数は1000文字程度を目安とします。
+- SEOを意識したキーワード（例：IT学習、プログラミング初心者、ロードマップ、Python学習、変数とデータ型基礎など）を自然に含めます。
+
+## 入力データ
+言語: Python
+テーマ: 変数とデータ型の基礎
+カテゴリ: [&quot;Python&quot;, &quot;プログラミング基礎&quot;]
+タグ: [&quot;Python入門&quot;, &quot;プログラミング学習&quot;]
+
+## 出力例
+---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [&quot;Python&quot;, &quot;プログラミング基礎&quot;]
+tags: [AI, Gemini, 自動生成, &quot;Python入門&quot;, &quot;プログラミング学習&quot;]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？
+
+（ここに本文が続きます。具体的な解説、見出し、箇条書き、サンプルコードなどを含め、1000文字程度の記事を作成します。）
+</code></pre>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
