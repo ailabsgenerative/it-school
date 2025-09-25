@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう！
+
+Pythonでのプログラミング学習を始める皆さん、ようこそ！プログラミングの基礎中の基礎">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう！
+
+Pythonでのプログラミング学習を始める皆さん、ようこそ！プログラミングの基礎中の基礎">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python, プログラミング基礎]
+tags: [AI, Gemini, 自動生成, Python, プログラミング入門, 変数, データ型, 初心者, ロードマップ]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう！
+
+Pythonでのプログラミング学習を始める皆さん、ようこそ！プログラミングの基礎中の基礎である「変数（へんすう）」と「データ型（データがた）」について、分かりやすく解説します。これらをしっかり理解することが、効率的なコードを書くための第一歩です。
+
+## 変数って何だろう？データをしまっておく「箱」のイメージ
+
+「変数」とは、簡単に言うと**データを一時的に保存しておくための「名前のついた箱」**のようなものです。この箱には、数値や文字など、さまざまなデータを入れることができます。そして、必要に応じてその中身を取り出したり、新しいものに入れ替えたりできます。
+
+Pythonで変数を使うのはとても簡単です。`=`（イコール）を使って、変数にデータ（値）を代入します。
+
+```python
+# 'name'という変数に「太郎」という文字列を代入
+name = &quot;太郎&quot;
+
+# 'age'という変数に「30」という数値を代入
+age = 30
+
+# 変数の中身を表示してみよう
+print(name)  # 出力: 太郎
+print(age)   # 出力: 30
+</code></pre>
+<p>変数の良いところは、一度値を代入した後でも、その値を変更できる点です。</p>
+<pre><code class="language-python"># ageの値を変更
+age = 31
+print(age) # 出力: 31 (30から31に変わった！)
+</code></pre>
+<h2>データ型って何だろう？データの「種類」を理解しよう</h2>
+<p>変数に入れるデータには、それぞれ<strong>「種類」</strong>があります。これが「データ型」です。Pythonは非常に賢く、あなたが変数に代入したデータを見て、自動的にそのデータ型を判断してくれます。しかし、どんなデータ型があるのか、そしてその特徴を理解しておくことは、エラーを防ぎ、より複雑なプログラムを作る上で非常に重要です。</p>
+<p>代表的なデータ型をいくつか見てみましょう。</p>
+<h3>1. 数値型 (int, float)</h3>
+<p>数値には、主に2種類あります。</p>
+<ul>
+<li><strong>整数型 (int)</strong>: 小数点を含まない数値です。
+    <code>python
+    my_integer = 100
+    print(my_integer) # 出力: 100</code></li>
+<li><strong>浮動小数点数型 (float)</strong>: 小数点を含む数値です。
+    <code>python
+    my_float = 3.14
+    print(my_float)   # 出力: 3.14</code></li>
+</ul>
+<h3>2. 文字列型 (str)</h3>
+<p>文字や単語、文章など、文字の並びを表すのが「文字列型」です。Pythonでは、シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲みます。</p>
+<pre><code class="language-python">greeting = &quot;こんにちは、Pythonの世界へようこそ！&quot;
+message = 'プログラミングは楽しい！'
+
+print(greeting) # 出力: こんにちは、Pythonの世界へようこそ！
+print(message)  # 出力: プログラミングは楽しい！
+</code></pre>
+<h3>3. 真偽値型 (bool)</h3>
+<p>「真（True）」か「偽（False）」のどちらかを表すデータ型です。これは、プログラムが何かを判断するときによく使われます。</p>
+<pre><code class="language-python">is_active = True   # アクティブである（真）
+is_logged_in = False # ログインしていない（偽）
+
+print(is_active)    # 出力: True
+print(is_logged_in) # 出力: False
+</code></pre>
+<h2>自分のデータ型を確認してみよう！<code>type()</code>関数</h2>
+<p>今代入したデータがどの型なのか、確認したい場合は<code>type()</code>関数を使うと便利です。</p>
+<pre><code class="language-python">num = 123
+text = &quot;Python学習&quot;
+flag = True
+price = 99.99
+
+print(type(num))   # 出力: &lt;class 'int'&gt;
+print(type(text))  # 出力: &lt;class 'str'&gt;
+print(type(flag))  # 出力: &lt;class 'bool'&gt;
+print(type(price)) # 出力: &lt;class 'float'&gt;
+</code></pre>
+<p>このように、<code>type()</code>関数を使うことで、変数がどのような種類のデータを持っているか一目で分かります。</p>
+<h2>なぜデータ型を理解することが大切なの？</h2>
+<p>データ型を理解することは、以下のような点で重要です。</p>
+<ul>
+<li><strong>適切な処理の選択</strong>: 数値計算と文字列操作では、Pythonが行う処理が異なります。データ型を知ることで、適切な操作を選べます。</li>
+<li><strong>エラーの回避</strong>: 異なるデータ型同士で無理な操作をすると、エラー（TypeErrorなど）が発生することがあります。例えば、数値と文字列を直接足し算することはできません。</li>
+<li><strong>効率的なプログラミング</strong>: データの種類を意識することで、より分かりやすく、効率的で、バグの少ないコードを書くことができます。</li>
+</ul>
+<h2>まとめ</h2>
+<p>Pythonプログラミングにおける「変数」と「データ型」は、まさにプログラムの土台となる概念です。
+*   <strong>変数</strong>はデータを一時的に保存する「箱」。
+*   <strong>データ型</strong>はそのデータの「種類」（数値、文字列、真偽値など）。</p>
+<p>これらの基礎をしっかりと押さえることで、今後のPython学習がスムーズに進むでしょう。焦らず、一つずつ理解を深めて、Pythonでのプログラミングを楽しみましょう！
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
