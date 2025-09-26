@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門：プログラミングの土台を築こう！</title>
+  <meta name="description" content="
+こんにちは！プログラミングの世界へようこそ。今回は、人気急上昇中のプログラミング言語 **Python** を学ぶ上で、最初に理解しておきたい非常に大切な概念">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門：プログラミングの土台を築こう！">
+<meta property="og:description" content="
+こんにちは！プログラミングの世界へようこそ。今回は、人気急上昇中のプログラミング言語 **Python** を学ぶ上で、最初に理解しておきたい非常に大切な概念">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, 変数, データ型, プログラミング初心者, 学習ロードマップ, 基本]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門：プログラミングの土台を築こう！
+date: 2024-03-01
+categories: [Python, プログラミング入門]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型, プログラミング初心者, 学習ロードマップ, 基本]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h2>Pythonの変数とデータ型とは？プログラミングの第一歩！</h2>
+<p>こんにちは！プログラミングの世界へようこそ。今回は、人気急上昇中のプログラミング言語 <strong>Python</strong> を学ぶ上で、最初に理解しておきたい非常に大切な概念「<strong>変数</strong>と<strong>データ型</strong>」について、初心者の方でもわかるようにじっくり解説していきます。</p>
+<p>プログラミングでは、数字や文字といった「データ」を扱います。これらのデータを一時的に保存したり、名前をつけて区別したりするために、変数とデータ型が欠かせません。まるで、引き出しに名前をつけて、中に入れるモノの種類（本、服、おもちゃなど）を決めるようなものだとイメージしてください。</p>
+<h3>変数を使ってみよう！データに名前をつける「箱」</h3>
+<p><strong>変数</strong>とは、データを一時的に保存しておくための「名前のついた箱」のようなものです。プログラムの中で何度も使う値や、計算結果などをこの箱に入れておくと、後で簡単に取り出して使うことができます。</p>
+<p>Pythonで変数を使うのはとても簡単です。<code>変数名 = 値</code> という形で、名前（変数名）と中身（値）を指定します。</p>
+<pre><code class="language-python"># 変数に名前をつけ、値を代入
+my_name = &quot;Python太郎&quot;    # 名前というデータを「my_name」という箱に入れる
+my_age = 30               # 年齢というデータを「my_age」という箱に入れる
+height = 175.5            # 身長というデータを「height」という箱に入れる
+
+# 変数の中身を出力してみよう
+print(my_name)
+print(my_age)
+print(height)
+</code></pre>
+<p><strong>実行結果:</strong></p>
+<pre><code>Python太郎
+30
+175.5
+</code></pre>
+<p>このように、一度変数に値を代入しておけば、後で変数名を使うだけでその値を取り出すことができます。</p>
+<h4>変数名のルールと注意点</h4>
+<p>変数名にはいくつかルールがあります。</p>
+<ul>
+<li>半角の英字、数字、アンダースコア <code>_</code> を使えます。</li>
+<li>数字で始めることはできません。（例: <code>1st_name</code> はNG）</li>
+<li>大文字と小文字は区別されます。（<code>my_name</code> と <code>My_Name</code> は別の変数）</li>
+<li>Pythonの予約語（<code>if</code>, <code>for</code>, <code>print</code> など特別な意味を持つ単語）は使えません。</li>
+<li>わかりやすい名前をつけることが大切です。（例: <code>x</code> より <code>age</code> の方が何を保存しているかわかりやすい）</li>
+</ul>
+<h3>主要なデータ型を知ろう！データの「種類」を理解する</h3>
+<p>次に<strong>データ型</strong>についてです。データ型とは、変数がどんな種類のデータを保存しているかを示すものです。Pythonでは、自動的にデータの種類を判断してくれますが、それぞれの型がどのようなものかを知っておくことは重要です。</p>
+<p>主なデータ型をいくつかご紹介します。</p>
+<ol>
+<li><strong>整数型 (int)</strong><ul>
+<li>小数点を含まない数値を表します。年齢、個数など。</li>
+<li>例: <code>10</code>, <code>100</code>, <code>-5</code></li>
+</ul>
+</li>
+<li><strong>浮動小数点数型 (float)</strong><ul>
+<li>小数点を含む数値を表します。身長、価格など。</li>
+<li>例: <code>3.14</code>, <code>0.5</code>, <code>175.5</code></li>
+</ul>
+</li>
+<li><strong>文字列型 (str)</strong><ul>
+<li>文字の並びを表します。名前、メッセージ、文章など。</li>
+<li>シングルクォーテーション <code>'</code> またはダブルクォーテーション <code>"</code> で囲みます。</li>
+<li>例: <code>"Hello"</code>, <code>'Python学習中'</code>, <code>"123"</code></li>
+</ul>
+</li>
+<li><strong>真偽値型 (bool)</strong><ul>
+<li>「真 (True)」か「偽 (False)」のいずれかを表します。条件判断などで使われます。</li>
+<li>例: <code>True</code>, <code>False</code></li>
+</ul>
+</li>
+</ol>
+<p>これらのデータ型は、<code>type()</code> 関数を使うことで確認できます。</p>
+<pre><code class="language-python"># データ型の例
+my_age = 30             # 整数型 (int)
+pi_value = 3.14         # 浮動小数点数型 (float)
+greeting = &quot;こんにちは、Pythonの世界へ！&quot; # 文字列型 (str)
+is_active = True        # 真偽値型 (bool)
+
+# 各変数のデータ型を確認してみよう
+print(type(my_age))
+print(type(pi_value))
+print(type(greeting))
+print(type(is_active))
+</code></pre>
+<p><strong>実行結果:</strong></p>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;
+</code></pre>
+<h3>まとめ：プログラミング学習の土台を固めよう！</h3>
+<p>Pythonの「変数」と「データ型」は、プログラミング学習の基礎中の基礎です。これらを理解することで、データを効率的に扱い、より複雑なプログラムを作成する第一歩を踏み出せます。</p>
+<p>最初は少し難しく感じるかもしれませんが、実際にコードを書いて動かしてみることが一番の学習方法です。今日学んだ知識を使って、色々な変数を作ったり、異なるデータ型を試したりしてみてください。</p>
+<p>これからも一緒にPythonの世界を楽しく探求していきましょう！</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
