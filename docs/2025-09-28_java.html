@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を徹底解説
+
+プログラミング学習を始めた皆さん、よう">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を徹底解説
+
+プログラミング学習を始めた皆さん、よう">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。IT初心者向けの教育ブログ記事として、Pythonの「変数とデータ型」について、ご指定の条件に従って解説記事をMarkdown形式で作成します。</p>
+<hr />
+<pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門！プログラミングの基礎を学ぼう
+date: 2023-10-27
+categories: [Python, プログラミング入門]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型, プログラミング基礎, 初心者]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を徹底解説
+
+プログラミング学習を始めた皆さん、ようこそ！Pythonは、そのシンプルさからプログラミング初心者にも非常に人気のある言語です。この記事では、Pythonプログラミングの最も基本的な要素である「変数」と「データ型」について、やさしく、そして具体例を交えながら解説していきます。
+
+プログラミングを学ぶ上で、この2つの概念は非常に重要です。しっかりと理解して、Python学習の第一歩を踏み出しましょう！
+
+## 1. 変数ってなんだろう？名前を付けた「箱」のイメージ
+
+プログラミングにおける「変数（へんすう）」とは、**データ（値）を一時的に保存しておくための「名前が付いた箱」**のようなものです。この箱の中に、数字や文字などのさまざまなデータをしまっておくことができます。そして、必要に応じて箱からデータを取り出したり、新しいデータに入れ替えたりすることが可能です。
+
+例えば、皆さんの名前や年齢をPythonプログラムで扱いたい場合を考えてみましょう。
+
+```python
+# 'name' という箱に「太郎」という文字列を入れます
+name = &quot;太郎&quot;
+
+# 'age' という箱に「25」という数字を入れます
+age = 25
+
+# 箱の中身を表示してみましょう
+print(name)  # 出力: 太郎
+print(age)   # 出力: 25
+</code></pre>
+<p>このように、<code>name</code> や <code>age</code> が変数名です。<code>=</code>（イコール）記号を使って、変数に値を代入（だいにする、つまり箱に値を入れること）します。</p>
+<h3>変数名のルールとヒント</h3>
+<p>変数名をつける際には、いくつかルールがあります。</p>
+<ul>
+<li>半角英数字とアンダースコア <code>_</code> を使う</li>
+<li>数字で始めることはできない（<code>1st_name</code> はNG、<code>name_1st</code> はOK）</li>
+<li>小文字で始めるのが一般的</li>
+<li>意味がわかる名前をつける（<code>x</code> や <code>y</code> よりも <code>user_name</code> の方が分かりやすい）</li>
+</ul>
+<h2>2. データ型ってなんだろう？データの「種類」</h2>
+<p>変数にしまうデータには、さまざまな「種類」があります。このデータの種類を「データ型（データがた）」と呼びます。例えば、数字は数字、文字は文字として扱わないと、コンピューターは正しく処理できません。</p>
+<p>Pythonでは、主要なデータ型として以下のようなものがあります。</p>
+<h3>2.1. 整数型 (int: integer)</h3>
+<p>小数点を含まない、まるい数字（正の数、負の数、0）。</p>
+<pre><code class="language-python">num = 100
+negative_num = -5
+zero = 0
+</code></pre>
+<h3>2.2. 浮動小数点数型 (float: floating point number)</h3>
+<p>小数点を含む数字。</p>
+<pre><code class="language-python">pi = 3.14
+price = 1980.50
+</code></pre>
+<h3>2.3. 文字列型 (str: string)</h3>
+<p>文字の並び。必ずシングルクォーテーション <code>' '</code> またはダブルクォーテーション <code>" "</code> で囲みます。</p>
+<pre><code class="language-python">message = &quot;こんにちは、Python！&quot;
+greeting = 'Hello World!'
+</code></pre>
+<h3>2.4. 真偽値型 (bool: boolean)</h3>
+<p>「正しい（True）」か「間違っている（False）」かのどちらかを表す型。条件判断などで使われます。</p>
+<pre><code class="language-python">is_active = True   # アクティブである
+is_admin = False   # 管理者ではない
+</code></pre>
+<h2>3. データ型を確認してみよう！<code>type()</code>関数</h2>
+<p>今代入したデータが、どんな型なのかを確認したいときがあります。Pythonには、変数のデータ型を教えてくれる便利な <code>type()</code> という関数があります。</p>
+<pre><code class="language-python"># いろいろな変数を定義してみましょう
+user_name = &quot;Alice&quot;
+user_age = 30
+user_height = 165.5
+is_student = True
+
+# それぞれのデータ型を確認してみます
+print(type(user_name))   # 出力: &lt;class 'str'&gt; (文字列型)
+print(type(user_age))    # 出力: &lt;class 'int'&gt; (整数型)
+print(type(user_height)) # 出力: &lt;class 'float'&gt; (浮動小数点数型)
+print(type(is_student))  # 出力: &lt;class 'bool'&gt; (真偽値型)
+</code></pre>
+<p><code>print(type(変数名))</code> のように書くと、その変数の中身がどのデータ型なのかが表示されます。これで、皆さんが扱っているデータの種類をいつでも確認できますね。</p>
+<h2>まとめ</h2>
+<p>Pythonプログラミングの基礎となる「変数」と「データ型」について解説しました。</p>
+<ul>
+<li><strong>変数</strong>：データをしまう「名前が付いた箱」。データを一時的に保存・利用する。</li>
+<li><strong>データ型</strong>：データの「種類」（整数、小数、文字、真偽など）。データに応じた適切な処理のために重要。</li>
+</ul>
+<p>これらの概念は、これから皆さんが書くすべてのPythonプログラムの土台となります。しっかりと理解し、実際にコードを書いてみて、Pythonの楽しさを体験してください！</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
