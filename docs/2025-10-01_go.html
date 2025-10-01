@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+  - `title`: 指定された言語とテーマを反映">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+  - `title`: 指定された言語とテーマを反映">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+Gemini APIに送信するプロンプトの例と、そのプロンプトで生成される記事の出力例をセットで作成します。</p>
+<hr />
+<h3>あなたがGemini APIに投げるプロンプトの例</h3>
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+  - `title`: 指定された言語とテーマを反映した、分かりやすく魅力的なタイトル。
+  - `date`: 2024-12-01のような `YYYY-MM-DD` 形式で、任意の未来の日付を設定してください。
+  - `categories`: 指定された言語名（例: `[Python]`）。
+  - `tags`: `[AI, Gemini, 自動生成]` は必須とし、記事の内容に関連する適切なタグを追加してください。
+- 導入文で「この記事はAIによって自動生成されています。」と明記してください。
+- 読みやすく、やさしい日本語で解説し、IT初心者がスムーズに学習できるよう配慮してください。
+- 見出し（H1, H2, H3）や箇条書きを効果的に活用し、論理的で分かりやすい構成にしてください。
+- 具体例やサンプルコードを適度に含め、理解を深める助けにしてください。サンプルコードは簡潔にまとめてください。
+- 全体で1000文字程度（Markdown記法やコードを除く本文の文字数）を目安としてください。
+- SEOを意識し、指定されたテーマに関連する主要キーワードを自然な形で文章中に含めてください。
+
+## 生成する記事の指定
+- 言語: Python
+- テーマ: 変数とデータ型の基礎
+
+上記条件と指定に基づいて、Markdown形式で記事を生成してください。
+</code></pre>
+<hr />
+<h3>上記プロンプトに対するGeminiの出力例</h3>
+<pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門 プログラミング基礎を徹底解説
+date: 2024-12-01
+categories: [Python]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型, プログラミング初心者, 学習ロードマップ]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう
+
+プログラミングを始めたいIT初心者の皆さん、Python学習の最初のステップへようこそ！この記事では、Pythonプログラミングの超基本となる「変数」と「データ型」について、やさしい日本語で丁寧に解説します。これらを理解することは、今後のPython学習ロードマップにおいて非常に重要です。この基礎をしっかりと学び、効率的なPython学習を進めていきましょう。
+
+## 変数とは？情報を一時的に保存する「箱」
+
+変数は、プログラムの中で使うデータを一時的に保存しておくための「箱」のようなものです。この箱には名前（変数名）を付けて、中身（データ）を自由に入れ替えたり、取り出したりできます。変数は、データを再利用したり、後で変更したりする際に非常に役立つ概念です。
+
+例えば、あなたの名前や年齢をプログラムで扱いたい場合を考えてみましょう。
+
+```python
+# 名前を保存する変数
+my_name = &quot;山田太郎&quot;
+# 年齢を保存する変数
+my_age = 30
+
+print(my_name)  # 実行結果: 山田太郎
+print(my_age)   # 実行結果: 30
+</code></pre>
+<p>上記の例では、<code>my_name</code> や <code>my_age</code> が変数名で、<code>"山田太郎"</code> や <code>30</code> がその中身です。<code>=</code>記号を使ってデータを変数に代入（入れる）します。このように変数を使うことで、コードが読みやすくなり、管理もしやすくなります。</p>
+<h2>データ型とは？データの種類を表すもの</h2>
+<p>箱（変数）の中に入れるデータには、さまざまな種類があります。このデータの種類を「データ型」と呼びます。Pythonでは、データの内容に応じて自動的に型を判断してくれますが、どのような型があるかを知っておくことは大切です。代表的なデータ型として以下のようなものがあります。</p>
+<h3>1. 数値型 (Numbers)</h3>
+<p>数字を扱うための型です。
+*   <strong>整数 (int)</strong>: 負の数、0、正の数といった小数点以下のない数値（例: <code>-5</code>, <code>0</code>, <code>100</code>）
+*   <strong>浮動小数点数 (float)</strong>: 小数点以下の値を持つ数値（例: <code>3.14</code>, <code>-0.5</code>, <code>99.99</code>）</p>
+<pre><code class="language-python">integer_number = 100    # 整数型
+float_number = 3.14     # 浮動小数点数型
+
+print(type(integer_number)) # 実行結果: &lt;class 'int'&gt;
+print(type(float_number))   # 実行結果: &lt;class 'float'&gt;
+</code></pre>
+<p><code>type()</code>関数を使うと、変数がどのようなデータ型を持っているか確認できます。</p>
+<h3>2. 文字列型 (String)</h3>
+<p>文字の並びを扱うための型です。半角または全角の文字、記号などを<code>''</code> (シングルクォーテーション) または <code>""</code> (ダブルクォーテーション) で囲んで表現します。</p>
+<pre><code class="language-python">greeting = &quot;こんにちは、世界！&quot; # 文字列型
+message = 'Pythonは楽しい！'    # 文字列型
+
+print(type(greeting)) # 実行結果: &lt;class 'str'&gt;
+</code></pre>
+<h3>3. 真偽値型 (Boolean)</h3>
+<p>真実（True）か偽（False）か、の2つの状態を扱う型です。条件分岐などで非常に役立ち、プログラムの流れを制御する基礎となります。</p>
+<pre><code class="language-python">is_active = True    # 真偽値型 (真)
+is_admin = False    # 真偽値型 (偽)
+
+print(type(is_active)) # 実行結果: &lt;class 'bool'&gt;
+</code></pre>
+<h2>なぜ変数とデータ型が大切なの？</h2>
+<ul>
+<li><strong>コードの分かりやすさ</strong>: 変数を使うことで、数字や文字に意味のある名前を付けられ、コードが読みやすくなります。</li>
+<li><strong>データの再利用</strong>: 一度変数に保存したデータは、プログラムのどこからでも何度も利用でき、効率的なプログラミングにつながります。</li>
+<li><strong>エラーの回避</strong>: データ型を意識することで、数値と文字列を間違えて計算しようとしてエラーになる、といった問題を避けられます。これにより、堅牢なプログラムを作成する基礎ができます。</li>
+</ul>
+<h2>まとめ</h2>
+<p>Pythonの「変数」と「データ型」は、プログラミングの土台となる非常に重要な概念です。箱に変数を、箱の中身の「種類」をデータ型と考えると理解しやすいでしょう。この基礎をしっかり押さえることで、今後のPythonプログラミング学習が格段に進めやすくなります。IT初心者の方がPythonを学ぶ上で避けては通れない道ですので、今回学んだことをぜひ実践してみてください。</p>
+<p>次のステップとして、これらの変数やデータ型を使った「演算」について学んでみましょう。Pythonの学習ロードマップを着実に進めていきましょう！
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
