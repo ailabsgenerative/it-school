@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門 - プログラミングの基礎を学ぼう</title>
+  <meta name="description" content="
+プログラミングを始めると、必ず出会うのが「変数（へんすう）」と「データ型（データがた）」という言葉です。これらはプログラムの基本的な要素であり、これらを理解す">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門 - プログラミングの基礎を学ぼう">
+<meta property="og:description" content="
+プログラミングを始めると、必ず出会うのが「変数（へんすう）」と「データ型（データがた）」という言葉です。これらはプログラムの基本的な要素であり、これらを理解す">
+<meta name="keywords" content="[Python, 初心者, 変数, データ型, プログラミング学習, AI, Gemini, 自動生成]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門 - プログラミングの基礎を学ぼう
+date: 2025-09-20
+categories: [Python, プログラミング基礎]
+tags: [Python, 初心者, 変数, データ型, プログラミング学習, AI, Gemini, 自動生成]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？プログラミングの「箱」と「種類」を理解しよう</h1>
+<p>プログラミングを始めると、必ず出会うのが「変数（へんすう）」と「データ型（データがた）」という言葉です。これらはプログラムの基本的な要素であり、これらを理解することがIT学習の第一歩になります。Python初心者の方でもわかりやすいように、プログラミングの「箱」と「種類」というイメージで解説していきます。</p>
+<h2>変数とは？値をしまう「箱」</h2>
+<p>変数は、プログラムの中で一時的に値を保存しておくための「名前のついた箱」のようなものです。例えば、あなたの名前や年齢、計算結果などをプログラムに覚えておかせたいときに使います。</p>
+<h3>変数の基本的な使い方</h3>
+<p>Pythonで変数を使うのはとても簡単です。<code>変数名 = 値</code> の形で、箱に値を入れるように使います。</p>
+<pre><code class="language-python"># 名前という箱に「たろう」という文字列を入れる
+name = &quot;たろう&quot;
+
+# 年齢という箱に「25」という数字を入れる
+age = 25
+
+# メッセージという箱に、名前と年齢を組み合わせた文字列を入れる
+message = name + &quot;さんは&quot; + str(age) + &quot;歳です。&quot;
+
+# 箱の中身を表示する
+print(name)    # 出力: たろう
+print(age)     # 出力: 25
+print(message) # 出力: たろうさんは25歳です。
+</code></pre>
+<p>変数に一度入れた値は、後から別の値で上書きすることもできます。</p>
+<pre><code class="language-python">score = 80
+print(score) # 出力: 80
+
+score = 95   # 新しい値で上書き
+print(score) # 出力: 95
+</code></pre>
+<h3>変数名のルール（ごく一部）</h3>
+<ul>
+<li>英数字とアンダースコア（<code>_</code>）が使える。</li>
+<li>数字から始めることはできない。</li>
+<li>大文字と小文字は区別される（<code>name</code> と <code>Name</code> は別物）。</li>
+</ul>
+<h2>データ型とは？値の「種類」</h2>
+<p>データ型とは、変数が持っている「値の種類」のことです。値には数字、文字、日付など、様々な種類がありますよね。プログラムもそれらを区別して扱います。種類によって、できる操作が変わってきます。</p>
+<p>Pythonでは、主に次のようなデータ型がよく使われます。</p>
+<h3>1. 整数型（int: Integer）</h3>
+<p>小数点を含まない、普通の数字です。年齢、個数など数えるものに使います。</p>
+<pre><code class="language-python">num_students = 30
+print(type(num_students)) # 出力: &lt;class 'int'&gt;
+</code></pre>
+<h3>2. 浮動小数点数型（float: Floating-point number）</h3>
+<p>小数点を含む数字です。身長、体重、割引率など、細かな数値に使います。</p>
+<pre><code class="language-python">height = 175.5
+pi_value = 3.14159
+print(type(height)) # 出力: &lt;class 'float'&gt;
+</code></pre>
+<h3>3. 文字列型（str: String）</h3>
+<p>文字や単語、文章などを扱います。シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲みます。</p>
+<pre><code class="language-python">greeting = &quot;こんにちは&quot;
+city = '東京'
+print(type(greeting)) # 出力: &lt;class 'str'&gt;
+</code></pre>
+<h3>4. 真偽値型（bool: Boolean）</h3>
+<p>「True（真・正しい）」か「False（偽・間違っている）」のどちらかを表す型です。条件判断によく使われます。</p>
+<pre><code class="language-python">is_raining = True
+is_sunny = False
+print(type(is_raining)) # 出力: &lt;class 'bool'&gt;
+</code></pre>
+<h2>変数とデータ型の関係</h2>
+<p>Pythonでは、変数に値を代入すると、その値の種類によって自動的にデータ型が決まります。例えば、<code>age = 25</code> と書くと、<code>age</code> 変数には整数の <code>25</code> が入るので、<code>age</code> のデータ型は整数型（<code>int</code>）になります。</p>
+<p>データ型を意識しないと、思わぬエラーが発生することもあります。例えば、文字列と数字をそのまま足し算することはできません。</p>
+<pre><code class="language-python">text = &quot;合計: &quot;
+amount = 100
+
+# print(text + amount) # エラーになる！
+
+# 型を変換してから結合する（str()関数で数字を文字列に変換）
+print(text + str(amount)) # 出力: 合計: 100
+</code></pre>
+<p>このように、変数とデータ型はプログラミングの最も基本的な部分であり、今後の学習においても非常に重要になります。ぜひこの機会にしっかりと理解し、Pythonプログラミングの基礎を固めてくださいね。</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
