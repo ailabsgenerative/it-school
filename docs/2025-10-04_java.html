@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="- 1000文字程度
+- SEOを意識したキーワードを適度に含める
+
+## 指定
+- 言語: Python
+- テーマ: 変数とデータ型の基礎
+
+---
+
+# ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="- 1000文字程度
+- SEOを意識したキーワードを適度に含める
+
+## 指定
+- 言語: Python
+- テーマ: 変数とデータ型の基礎
+
+---
+
+# ">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。</p>
+<h2>条件</h2>
+<ul>
+<li>タイトル、日付、カテゴリ、タグをYAML Front Matterで記載</li>
+<li>導入文で「この記事はAIによって自動生成されています」と明記</li>
+<li>読みやすく、やさしい日本語で解説</li>
+<li>見出しや箇条書きを活用</li>
+<li>具体例やサンプルコードを含める</li>
+<li>1000文字程度</li>
+<li>SEOを意識したキーワードを適度に含める</li>
+</ul>
+<h2>指定</h2>
+<ul>
+<li>言語: Python</li>
+<li>テーマ: 変数とデータ型の基礎</li>
+</ul>
+<hr />
+<h1>出力例</h1>
+<hr />
+<p>title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？</h1>
+<p>Pythonを学習する上で、最初につまずきやすいポイントの一つが「変数」と「データ型」かもしれません。でも安心してください！これらはプログラミングの基本的な考え方であり、一度理解してしまえば、Pythonでのコーディングがずっと楽しくなります。この記事では、Pythonの変数とデータ型について、プログラミング初心者の方にも分かりやすく、具体的な例を交えながら解説していきます。</p>
+<h2>変数ってなんだろう？</h2>
+<p>プログラミングにおける「変数（へんすう）」とは、<strong>データを一時的に保存しておくための「箱」のようなもの</strong>とイメージしてください。例えば、計算結果や名前、文章などをこの箱に入れておくことができます。そして、必要に応じて箱の中身を取り出したり、新しいものに入れ替えたりすることが可能です。</p>
+<p>Pythonで変数を使うときは、以下のように書きます。</p>
+<pre><code class="language-python"># 変数'message'に「こんにちは、世界！」という文字列を入れる
+message = &quot;こんにちは、世界！&quot;
+
+# 変数'score'に数値の100を入れる
+score = 100
+
+# 変数の中身を表示する
+print(message)
+print(score)
+</code></pre>
+<p>上記の例では、<code>message</code>と<code>score</code>が変数名です。<code>=</code>記号は「代入演算子」と呼ばれ、右側の値を左側の変数に「代入する（入れる）」という意味になります。</p>
+<h2>データ型ってなんだろう？</h2>
+<p>次に「データ型（データがた）」について説明します。変数に入れるデータには、数字や文字、真偽（はい/いいえ）など、さまざまな種類がありますよね？このデータの種類を「データ型」と呼びます。Pythonは、変数にどのような種類のデータが格納されているかを自動的に判断してくれます。</p>
+<p>主なデータ型をいくつか見てみましょう。</p>
+<h3>1. 文字列型（string / <code>str</code>）</h3>
+<p>文字の並びや文章を表すデータ型です。シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲んで表現します。</p>
+<pre><code class="language-python">name = &quot;太郎&quot;         # ダブルクォーテーション
+greeting = 'こんにちは' # シングルクォーテーション
+print(type(name))     # &lt;class 'str'&gt; と表示されます
+</code></pre>
+<h3>2. 整数型（integer / <code>int</code>）</h3>
+<p>小数点を含まない、正の数、負の数、ゼロを表すデータ型です。</p>
+<pre><code class="language-python">age = 30
+count = -5
+print(type(age))      # &lt;class 'int'&gt; と表示されます
+</code></pre>
+<h3>3. 浮動小数点型（float / <code>float</code>）</h3>
+<p>小数点を含む数値を表すデータ型です。</p>
+<pre><code class="language-python">height = 175.5
+pi = 3.14159
+print(type(height))   # &lt;class 'float'&gt; と表示されます
+</code></pre>
+<h3>4. 真偽値型（boolean / <code>bool</code>）</h3>
+<p>真（True）か偽（False）のどちらかを表すデータ型です。条件分岐などでよく使われます。</p>
+<pre><code class="language-python">is_active = True
+has_error = False
+print(type(is_active)) # &lt;class 'bool'&gt; と表示されます
+</code></pre>
+<h2>なぜデータ型が重要なのか？</h2>
+<p>データ型は、Pythonがそのデータをどのように扱えばいいかを判断するために非常に重要です。例えば、数字は足し算ができますが、文字は足し算ができません（ただし、文字列同士は結合できます）。</p>
+<pre><code class="language-python">num1 = 10
+num2 = 20
+result_num = num1 + num2 # 30 となります
+
+str1 = &quot;Hello&quot;
+str2 = &quot;World&quot;
+result_str = str1 + str2 # &quot;HelloWorld&quot; となります
+
+# num1 + str1 はエラーになります！異なるデータ型はそのままでは計算できません。
+# print(num1 + str1)
+</code></pre>
+<p>このように、データ型を意識することで、意図しないエラーを防ぎ、Pythonプログラムを正確に動作させることができます。</p>
+<h2>まとめ</h2>
+<p>この記事では、Pythonのプログラミングにおける「変数」と「データ型」の基礎について解説しました。
+- <strong>変数</strong>は、データを一時的に保存する「箱」のようなものです。
+- <strong>データ型</strong>は、変数に格納されるデータの種類を表します。主要なものには文字列（<code>str</code>）、整数（<code>int</code>）、浮動小数点数（<code>float</code>）、真偽値（<code>bool</code>）があります。</p>
+<p>これらの概念はPythonプログラミングの土台となる非常に大切な要素です。実際にコードを書いてみて、変数に様々なデータ型の値を代入し、<code>print()</code>関数や<code>type()</code>関数を使ってその結果を確認してみましょう。実践を通じて、きっと理解が深まるはずです。</p>
+<h2>Pythonの学習ロードマップの第一歩として、変数とデータ型をしっかりマスターしてくださいね！</h2>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

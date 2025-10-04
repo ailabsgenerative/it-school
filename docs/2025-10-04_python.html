@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="
+## 記事生成条件
+
+1.  **フォーマット:** Markdown形式で出力してください。
+2.  **メタデータ (YAML Front Matter)">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="
+## 記事生成条件
+
+1.  **フォーマット:** Markdown形式で出力してください。
+2.  **メタデータ (YAML Front Matter)">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+指定されたプログラミング言語やIT分野について、IT初心者向けの解説記事を生成するためのGemini API用プロンプト例をMarkdown形式で作成します。</p>
+<p>このプロンプトを使用すると、指定された「言語」と「テーマ」に基づいて、条件を満たした記事が生成されます。</p>
+<hr />
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の記事生成条件と、後述の「記事の指定内容」に基づいて、IT初心者にも理解しやすい解説記事をMarkdown形式で作成してください。
+
+## 記事生成条件
+
+1.  **フォーマット:** Markdown形式で出力してください。
+2.  **メタデータ (YAML Front Matter):**
+    *   `title`: 記事の内容を的確に表すタイトルを生成してください。
+    *   `date`: 記事生成時の日付を `YYYY-MM-DD` 形式で記載してください。
+    *   `categories`: 指定された言語やIT分野に基づいて、最も適切なカテゴリを配列形式（例: `[Python, プログラミング基礎]`）で設定してください。
+    *   `tags`: `[AI, Gemini, 自動生成]` を必須とし、記事の内容に関連するキーワードを3〜5個追加してください。
+3.  **導入文:** YAML Front Matterの直後に「この記事はAIによって自動生成されています。」と明記してください。
+4.  **ターゲット読者:** IT初心者
+5.  **トーンとスタイル:** 読みやすく、やさしい日本語で記述し、専門用語は避け、または丁寧に解説してください。
+6.  **記事の構造:**
+    *   適切な見出し（`#` や `##` など）を効果的に使用し、内容を分かりやすく整理してください。
+    *   箇条書きを積極的に活用し、情報を整理してください。
+7.  **具体例とサンプルコード:** 内容を理解しやすくするため、具体例や関連するサンプルコード（Pythonなど、指定言語に応じたもの）を必ず含めてください。コードはMarkdownのコードブロック（例: ````python ... ````）で囲んでください。
+8.  **文字数:** 約1000文字を目安としてください。
+9.  **SEO対策:** 読者が検索しそうなキーワードを自然な形で適度に含めてください。
+
+## 記事の指定内容
+
+*   **言語:** {ここにPythonやJavaScriptなどのプログラミング言語名、または特定のIT分野名が入ります}
+*   **テーマ:** {ここに「変数とデータ型の基礎」や「Webサーバーとは」などの具体的なテーマが入ります}
+
+---
+
+**以下は出力形式の例です。**
+```markdown
+---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python, プログラミング基礎]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型, 初心者向け]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？
+
+（ここに本文が続きます。具体例やサンプルコード、見出し、箇条書きなどを活用して約1000文字で解説してください。）
+</code></pre>
+<hr />
+<p>上記を踏まえ、以下の指定内容で記事を生成してください。</p>
+<p><strong>言語:</strong> Python
+<strong>テーマ:</strong> 変数とデータ型の基礎
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
