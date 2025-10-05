@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="## Pythonの変数とデータ型とは？プログラミングの超基本
+
+Pythonプログラミング学習の第一歩として、**変数**と**データ型**は避けて通れない重">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="## Pythonの変数とデータ型とは？プログラミングの超基本
+
+Pythonプログラミング学習の第一歩として、**変数**と**データ型**は避けて通れない重">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門｜プログラミングの基礎を学ぼう！
+date: 2025-09-20
+categories: [Python, プログラミング入門]
+tags: [Python, 変数, データ型, 初心者, プログラミング基礎, AI, Gemini, ロードマップ]
+---
+
+この記事はAIによって自動生成されています。
+
+## Pythonの変数とデータ型とは？プログラミングの超基本
+
+Pythonプログラミング学習の第一歩として、**変数**と**データ型**は避けて通れない重要な基礎知識です。これらを理解することで、プログラムがどのように情報を扱い、計算していくのかがわかります。
+
+「変数」と聞くと難しそうに感じるかもしれませんが、例えるなら**情報をしまっておくための「箱」**のようなものです。そして、「データ型」はその箱の中に**どんな種類の情報が入っているか**を示すものだと考えてください。
+
+この記事では、IT初心者の方でもPythonの変数とデータ型の基本をしっかりと理解できるよう、わかりやすい言葉と具体的な例で解説していきます。
+
+### 変数を使ってみよう！情報の「箱」を準備する
+
+プログラミングにおける**変数（Variable）**とは、データ（情報）を一時的に保存しておくための名前がついた場所（メモリ領域）のことです。この「箱」に数値や文字などを入れて、後から取り出して使ったり、中身を書き換えたりすることができます。
+
+#### 変数の宣言と代入
+
+Pythonで変数を使うのはとても簡単です。特別なキーワードは必要なく、変数名と `=` (イコール) を使って値を代入するだけです。
+
+**例：**
+
+```python
+# 'name' という箱に 'Taro' という文字列を入れる
+name = &quot;Taro&quot;
+
+# 'age' という箱に '25' という数値を入れる
+age = 25
+
+# 箱の中身を表示する
+print(name) # 出力: Taro
+print(age)  # 出力: 25
+</code></pre>
+<p>上の例では、<code>name</code> と <code>age</code> が変数名です。<code>=</code> は「代入演算子」と呼ばれ、「右側の値を左側の変数に入れる」という意味になります。</p>
+<h4>変数の命名ルール（名前の付け方）</h4>
+<p>変数名にはルールがいくつかあります。</p>
+<ul>
+<li>英数字とアンダースコア <code>_</code> が使える</li>
+<li>数字で始めることはできない（例: <code>1name</code> はNG）</li>
+<li>大文字と小文字は区別される（<code>myVar</code> と <code>myvar</code> は別の変数）</li>
+<li>Pythonの予約語（<code>if</code>, <code>for</code>, <code>print</code> など）は使えない</li>
+</ul>
+<p>初心者の方は、<strong>内容がわかるような名前</strong>をつけることを心がけましょう。</p>
+<h3>データ型ってなに？「箱の中身」の種類</h3>
+<p>変数という「箱」にどんな種類の情報が入っているかを示すのが<strong>データ型（Data Type）</strong>です。Pythonは、変数に代入された値から自動的にデータ型を判断してくれます。これを「動的型付け」と呼びます。</p>
+<p>主なデータ型をいくつか見てみましょう。</p>
+<ol>
+<li>
+<p><strong>整数型 (int - Integer)</strong></p>
+<ul>
+<li>小数点を含まない数値です。</li>
+<li>例: <code>10</code>, <code>-5</code>, <code>0</code>
+<code>python
+number_of_items = 100
+print(type(number_of_items)) # 出力: &lt;class 'int'&gt;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>浮動小数点数型 (float - Floating Point Number)</strong></p>
+<ul>
+<li>小数点を含む数値です。</li>
+<li>例: <code>3.14</code>, <code>-0.5</code>, <code>100.0</code>
+<code>python
+pi_value = 3.14159
+print(type(pi_value)) # 出力: &lt;class 'float'&gt;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>文字列型 (str - String)</strong></p>
+<ul>
+<li>文字の並びです。シングルクォーテーション (<code>'</code>) またはダブルクォーテーション (<code>"</code>) で囲んで表現します。</li>
+<li>例: <code>"Hello"</code>, <code>'Python'</code>, <code>"123"</code> (数値のように見えますが、囲まれているので文字列です)
+<code>python
+greeting = "こんにちは、世界！"
+print(type(greeting)) # 出力: &lt;class 'str'&gt;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>真偽値型 (bool - Boolean)</strong></p>
+<ul>
+<li><code>True</code> (真) か <code>False</code> (偽) のどちらかを表す型です。条件分岐などでよく使われます。</li>
+<li>例: <code>True</code>, <code>False</code>
+<code>python
+is_active = True
+print(type(is_active)) # 出力: &lt;class 'bool'&gt;</code></li>
+</ul>
+</li>
+</ol>
+<p><code>type()</code> 関数を使うと、変数がどんなデータ型を持っているかを確認できます。</p>
+<h3>まとめ：変数は情報の箱、データ型はその中身の種類</h3>
+<p>Pythonプログラミングの基礎である<strong>変数</strong>と<strong>データ型</strong>について解説しました。</p>
+<ul>
+<li><strong>変数</strong>: データをしまっておく「箱」。<code>変数名 = 値</code> で使う。</li>
+<li><strong>データ型</strong>: 箱の中身がどんな種類のデータかを示すもの（整数、小数、文字列、真偽値など）。</li>
+</ul>
+<p>これらを理解することで、プログラム内でさまざまな情報を扱い、加工する準備が整いました。最初のうちは少し戸惑うかもしれませんが、実際に手を動かしてコードを書き、結果を確認するうちに自然と身についていきます。</p>
+<p>次は、これらの変数やデータ型を使って、四則演算などの計算をしたり、文字列を結合したりする方法を学んでいきましょう！プログラミング学習のロードマップは、この一歩から始まります。
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
