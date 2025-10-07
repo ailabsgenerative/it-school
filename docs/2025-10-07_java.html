@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+    - `title`: 指定された言語とテーマに">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+    - `title`: 指定された言語とテーマに">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+Gemini APIに直接投入して、ご指定の条件と出力例に沿った記事を生成するためのプロンプトを作成します。</p>
+<p>以下のプロンプトをGemini APIに送信することで、IT学習ロードマップ記事（指定された言語とテーマに関する解説記事）を生成できます。</p>
+<hr />
+<pre><code class="language-markdown">あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+    - `title`: 指定された言語とテーマに合わせて、初心者向けに理解しやすいタイトルを生成してください。
+    - `date`: `YYYY-MM-DD` 形式で、適当な日付を設定してください（例: 2023-10-27、2025-09-20など）。
+    - `categories`: 指定された言語名をリスト形式で記載してください（例: `[Python]`）。
+    - `tags`: `[AI, Gemini, 自動生成, {言語名}, {テーマの主要キーワード}, 初心者, 入門, 基礎]` のように、指定された言語とテーマに関連するキーワード、および記事生成に関する情報を適切に含めてください。
+- 導入文で「この記事はAIによって自動生成されています。」と明記してください。
+- 読みやすく、やさしい日本語で解説してください。専門用語は避け、もし使う場合は必ず平易な言葉で説明を加えてください。
+- 見出し（`#`、`##`、`###`など）や箇条書き（`-`）を積極的に活用し、記事の構造を分かりやすくしてください。
+- 具体例やサンプルコードを必ず含めてください。サンプルコードはMarkdownのコードブロック（例: ````python\nprint(&quot;Hello&quot;)\n````）で記述し、言語指定をしてください。
+- 記事全体の文字数は1000文字程度を目安にしてください。
+- SEOを意識し、タイトル、見出し、本文中に指定された言語名、テーマのキーワード、および「初心者」「入門」「基礎」といった関連キーワードを適度に含めてください。
+
+## 作成する記事の情報
+- 言語: Python
+- テーマ: 変数とデータ型の基礎
+
+---
+
+上記条件に基づき、記事を生成してください。
+</code></pre>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
