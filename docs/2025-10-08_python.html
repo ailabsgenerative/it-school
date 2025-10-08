@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="1.  **フォーマット:**
+    *   記事の冒頭に、以下の項目をYAML Front Matter形式で記載してください。
+        *   `">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="1.  **フォーマット:**
+    *   記事の冒頭に、以下の項目をYAML Front Matter形式で記載してください。
+        *   `">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+Gemini APIでIT学習ロードマップ記事を生成するためのプロンプト例を以下に示します。</p>
+<hr />
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の「## 指示」と「## 入力情報」を基に、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 指示
+1.  **フォーマット:**
+    *   記事の冒頭に、以下の項目をYAML Front Matter形式で記載してください。
+        *   `title`: 記事の内容に合わせたタイトル
+        *   `date`: 記事の公開日（例: YYYY-MM-DD）
+        *   `categories`: 主要なカテゴリ（例: `[Python]`, `[Web開発]`）
+        *   `tags`: 関連するタグ（例: `[AI, Gemini, 自動生成, プログラミング入門]`）
+2.  **導入文:**
+    *   YAML Front Matterの直後に「この記事はAIによって自動生成されています。」と明記してください。
+3.  **記事の構成と内容:**
+    *   読みやすく、やさしい日本語で解説してください。専門用語には簡単な説明を加えてください。
+    *   見出し（`#`、`##`、`###`）や箇条書き（`-`または`*`）を積極的に活用し、視覚的に理解しやすいように工夫してください。
+    *   具体的な例や、可能であれば短いサンプルコードを含めてください。サンプルコードには簡単な説明を添えてください。
+    *   文字数は、YAML Front Matterと導入文を除いて**1000文字程度**を目安にしてください。
+    *   SEOを意識し、主要なキーワード（例: 「[言語名] 基礎」「[テーマ] 入門」「初心者向け」など）を記事全体に自然な形で含めてください。
+
+## 入力情報
+- **言語または分野:** [ここに具体的なプログラミング言語名やIT分野名が入ります 例: Python, JavaScript, Webサーバー]
+- **テーマ:** [ここに具体的な記事のテーマが入ります 例: 変数とデータ型の基礎, 非同期処理, コンテナ技術とは]
+
+---
+
+**（APIに送信する際の具体的な呼び出し例）**
+
+**Geminiへの入力例:**
+
+</code></pre>
+<p>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の「## 指示」と「## 入力情報」を基に、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。</p>
+<h2>指示</h2>
+<ol>
+<li><strong>フォーマット:</strong><ul>
+<li>記事の冒頭に、以下の項目をYAML Front Matter形式で記載してください。<ul>
+<li><code>title</code>: 記事の内容に合わせたタイトル</li>
+<li><code>date</code>: 記事の公開日（例: YYYY-MM-DD）</li>
+<li><code>categories</code>: 主要なカテゴリ（例: <code>[Python]</code>, <code>[Web開発]</code>）</li>
+<li><code>tags</code>: 関連するタグ（例: <code>[AI, Gemini, 自動生成, プログラミング入門]</code>）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>導入文:</strong><ul>
+<li>YAML Front Matterの直後に「この記事はAIによって自動生成されています。」と明記してください。</li>
+</ul>
+</li>
+<li><strong>記事の構成と内容:</strong><ul>
+<li>読みやすく、やさしい日本語で解説してください。専門用語には簡単な説明を加えてください。</li>
+<li>見出し（<code>#</code>、<code>##</code>、<code>###</code>）や箇条書き（<code>-</code>または<code>*</code>）を積極的に活用し、視覚的に理解しやすいように工夫してください。</li>
+<li>具体的な例や、可能であれば短いサンプルコードを含めてください。サンプルコードには簡単な説明を添えてください。</li>
+<li>文字数は、YAML Front Matterと導入文を除いて<strong>1000文字程度</strong>を目安にしてください。</li>
+<li>SEOを意識し、主要なキーワード（例: 「[言語名] 基礎」「[テーマ] 入門」「初心者向け」など）を記事全体に自然な形で含めてください。</li>
+</ul>
+</li>
+</ol>
+<h2>入力情報</h2>
+<ul>
+<li><strong>言語または分野:</strong> Python</li>
+<li><strong>テーマ:</strong> 変数とデータ型の基礎</li>
+</ul>
+<pre><code>
+**Geminiからの出力例:**
+
+```markdown
+---
+title: Pythonの変数とデータ型入門｜初心者向け基礎解説
+date: 2024-07-26
+categories: [Python]
+tags: [Python, 変数, データ型, プログラミング入門, 初心者, AI, Gemini, 自動生成]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？初心者向け基礎解説
+
+プログラミングを始める上で、まず理解しておきたいのが「変数」と「データ型」です。これらはプログラムが情報を扱うための基本的な仕組み。Pythonを使って、その基礎を優しく解説していきます。Pythonはシンプルで読みやすい言語なので、初心者の方にもおすすめです。
+
+## 変数とは？情報をしまっておく「箱」
+
+変数は、プログラムの中で一時的にデータを保存しておくための「名前が付いた箱」のようなものです。例えば、あなたの名前や年齢、計算結果などをこの箱に入れておくことができます。箱の中身はいつでも変えることができます。
+
+### 変数の宣言と値の代入
+
+Pythonでは、変数を使う前に特別な「宣言」は不要です。箱に名前を付けて、イコール（`=`）を使って中身（値）を入れるだけでOKです。この操作を「代入」と呼びます。
+
+**サンプルコード:**
+```python
+# 'name'という箱に「山田太郎」という文字列を代入
+name = &quot;山田太郎&quot;
+
+# 'age'という箱に「30」という数値を代入
+age = 30
+
+# 変数の値を表示してみましょう
+print(name)  # 出力: 山田太郎
+print(age)   # 出力: 30
+</code></pre>
+<p>このように、<code>name</code>や<code>age</code>という名前を使って、保存した情報にアクセスできます。</p>
+<h2>データ型とは？情報の「種類」</h2>
+<p>変数に入れることができる情報には、いろいろな「種類」があります。この情報の種類を「データ型」と呼びます。例えば、数字なのか、文字なのか、それとも真偽（Yes/No）なのか、といった違いです。Pythonでは、自動的にデータ型を判断してくれます。</p>
+<h3>よく使う基本的なデータ型</h3>
+<p>Pythonでよく使うデータ型をいくつかご紹介します。</p>
+<ul>
+<li><strong>整数型 (int):</strong><ul>
+<li>小数点を含まない数字（例: <code>10</code>, <code>-5</code>, <code>0</code>）</li>
+<li>年齢や個数など数えるものに使われます。</li>
+</ul>
+</li>
+<li><strong>浮動小数点数型 (float):</strong><ul>
+<li>小数点を含む数字（例: <code>3.14</code>, <code>-0.5</code>, <code>100.0</code>）</li>
+<li>身長や料金など、精密な数値に使われます。</li>
+</ul>
+</li>
+<li><strong>文字列型 (str):</strong><ul>
+<li>文字の並び（例: <code>"こんにちは"</code>, <code>'Python'</code>, <code>"123"</code>）</li>
+<li>必ずシングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲みます。</li>
+</ul>
+</li>
+<li><strong>真偽値型 (bool):</strong><ul>
+<li><code>True</code>（真）または<code>False</code>（偽）のどちらかの値</li>
+<li>条件分岐（もし〜ならば）などで使われます。</li>
+</ul>
+</li>
+</ul>
+<p><strong>サンプルコード:</strong></p>
+<pre><code class="language-python"># 各データ型の例
+num_int = 123          # 整数型
+num_float = 3.14       # 浮動小数点数型
+text_str = &quot;ハローPython&quot; # 文字列型
+is_active = True       # 真偽値型
+
+# type()関数でデータ型を調べることができます
+print(type(num_int))   # 出力: &lt;class 'int'&gt;
+print(type(num_float)) # 出力: &lt;class 'float'&gt;
+print(type(text_str))  # 出力: &lt;class 'str'&gt;
+print(type(is_active)) # 出力: &lt;class 'bool'&gt;
+</code></pre>
+<p>これらのデータ型を理解することで、Pythonプログラムがどのように情報を処理しているのか、より深く理解できるようになります。</p>
+<h2>まとめ</h2>
+<p>Pythonにおける変数とデータ型は、プログラムがデータを扱うための基本中の基本です。
+*   <strong>変数:</strong> データを保存する「箱」
+*   <strong>データ型:</strong> 保存するデータの「種類」</p>
+<p>これらの概念をしっかり押さえることで、Pythonでのプログラミング学習がスムーズに進むでしょう。まずは簡単な変数をいくつか作って、色々な値を代入し、<code>print()</code>関数で表示してみることから始めてみてください。
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
