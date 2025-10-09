@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載します。
+    - タイトルは指定されたテーマに沿った、初心者向けの分かりやすいも">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載します。
+    - タイトルは指定されたテーマに沿った、初心者向けの分かりやすいも">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+IT学習ロードマップ記事生成用のGemini APIプロンプト例として、以下のテンプレートをご活用ください。<code>{{language}}</code>と<code>{{theme}}</code>の部分を、API呼び出し時に実際の値に置き換えて使用してください。</p>
+<hr />
+<pre><code class="language-markdown">あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載します。
+    - タイトルは指定されたテーマに沿った、初心者向けの分かりやすいものを生成してください。
+    - 日付は固定で `2025-09-20` とします。
+    - カテゴリは指定された「言語」または「分野」を一つだけ記載してください。（例: `[Python]`）
+    - タグは `[AI, Gemini, 自動生成, [言語名または分野名]]` の形式で生成してください。（例: `[AI, Gemini, 自動生成, Python]`）
+- 導入文で「この記事はAIによって自動生成されています」と明記します。
+- 本文は読みやすく、やさしい日本語で解説します。専門用語は避け、使う場合は必ず分かりやすく説明を加えてください。
+- 見出し（`#`、`##`、`###`）や箇条書き（`-`）を効果的に活用し、論理的な構成にしてください。
+- 具体例やサンプルコード（適切な言語のシンタックスハイライト付き）を適度に含め、読者が実際に試せるようにします。
+- 全体で1000文字程度（YAML Front Matterと導入文を除く本文のみで）になるように調整してください。
+- SEOを意識したキーワードを適度に含めます。（例: 「Python 初心者」「Python 学習」「変数とは」「データ型 入門」「プログラミング 基礎」など）
+
+## 指定
+- 言語: {{language}}
+- テーマ: {{theme}}
+
+---
+
+**出力例:**
+
+```yaml
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成, Python]
+</code></pre>
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？プログラミングの基礎を理解しよう！</h1>
+<p>プログラミングを学ぶ上で、避けて通れないのが「変数」と「データ型」です。これらは、データを一時的に保存したり、扱うための基本的な概念であり、Pythonプログラミングの土台となります。この記事では、Pythonにおける変数とデータ型の基礎を、初心者の方にも分かりやすく解説していきます。</p>
+<h2>変数って何？箱に例えてみよう！</h2>
+<p>変数は、プログラミングにおいて「データをしまっておく箱」のようなものです。例えば、あなたがお店で買った商品の値段を覚えておきたいとき、その値段をメモに書きますよね？プログラミングの世界では、このメモの役割をするのが変数です。変数には名前をつけ、その中に好きなデータ（数値や文字など）を保存できます。</p>
+<h3>Pythonでの変数の使い方</h3>
+<p>Pythonで変数を使うのはとても簡単です。<code>変数名 = 値</code> の形式で記述します。</p>
+<pre><code class="language-python"># 'name'という変数に「太郎」という文字列を保存
+name = &quot;太郎&quot;
+# 'age'という変数に「30」という数値を保存
+age = 30
+# 'price'という変数に「100.5」という小数点を保存
+price = 100.5
+
+# 変数の中身を表示してみよう
+print(name)  # 出力: 太郎
+print(age)   # 出力: 30
+print(price) # 出力: 100.5
+</code></pre>
+<p>このように、一度データを変数に保存すれば、その変数名を呼ぶだけで、いつでもデータを取り出して使うことができます。</p>
+<h2>データ型って何？データの種類を理解しよう！</h2>
+<p>変数に入れるデータには様々な「種類」があります。このデータの種類のことを「データ型」と呼びます。例えば、数字、文字、真偽（はい/いいえ）などです。Pythonは、自動的に変数のデータ型を判断してくれるので、自分で明示的に指定する必要はほとんどありませんが、どのようなデータ型があるのかを知っておくことは非常に重要です。</p>
+<h3>Pythonの主なデータ型</h3>
+<p>Pythonでよく使われる基本的なデータ型をいくつかご紹介します。</p>
+<ul>
+<li><strong>整数型（int）</strong>: 0, 1, -100 のような小数点を含まない数値です。
+    <code>python
+    my_integer = 123
+    print(type(my_integer)) # 出力: &lt;class 'int'&gt;</code></li>
+<li><strong>浮動小数点型（float）</strong>: 3.14, 0.5, -2.75 のような小数点を含む数値です。
+    <code>python
+    my_float = 3.14159
+    print(type(my_float)) # 出力: &lt;class 'float'&gt;</code></li>
+<li><strong>文字列型（str）</strong>: "こんにちは", "Python", 'Apple' のように、文字の並びを表すデータです。シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲んで表現します。
+    <code>python
+    my_string = "Hello, Python!"
+    print(type(my_string)) # 出力: &lt;class 'str'&gt;</code></li>
+<li><strong>真偽値型（bool）</strong>: <code>True</code>（真）または <code>False</code>（偽）のどちらか一方の値を持つデータです。条件分岐などでよく使われます。
+    <code>python
+    is_active = True
+    is_finished = False
+    print(type(is_active)) # 出力: &lt;class 'bool'&gt;</code></li>
+</ul>
+<h3>データ型を意識する理由</h3>
+<p>データ型を意識することは、プログラミングにおいて非常に大切です。なぜなら、データ型によって行える操作が異なるからです。例えば、数字同士は足し算ができますが、数字と文字列をそのまま足し算することはできません。</p>
+<pre><code class="language-python">num1 = 10
+num2 = 5
+result_sum = num1 + num2 # 15 (数値の足し算)
+
+str1 = &quot;Hello&quot;
+str2 = &quot;World&quot;
+result_concat = str1 + str2 # &quot;HelloWorld&quot; (文字列の結合)
+
+# エラーになる例: 数値と文字列を直接足し算しようとすると...
+# error_example = num1 + str1
+# print(error_example)
+# TypeError: unsupported operand type(s) for +: 'int' and 'str'
+</code></pre>
+<p>このように、<code>TypeError</code>というエラーが発生し、プログラムが止まってしまいます。適切なデータ型を使い分けたり、必要に応じてデータ型を変換（キャスト）したりすることが、正確なプログラムを書く上で重要になります。</p>
+<h2>まとめ</h2>
+<p>この記事では、Pythonプログラミングの基礎となる「変数」と「データ型」について解説しました。
+変数はデータを保存する「箱」、データ型はその「箱に入れるデータの種類」と覚えておくと良いでしょう。
+これらの概念をしっかりと理解することは、今後のPython学習の土台となります。
+ぜひ、実際にコードを書いて、変数やデータ型がどのように機能するかを体験してみてください。
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
