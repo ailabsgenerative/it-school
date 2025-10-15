@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門</title>
+  <meta name="description" content="
+プログラミングを始めると、まず耳にするのが「変数（へんすう）」と「データ型（データがた）」という言葉です。これらは、プログラムが情報を扱う上で非常に大切な概念">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門">
+<meta property="og:description" content="
+プログラミングを始めると、まず耳にするのが「変数（へんすう）」と「データ型（データがた）」という言葉です。これらは、プログラムが情報を扱う上で非常に大切な概念">
+<meta name="keywords" content="[Python, 変数, データ型, 基礎, 初心者, AI, Gemini, 自動生成]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python, プログラミング]
+tags: [Python, 変数, データ型, 基礎, 初心者, AI, Gemini, 自動生成]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？プログラミングの第一歩を踏み出そう！</h1>
+<p>プログラミングを始めると、まず耳にするのが「変数（へんすう）」と「データ型（データがた）」という言葉です。これらは、プログラムが情報を扱う上で非常に大切な概念で、いわば情報の「箱」とその「中身の種類」を指します。この記事は、IT初心者のあなたがPythonの変数とデータ型の基礎をしっかりと理解できるよう、やさしい言葉で解説します。さあ、一緒にプログラミングの第一歩を踏み出しましょう！</p>
+<h2>変数ってなんだろう？情報をしまっておく「箱」のイメージ</h2>
+<p>プログラミングにおける「変数」は、<strong>一時的に情報を保存しておくための「箱」</strong>のようなものだと考えると分かりやすいでしょう。例えば、あなたの名前や年齢、今日の天気など、様々な種類のデータをこの箱の中に入れておくことができます。そして、必要になったらいつでも箱の中身を取り出して使ったり、新しい情報に書き換えたりすることが可能です。</p>
+<p>Pythonで変数を使うのはとても簡単です。例えば、「my_name」という箱に「たろう」という名前を入れたいときは、次のように書きます。</p>
+<pre><code class="language-python"># 'my_name'という変数に文字列「たろう」を代入
+my_name = &quot;たろう&quot;
+# 'age'という変数に整数「25」を代入
+age = 25
+
+print(my_name) # 実行すると「たろう」と表示されます
+print(age)     # 実行すると「25」と表示されます
+</code></pre>
+<p>この「<code>=</code>」（イコール）記号は「代入演算子」と呼ばれ、「右側の値を左側の変数に入れる（代入する）」という意味になります。一度代入した値は、後から何度でも変更できます。</p>
+<pre><code class="language-python">score = 100
+print(score) # 100
+
+score = 95   # 値を更新
+print(score) # 95
+</code></pre>
+<h2>データ型を知ろう！箱の中身の種類</h2>
+<p>変数に入れる情報には、文字、数字、日付など、いくつかの種類があります。これを「データ型」と呼びます。Pythonは非常に賢い言語なので、あなたが変数に代入した値を見て、自動的にその「データ型」を判断してくれます。Pythonでよく使われる主なデータ型を見ていきましょう。</p>
+<h3>1. 文字列（<code>str</code> - String）</h3>
+<p>文字や単語、文章などを扱うときに使います。引用符（<code>"</code> または <code>'</code>）で囲んで表現します。</p>
+<pre><code class="language-python"># ダブルクォーテーションで囲む
+message = &quot;こんにちは、Pythonの世界へようこそ！&quot;
+# シングルクォーテーションで囲む
+city = '東京'
+
+print(message)
+print(city)
+</code></pre>
+<h3>2. 整数（<code>int</code> - Integer）</h3>
+<p>小数点を含まない、正の数、負の数、ゼロを扱います。年齢、個数、得点など、数え上げるものによく使われます。</p>
+<pre><code class="language-python">student_count = 30
+year = 2024
+minus_value = -5
+
+print(student_count)
+print(year)
+print(minus_value)
+</code></pre>
+<h3>3. 浮動小数点数（<code>float</code> - Floating-point number）</h3>
+<p>小数点を含む数を扱います。身長、体重、温度、円周率など、より精密な数値を表現する際に使われます。</p>
+<pre><code class="language-python">height = 175.5
+pi = 3.14159
+temperature = 28.3
+
+print(height)
+print(pi)
+print(temperature)
+</code></pre>
+<h3>4. 真偽値（<code>bool</code> - Boolean）</h3>
+<p>「<code>True</code>（真・正しい）」か「<code>False</code>（偽・間違っている）」の2つの値だけを扱うデータ型です。プログラムの中で「もし〜ならば」という条件を判断するときによく使われます。</p>
+<pre><code class="language-python">is_raining = True    # 雨が降っている（正しい）
+has_license = False  # 免許を持っていない（間違っている）
+
+print(is_raining)
+print(has_license)
+</code></pre>
+<h2>なぜデータ型が大切なの？プログラムの正確な動作のために</h2>
+<p>Pythonは自動でデータ型を判断してくれると言いましたが、データ型を意識することは、プログラムが意図した通りに正確に動くためにとても重要です。例えば、数字を文字列として扱ってしまうと、足し算などの計算ができなくなってしまいます。</p>
+<p>データ型は<code>type()</code>関数を使って確認できます。</p>
+<pre><code class="language-python">num_str = &quot;123&quot;
+num_int = 123
+num_float = 12.3
+
+print(type(num_str))  # &lt;class 'str'&gt; (文字列)
+print(type(num_int))  # &lt;class 'int'&gt; (整数)
+print(type(num_float)) # &lt;class 'float'&gt; (浮動小数点数)
+</code></pre>
+<p>もし、文字列と数字を結合したい場合など、異なるデータ型を一緒に使うときは、データ型を変換する「型変換（キャスト）」が必要になることがあります。</p>
+<pre><code class="language-python"># 数値と文字列を直接結合するとエラーになる
+# print(&quot;生徒の人数は&quot; + num_int + &quot;人です&quot;) # TypeError
+
+# int型の値をstr型に変換してから結合する
+print(&quot;生徒の人数は&quot; + str(num_int) + &quot;人です&quot;) # 生徒の人数は123人です
+</code></pre>
+<h2>まとめ：変数とデータ型を理解して、プログラミングを楽しもう！</h2>
+<p>Pythonの変数とデータ型は、プログラミング学習の基礎中の基礎です。情報を「箱」に整理して入れ、その「中身の種類」を理解することで、もっと複雑なプログラムも着実に作れるようになります。</p>
+<p>まずは、色々な値を変数に入れて、<code>type()</code>関数でどんなデータ型になるか確認してみることから始めてみましょう！この基本をしっかり押さえることが、あなたのプログラミングスキルを次のレベルへと引き上げる重要な一歩となるでしょう。</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
