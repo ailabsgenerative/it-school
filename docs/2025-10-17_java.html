@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門</title>
+  <meta name="description" content="
+Pythonでのプログラミング学習を始める皆さん、ようこそ！プログラミングの世界には、最初に理解しておくと後々スムーズに進めるための大切な基本がいくつかありま">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門">
+<meta property="og:description" content="
+Pythonでのプログラミング学習を始める皆さん、ようこそ！プログラミングの世界には、最初に理解しておくと後々スムーズに進めるための大切な基本がいくつかありま">
+<meta name="keywords" content="[Python, 変数, データ型, 初心者, プログラミング学習, AI自動生成]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門
+date: 2023-10-27
+categories: [Python, プログラミング基礎]
+tags: [Python, 変数, データ型, 初心者, プログラミング学習, AI自動生成]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？プログラミングの基本を学ぼう！</h1>
+<p>Pythonでのプログラミング学習を始める皆さん、ようこそ！プログラミングの世界には、最初に理解しておくと後々スムーズに進めるための大切な基本がいくつかあります。その中でも特に重要なのが「変数（へんすう）」と「データ型（データがた）」です。</p>
+<p>これらはプログラミングの土台となる考え方で、理解することでより複雑な処理もできるようになります。この記事では、Pythonの変数とデータ型について、プログラミング初心者の方にも分かりやすいように、具体的な例を交えながらやさしく解説していきます。</p>
+<h2>1. Pythonの変数って何だろう？</h2>
+<p>変数とは、簡単に言えば「<strong>値を入れておくための名前付きの箱</strong>」のようなものです。例えば、あなたの年齢や好きな食べ物など、色々な情報を一時的に保存しておく場所だと思ってください。この箱の中身は後から自由に変えることができます。</p>
+<p>Pythonで変数を使うのはとても簡単です。<code>変数名 = 値</code> のように書くだけで、その変数に値を代入できます。</p>
+<pre><code class="language-python"># 'age'という箱に '25' という年齢を入れる
+age = 25
+print(age) # 結果：25
+
+# 'name'という箱に '山田太郎' という名前を入れる
+name = &quot;山田太郎&quot;
+print(name) # 結果：山田太郎
+
+# 箱の中身（変数の値）は後から変更できる
+age = 26
+print(age) # 結果：26
+</code></pre>
+<p>変数名には、半角英数字とアンダースコア（<code>_</code>）を使うことができますが、数字で始めることはできません。また、分かりやすい名前を付けることが、良いプログラミングの第一歩です。</p>
+<h2>2. データ型って何？</h2>
+<p>「データ型」とは、「<strong>変数に入れる値の種類</strong>」のことです。例えば、数字なのか、文字なのか、それとも真偽（正しいか間違っているか）なのか、といったデータの性質を表します。</p>
+<p>コンピュータはデータの種類によって扱い方を変えるため、データ型を理解することはとても大切です。Pythonには様々なデータ型がありますが、ここでは特に頻繁に使う基本的なものを紹介します。</p>
+<h3>代表的なデータ型</h3>
+<ul>
+<li><strong>整数 (int: integer)</strong><ul>
+<li>小数点を含まない数字です。年齢、個数、得点など。
+<code>python
+number = 100 # 整数
+print(number) # 結果：100</code></li>
+</ul>
+</li>
+<li><strong>浮動小数点数 (float)</strong><ul>
+<li>小数点を含む数字です。身長、体重、価格など。
+<code>python
+height = 175.5 # 浮動小数点数
+print(height) # 結果：175.5</code></li>
+</ul>
+</li>
+<li><strong>文字列 (str: string)</strong><ul>
+<li>文字や記号の並びです。名前、住所、メッセージなど。シングルクォート（<code>'</code>）またはダブルクォート（<code>"</code>）で囲んで表現します。
+<code>python
+message = "こんにちは、Python！" # 文字列
+print(message) # 結果：こんにちは、Python！</code></li>
+</ul>
+</li>
+<li><strong>真偽値 (bool: boolean)</strong><ul>
+<li><code>True</code>（真・正しい）か <code>False</code>（偽・間違っている）のどちらかの値を取ります。条件判断によく使われます。
+<code>python
+is_active = True # 真偽値
+print(is_active) # 結果：True</code></li>
+</ul>
+</li>
+</ul>
+<h2>3. Pythonの型はちょっと特別？</h2>
+<p>Pythonは「<strong>動的型付け言語（どうてきかたづけげんご）</strong>」と呼ばれています。これは、変数を宣言する時に「これは整数だよ」「これは文字列だよ」といった<strong>データ型をわざわざ指定しなくても良い</strong>という意味です。Pythonが自動的に値の種類を判断してくれます。</p>
+<p>しかし、どんなデータ型なのかを知りたい時は、<code>type()</code>関数を使うことで確認できます。</p>
+<pre><code class="language-python">data1 = 123
+data2 = 3.14
+data3 = &quot;プログラミング&quot;
+data4 = True
+
+print(type(data1)) # 結果：&lt;class 'int'&gt;
+print(type(data2)) # 結果：&lt;class 'float'&gt;
+print(type(data3)) # 結果：&lt;class 'str'&gt;
+print(type(data4)) # 結果：&lt;class 'bool'&gt;
+</code></pre>
+<p>このように、Pythonは非常に柔軟にプログラミングができるのが特徴です。</p>
+<h2>まとめ</h2>
+<p>この記事では、Pythonプログラミングの基礎中の基礎である「変数」と「データ型」について解説しました。</p>
+<ul>
+<li><strong>変数</strong>：値を入れておく「名前付きの箱」</li>
+<li><strong>データ型</strong>：値の種類（整数、小数点数、文字列、真偽値など）</li>
+</ul>
+<p>これらの概念をしっかりと理解することは、今後のPython学習において非常に重要です。まずは簡単なコードを書いてみて、変数に様々なデータ型の値を代入し、<code>print()</code>関数で表示したり、<code>type()</code>関数で型を確認したりする練習をしてみましょう。</p>
+<p>プログラミングは実際に手を動かすことで理解が深まります。これからも楽しみながらPythonを学んでいきましょう！</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
