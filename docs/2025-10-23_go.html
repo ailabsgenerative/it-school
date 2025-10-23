@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="## Pythonの変数とデータ型とは？初心者のための基礎解説
+
+プログラミングを学ぶ上で、避けて通れないのが「変数」と「データ型」です。これらはPythonだ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="## Pythonの変数とデータ型とは？初心者のための基礎解説
+
+プログラミングを学ぶ上で、避けて通れないのが「変数」と「データ型」です。これらはPythonだ">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門
+date: 2024-03-01
+categories: [Python, プログラミング入門]
+tags: [Python, プログラミング, 初心者, 変数, データ型, AI, Gemini, IT学習]
+---
+
+この記事はAIによって自動生成されています。
+
+## Pythonの変数とデータ型とは？初心者のための基礎解説
+
+プログラミングを学ぶ上で、避けて通れないのが「変数」と「データ型」です。これらはPythonだけでなく、ほとんどのプログラミング言語の基本中の基本となります。この記事では、IT初心者の方でも理解しやすいように、Pythonにおける変数とデータ型の役割と使い方を、具体例を交えながらやさしく解説します。
+
+### 1. Pythonの変数とは？
+
+変数は、プログラミングにおいて**データを一時的に保存しておくための「箱」**のようなものです。この箱には「名前（変数名）」を付けることができ、その名前を使って後から箱の中のデータを取り出したり、新しいデータに入れ替えたりすることができます。
+
+例えば、あなたの名前や年齢をコンピュータに覚えさせたい場合、それぞれに「名前」という箱と「年齢」という箱を用意し、そこに情報を入れておくイメージです。
+
+**変数の定義と使い方**
+
+Pythonで変数を使うのはとても簡単です。`変数名 = 値` の形式で記述します。
+
+```python
+# 'name'という変数に「山田太郎」という文字列を代入
+name = &quot;山田太郎&quot;
+
+# 'age'という変数に「30」という数値を代入
+age = 30
+
+# 'height'という変数に「175.5」という数値を代入
+height = 175.5
+
+# 変数に保存されたデータを取り出して表示
+print(name)   # 出力: 山田太郎
+print(age)    # 出力: 30
+print(height) # 出力: 175.5
+</code></pre>
+<p>一度変数に値を代入した後でも、別の値を代入し直すことができます。この場合、古い値は新しい値で上書きされます。</p>
+<pre><code class="language-python"># age変数を30から31に更新
+age = 31
+print(age) # 出力: 31
+</code></pre>
+<h3>2. Pythonのデータ型とは？</h3>
+<p>データ型とは、変数が保存する<strong>データの「種類」</strong>のことです。コンピュータは、保存されているデータが「数字」なのか「文字」なのか、あるいは「真偽（はい/いいえ）」なのかを知る必要があります。なぜなら、データの種類によってコンピュータが行う処理が変わってくるからです。</p>
+<p>Pythonには様々なデータ型がありますが、ここでは特によく使う基本的なデータ型をいくつか紹介します。</p>
+<ul>
+<li><strong>整数型 (int)</strong>: 負の数、0、正の数といった小数点を含まない数値です。<ul>
+<li>例: <code>10</code>, <code>-5</code>, <code>0</code>, <code>100000</code></li>
+</ul>
+</li>
+<li><strong>浮動小数点数型 (float)</strong>: 小数点を含む数値です。<ul>
+<li>例: <code>3.14</code>, <code>-0.5</code>, <code>123.456</code></li>
+</ul>
+</li>
+<li><strong>文字列型 (str)</strong>: 文字の並びです。シングルクォート (<code>'</code>) またはダブルクォート (<code>"</code>) で囲んで表現します。<ul>
+<li>例: <code>"こんにちは"</code>, <code>'Python'</code>, <code>"AIプログラミング"</code></li>
+</ul>
+</li>
+<li><strong>真偽値型 (bool)</strong>: <code>True</code>（真）か <code>False</code>（偽）のどちらかを取るデータ型です。条件判断によく使われます。<ul>
+<li>例: <code>True</code>, <code>False</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>データ型の例</strong></p>
+<pre><code class="language-python"># 整数型 (int)
+score = 100
+print(score)
+print(type(score)) # 出力: &lt;class 'int'&gt;
+
+# 浮動小数点数型 (float)
+temperature = 25.7
+print(temperature)
+print(type(temperature)) # 出力: &lt;class 'float'&gt;
+
+# 文字列型 (str)
+greeting = &quot;皆さん、こんにちは！&quot;
+print(greeting)
+print(type(greeting)) # 出力: &lt;class 'str'&gt;
+
+# 真偽値型 (bool)
+is_student = True
+print(is_student)
+print(type(is_student)) # 出力: &lt;class 'bool'&gt;
+</code></pre>
+<p><code>type()</code>関数を使うと、特定の変数がどのデータ型であるかを確認できます。</p>
+<h3>まとめ</h3>
+<p>Pythonプログラミングの基礎である「変数」と「データ型」について解説しました。
+*   <strong>変数</strong>はデータを一時的に保存する「箱」で、名前を付けて管理します。
+*   <strong>データ型</strong>は変数が保持するデータの「種類」で、整数、小数、文字列、真偽値などがあります。</p>
+<p>これらの概念をしっかり理解することは、今後のPython学習の土台となります。まずは色々な値を変数に入れてみたり、<code>type()</code>関数でデータ型を確認してみたりして、実際にコードを書いて慣れていきましょう。プログラミングの第一歩として、ぜひこの知識を活用してください。</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

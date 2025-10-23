@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう！
+
+「プログラミングを始めたいけど">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう！
+
+「プログラミングを始めたいけど">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+IT初心者向けの教育ブログ記事として、指定されたプロ言語とテーマについて解説記事をMarkdown形式で作成します。</p>
+<hr />
+<pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門【初心者向け徹底解説】
+date: 2024-07-29
+categories: [Python, プログラミング基礎]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型, プログラミング初心者, IT学習]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう！
+
+「プログラミングを始めたいけど、何から手を付ければいいんだろう？」そう思っているIT初心者の方、ご安心ください！今回は、プログラミング言語Pythonの最も基本的な要素である「変数」と「データ型」について、やさしく解説していきます。
+
+この二つを理解することは、Pythonプログラミングの第一歩であり、今後のIT学習ロードマップを進める上で非常に重要です。
+
+## 1. 変数とは？情報を一時的に保存する「箱」
+
+変数とは、簡単に言うと「**情報を一時的に保存しておくための名前付きの箱**」のようなものです。コンピュータプログラムは様々な情報を扱いますが、その情報をどこかにしまっておかないと、すぐに忘れてしまいますよね。
+
+そこで変数の登場です！
+
+Pythonでは、この「箱」に名前をつけ、その中に好きなデータを入れることができます。
+
+### 変数の使い方（Pythonの例）
+
+Pythonで変数を使うのはとても簡単です。
+
+```python
+# 'my_number'という名前の箱に「10」という数字を入れる
+my_number = 10
+
+# 'my_name'という名前の箱に「太郎」という名前を入れる
+my_name = &quot;太郎&quot;
+
+# 変数の中身を表示してみよう
+print(my_number)
+print(my_name)
+</code></pre>
+<p><strong>出力結果:</strong></p>
+<pre><code>10
+太郎
+</code></pre>
+<p>このように、<code>変数名 = 値</code> の形で、変数に値を代入（入れること）できます。一度入れた値は、後から別の値に置き換えることも可能です。</p>
+<h2>2. データ型とは？保存する情報の「種類」</h2>
+<p>さて、箱に「10」という数字を入れたり、「太郎」という文字を入れたりしましたが、これらには「種類」があることをご存知ですか？これが「データ型」です。</p>
+<p>データ型とは、<strong>変数に保存されるデータの種類</strong>を指します。コンピュータは、数字と文字では扱い方が異なるため、データの種類を区別する必要があります。</p>
+<p>Pythonには主に次のようなデータ型があります。</p>
+<h3>主なデータ型とその例</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">データ型</th>
+<th style="text-align: left;">説明</th>
+<th style="text-align: left;">Pythonでの例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>整数型 (int)</strong></td>
+<td style="text-align: left;">整数（小数点のない数字）</td>
+<td style="text-align: left;"><code>10</code>, <code>-5</code>, <code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>浮動小数点型 (float)</strong></td>
+<td style="text-align: left;">小数点を含む数字</td>
+<td style="text-align: left;"><code>3.14</code>, <code>0.5</code>, <code>-10.2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>文字列型 (str)</strong></td>
+<td style="text-align: left;">文字の並び（テキスト）</td>
+<td style="text-align: left;"><code>"Hello"</code>, <code>'Python'</code>, <code>"123"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>真偽値型 (bool)</strong></td>
+<td style="text-align: left;">真（True）か偽（False）かを表す</td>
+<td style="text-align: left;"><code>True</code>, <code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h3>データ型を確認してみよう！</h3>
+<p>Pythonでは、<code>type()</code>関数を使って変数がどんなデータ型を持っているか簡単に確認できます。</p>
+<pre><code class="language-python">num_int = 10
+num_float = 3.14
+text_str = &quot;Pythonプログラミング&quot;
+bool_val = True
+
+print(type(num_int))   # &lt;class 'int'&gt; と表示される
+print(type(num_float)) # &lt;class 'float'&gt; と表示される
+print(type(text_str))  # &lt;class 'str'&gt; と表示される
+print(type(bool_val))  # &lt;class 'bool'&gt; と表示される
+</code></pre>
+<h2>まとめ：変数を使いこなしてプログラミングを楽しもう！</h2>
+<p>今回はPythonプログラミングの基礎中の基礎である「変数」と「データ型」について学びました。</p>
+<ul>
+<li><strong>変数</strong>：情報を一時的に保存する「箱」。</li>
+<li><strong>データ型</strong>：保存する情報の「種類」。</li>
+</ul>
+<p>この二つを理解することは、複雑なプログラムを作成するための土台となります。まずは色々な値を変数に入れて、そのデータ型を<code>type()</code>関数で確認する練習から始めてみましょう。</p>
+<p>Pythonは初心者にも非常に学習しやすい言語です。焦らず、一歩ずつIT学習の道を歩んでいきましょう！
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
