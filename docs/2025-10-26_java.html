@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+  - `title`: 指定されたテーマに基づいた適">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+  - `title`: 指定されたテーマに基づいた適">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+IT初心者向けの教育ブログ記事をMarkdown形式で生成するためのGemini API用プロンプト例と、その出力例を提示します。</p>
+<hr />
+<h1>Gemini API用プロンプト例（IT学習ロードマップ記事生成用）</h1>
+<hr />
+<p>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。</p>
+<h2>条件</h2>
+<ul>
+<li>タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。</li>
+<li><code>title</code>: 指定されたテーマに基づいた適切で魅力的なタイトルを生成してください。</li>
+<li><code>date</code>: 後述する「記事生成日」の値を<code>YYYY-MM-DD</code>形式でそのまま使用してください。</li>
+<li><code>categories</code>: 後述する「カテゴリ」の値をそのまま使用してください。</li>
+<li><code>tags</code>: AIによる生成を示す<code>AI</code>, <code>Gemini</code>, <code>自動生成</code>に加え、後述する「追加タグ」の値を全て含めてください。さらに、SEOを意識したキーワードも適切に追加してください。</li>
+<li>導入文で「この記事はAIによって自動生成されています。」と明記してください。</li>
+<li>読みやすく、やさしい日本語で解説してください。専門用語が登場する場合は、簡単な説明を加えてください。</li>
+<li>見出し（<code>#</code>、<code>##</code>、<code>###</code>）や箇条書き（<code>-</code>または<code>*</code>）を効果的に活用し、視覚的に分かりやすくしてください。</li>
+<li>具体例やサンプルコードを含めてください。サンプルコードは指定された言語のものとし、適切なコードブロック（バッククォート3つで囲む）で表現してください。</li>
+<li>全体で1000文字程度を目安としてください。</li>
+<li>SEOを意識し、指定された言語とテーマに関連するキーワード（例: <code>Python 初心者</code>, <code>変数 基礎</code>, <code>データ型 解説</code>, <code>プログラミング学習</code> など）を記事全体にわたって適度に含めてください。</li>
+</ul>
+<h2>記事生成に必要な情報</h2>
+<p>以下の情報を元に記事を生成してください。</p>
+<ul>
+<li><strong>言語</strong>: [ここにプログラミング言語名やIT分野を記入]</li>
+<li><strong>テーマ</strong>: [ここに記事の具体的なテーマを記入]</li>
+<li><strong>記事生成日</strong>: [YYYY-MM-DD 形式で日付を記入。例: 2025-09-20]</li>
+<li><strong>カテゴリ</strong>: [YAML Front Matterの<code>categories</code>に記載するカテゴリをリスト形式で記入。例: <code>[Python]</code>]</li>
+<li><strong>追加タグ</strong>: [YAML Front Matterの<code>tags</code>に追加するタグをリスト形式で記入。例: <code>[プログラミング基礎, 初心者向け]</code>]</li>
+</ul>
+<hr />
+<h2>指示例（ユーザーがGemini APIに送信するプロンプトの続き）</h2>
+<p>言語: Python
+テーマ: 変数とデータ型の基礎
+記事生成日: 2025-09-20
+カテゴリ: [Python]
+追加タグ: [プログラミング基礎, 初心者向け]</p>
+<hr />
+<h2>出力例（AIの応答例）</h2>
+<pre><code class="language-markdown">---
+title: Pythonの変数とデータ型入門｜初心者でも安心の基礎知識
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成, プログラミング基礎, 初心者向け, Python 初心者, 変数 基礎, データ型 解説, プログラミング学習]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？プログラミング初心者向け基礎解説
+
+「プログラミングを始めたいけど、何から手を付ければいいんだろう？」そう思っているあなた！Pythonは、その学びやすさから多くの人に選ばれている人気のプログラミング言語です。今回は、Pythonプログラミングの超基本である「**変数**」と「**データ型**」について、**初心者**の方でもつまずかないように、やさしく解説していきます。これらの概念をしっかり理解すれば、あなたの**Python学習**がぐっとスムーズに進むはずです。
+
+## 変数とは？情報を一時的に保存する「箱」
+
+**変数**は、プログラムの中で使うデータを一時的に保存しておくための「名前のついた箱」のようなものです。例えば、あなたの名前や年齢、計算の結果など、さまざまな情報をこの箱に入れて、必要に応じて取り出して使うことができます。
+
+Pythonで変数を扱うのはとても簡単です。`=`（イコール）記号を使って、変数に値を代入します。これは「この箱にこのデータを入れてね」と指示しているようなものです。
+
+### 変数の基本的な使い方（Pythonサンプルコード）
+
+```python
+# 'my_name' という変数に '太郎' という文字列を代入
+my_name = &quot;太郎&quot;
+
+# 'age' という変数に '25' という数値を代入
+age = 25
+
+# 変数の中身を表示してみよう
+print(my_name)  # 出力: 太郎
+print(age)      # 出力: 25
+
+# 変数の中身は後から別の値で変更できます
+age = 26
+print(age)      # 出力: 26
+</code></pre>
+<p>変数に名前を付ける際には、いくつかの小さなルールがあります。
+- 半角英数字とアンダースコア（<code>_</code>）を使うのが一般的です。
+- 数字で始めることはできません（例: <code>1st_name</code>はNG）。
+- 大文字と小文字は区別されます（<code>name</code>と<code>Name</code>は別の変数として扱われます）。</p>
+<h2>データ型とは？情報の「種類」を区別する概念</h2>
+<p>変数に保存する情報には、いろいろな「種類」があります。例えば、ただの数字なのか、小数点を含む数字なのか、それとも文字の並びなのか、はたまた「はい」か「いいえ」のような真偽（Yes/No）なのか、といった違いです。この情報の種類を「<strong>データ型</strong>」と呼びます。</p>
+<p>Pythonでは、あなたが変数に値を代入すると、Pythonが自動的にその値のデータ型を判断してくれます。とても便利ですね！主要なデータ型をいくつか見てみましょう。</p>
+<h3>主要なデータ型とその例（Python）</h3>
+<ul>
+<li><strong>整数型（int）</strong>: 小数点を含まない数（例: <code>10</code>, <code>100</code>, <code>-5</code>）</li>
+<li><strong>浮動小数点型（float）</strong>: 小数点を含む数（例: <code>3.14</code>, <code>0.5</code>, <code>-1.23</code>）</li>
+<li><strong>文字列型（str）</strong>: 文字や記号の並び。必ずシングルクォーテーション（<code>'</code>）かダブルクォーテーション（<code>"</code>）で囲みます（例: <code>"こんにちは"</code>, <code>'Python'</code>, <code>"123"</code>）</li>
+<li><strong>真偽値型（bool）</strong>: <code>True</code>（真）か<code>False</code>（偽）のどちらかを表す型（例: <code>True</code>, <code>False</code>）</li>
+</ul>
+<h3>データ型を確認してみよう（Pythonコード例）</h3>
+<pre><code class="language-python">num_int = 10
+num_float = 3.14
+text_str = &quot;Hello Python&quot;
+is_active = True
+
+# type()関数を使って変数の中身のデータ型を確認できます
+print(type(num_int))    # 出力: &lt;class 'int'&gt;
+print(type(num_float))  # 出力: &lt;class 'float'&gt;
+print(type(text_str))   # 出力: &lt;class 'str'&gt;
+print(type(is_active))  # 出力: &lt;class 'bool'&gt;
+</code></pre>
+<p>Pythonの<strong>変数とデータ型</strong>は、プログラミングのあらゆる場面で登場する最も<strong>基礎</strong>的な概念です。これらをしっかりと<strong>解説</strong>することで、データの扱い方が明確になり、より複雑なプログラムも着実に組み立てられるようになります。</p>
+<h2>まとめ：Python学習の第一歩を踏み出そう！</h2>
+<p>この記事では、<strong>Pythonの変数とデータ型</strong>について、<strong>初心者</strong>向けに解説しました。
+-   <strong>変数</strong>は情報を一時的に保存する「箱」で、<code>=</code>で値を代入します。
+-   <strong>データ型</strong>は情報の「種類」を表し、Pythonが自動で判断します。
+-   <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code> などが代表的なデータ型です。</p>
+<p>これらの<strong>基礎知識</strong>をしっかりと押さえて、あなたの<strong>Pythonプログラミング学習</strong>をさらに深めていきましょう！次回の記事では、これらの知識を活かして、実際に計算や文字の操作を行う方法について<strong>初心者向け</strong>に<strong>解説</strong>する予定です。<strong>Python学習ロードマップ</strong>の第一歩として、今日の知識をぜひ活用してくださいね。
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
