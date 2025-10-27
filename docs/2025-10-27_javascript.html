@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門｜プログラミング基礎を優しく解説</title>
+  <meta name="description" content="
+Pythonをこれから学び始める皆さん、こんにちは！プログラミングの世界へようこそ。
+今回は、Pythonプログラミングの最も基本的ながら非常に重要な概念であ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門｜プログラミング基礎を優しく解説">
+<meta property="og:description" content="
+Pythonをこれから学び始める皆さん、こんにちは！プログラミングの世界へようこそ。
+今回は、Pythonプログラミングの最も基本的ながら非常に重要な概念であ">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, 変数, データ型, 初心者, 学習, プログラミング]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門｜プログラミング基礎を優しく解説
+date: 2025-09-20
+categories: [Python, プログラミング基礎]
+tags: [AI, Gemini, 自動生成, Python, 変数, データ型, 初心者, 学習, プログラミング]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？プログラミングの基礎を学ぼう</h1>
+<p>Pythonをこれから学び始める皆さん、こんにちは！プログラミングの世界へようこそ。
+今回は、Pythonプログラミングの最も基本的ながら非常に重要な概念である「変数」と「データ型」について、IT初心者の方にも分かりやすく解説します。これらをしっかり理解することが、今後の学習の大きな土台となりますよ。</p>
+<h2>変数ってなんだろう？「名前付きの箱」でデータを管理しよう</h2>
+<p>プログラミングでは、数字や文字などの「データ」をたくさん扱います。これらのデータを一時的に保存しておいて、後から使ったり、加工したりするために使うのが「変数」です。</p>
+<p>変数をイメージするなら、「名前が付いた箱」を想像してみてください。
+例えば、「age（年齢）」という名前の箱に「30」という数字を入れたり、「name（名前）」という箱に「Taro」という文字を入れたりするようなものです。</p>
+<p>Pythonで変数を使うのはとても簡単です。<code>=</code>（イコール）記号を使って、箱に値を入れる（代入する）ことができます。</p>
+<pre><code class="language-python"># 変数に数字を代入する例
+age = 30
+height = 175.5
+
+# 変数に文字を代入する例
+name = &quot;山田太郎&quot;
+message = 'こんにちは！'
+
+# 変数の値を出力してみましょう
+print(age)       # 出力: 30
+print(name)      # 出力: 山田太郎
+</code></pre>
+<p>変数は一度値を代入した後でも、新しい値を代入し直すことができます。</p>
+<pre><code class="language-python">score = 80
+print(score) # 出力: 80
+
+score = 95 # 新しい値を代入
+print(score) # 出力: 95
+</code></pre>
+<h2>データ型ってなんだろう？データの「種類」を理解しよう</h2>
+<p>変数には様々な種類のデータを保存できますが、それぞれのデータには「型（かた）」があります。この「データ型」は、そのデータがどんな種類のものなのか、Pythonに教える役割を果たします。</p>
+<p>なぜデータ型が大切なのでしょうか？それは、データの種類によってできることや、扱い方が変わるからです。例えば、数字は足し算ができますが、文字同士は足し算ではなく結合になりますよね。</p>
+<p>Pythonの主なデータ型を見ていきましょう。</p>
+<h3>1. 整数型（int）</h3>
+<p>小数点を含まない、丸い数字のことです。年齢や個数などによく使われます。</p>
+<pre><code class="language-python"># 整数型の例
+quantity = 100
+year = 2025
+
+print(type(quantity)) # 出力: &lt;class 'int'&gt;
+</code></pre>
+<h3>2. 浮動小数点数型（float）</h3>
+<p>小数点を含む数字のことです。身長や体重、気温などによく使われます。</p>
+<pre><code class="language-python"># 浮動小数点数型の例
+price = 19.80
+temperature = 25.5
+
+print(type(price)) # 出力: &lt;class 'float'&gt;
+</code></pre>
+<h3>3. 文字列型（str）</h3>
+<p>文字の並びのことです。名前やメッセージ、住所などによく使われます。必ずシングルクォート <code>'</code> またはダブルクォート <code>"</code> で囲みます。</p>
+<pre><code class="language-python"># 文字列型の例
+city = &quot;Tokyo&quot;
+greeting = 'Hello, Python!'
+
+print(type(city)) # 出力: &lt;class 'str'&gt;
+</code></pre>
+<h3>4. 真偽値型（bool）</h3>
+<p><code>True</code> (真、正しい) か <code>False</code> (偽、間違い) のどちらかを表すデータ型です。条件分岐などで「〜ならば」「〜でなければ」といった判断をする際に使われます。</p>
+<pre><code class="language-python"># 真偽値型の例
+is_active = True
+has_permission = False
+
+print(type(is_active)) # 出力: &lt;class 'bool'&gt;
+</code></pre>
+<p>どのデータ型か分からなくなった時は、<code>type()</code> 関数を使うと確認できます。</p>
+<pre><code class="language-python">my_variable = &quot;Python学習&quot;
+print(type(my_variable)) # 出力: &lt;class 'str'&gt;
+
+another_variable = 123
+print(type(another_variable)) # 出力: &lt;class 'int'&gt;
+</code></pre>
+<h2>なぜ変数とデータ型が重要なのか？</h2>
+<p>変数とデータ型を理解することは、プログラミング学習において非常に大切です。
+-   <strong>エラーを防ぐ</strong>: 異なるデータ型同士で無理な計算をしようとするとエラーが発生します。データ型を意識することで、このような間違いを避けられます。
+-   <strong>意図通りの処理</strong>: どのような種類のデータを扱っているかを理解することで、プログラムが期待通りの動作をするよう、適切な処理を選べるようになります。
+-   <strong>効率的なコード</strong>: データを適切に管理することで、プログラムを分かりやすく、効率的に記述できるようになります。</p>
+<h2>まとめ</h2>
+<p>今回はPythonのプログラミングにおける「変数」と「データ型」の基礎について解説しました。
+変数はデータを保存する「名前付きの箱」、データ型はそのデータの「種類」を表します。これらの概念は、Pythonを使ったどんなプログラムでも必ず登場する基本中の基本です。</p>
+<p>この記事で学んだことを活かして、実際にPythonのコードを書いてみましょう。たくさんのコードに触れていくうちに、自然と変数とデータ型の扱いにも慣れていきます。
+Pythonの学習ロードマップの第一歩として、この内容が皆さんのお役に立てば幸いです。次回は、これらのデータを使ってどのような計算ができるか、といった内容を解説するかもしれません。頑張ってください！</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="- **出力形式**: Markdown形式で出力してください。
+- **YAML Front Matter**: 記事の冒頭に以下のYAML Front Ma">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="- **出力形式**: Markdown形式で出力してください。
+- **YAML Front Matter**: 記事の冒頭に以下のYAML Front Ma">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。IT学習ロードマップ記事生成用のGemini APIプロンプト例を作成します。
+このプロンプトを使用することで、AIが指定された条件に従って記事を生成できるようになります。</p>
+<hr />
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- **出力形式**: Markdown形式で出力してください。
+- **YAML Front Matter**: 記事の冒頭に以下のYAML Front Matterを記述してください。
+    - `title`: 指定されたテーマと学習ターゲット層に合わせた、魅力的で分かりやすいタイトルを生成してください。
+    - `date`: 記事作成時の日付を`YYYY-MM-DD`形式で記述してください。（例: 2025-09-20）
+    - `categories`: 指定された`言語`を配列形式で記述してください。（例: `[Python]`）
+    - `tags`: `[AI, Gemini, 自動生成]` を含め、指定された`テーマ`に関連するSEOキーワードを3つ程度追加してください。（例: `[AI, Gemini, 自動生成, Python入門, 変数, データ型]`）
+- **導入文**: YAML Front Matterの直後、記事本文の前に「この記事はAIによって自動生成されています。」という一文を必ず記載してください。
+- **ターゲットとトーン**: IT初心者の方を対象に、読みやすく、やさしい日本語で解説してください。専門用語を使用する場合は、必ず簡潔に説明を加えてください。
+- **構成**:
+    - 導入部で、記事の概要と学習するメリットを提示してください。
+    - 主要な概念ごとに`##`または`###`の見出しを立てて説明してください。
+    - 箇条書き（`-`）を効果的に使用して情報を整理してください。
+    - 学習のまとめと、次のステップへの簡単なヒントで締めくくってください。
+- **具体例とコード**: 説明する概念ごとに、分かりやすい具体例やサンプルコードを必ず含めてください。
+    - サンプルコードは、指定された言語の構文ハイライトが有効になるように、バッククォート3つ（` ` `）と言語名で囲んでください。（例: ` ` `python ... ` ` `）
+    - 必要に応じて、コードの実行結果や解説も加えてください。
+- **文字数**: 全体で日本語1000文字程度になるように記述してください。
+- **SEO**: 記事の内容に関連するSEOキーワード（例: `プログラミング初心者`, `[言語名]入門`, `[テーマ名]とは`, `学習ロードマップ`など）を自然な形で本文中に適度な頻度で含めてください。
+
+## 指定例
+- 言語: Python
+- テーマ: 変数とデータ型の基礎
+
+---
+
+## 出力例
+```markdown
+---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成, Python入門, 変数, データ型]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？
+
+（ここに本文が続きます）
+</code></pre>
+<p>```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
