@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="    - `date` はYYYY-MM-DD形式で生成時の日付に近い未来の日付（例: 2025-09-20）を使用してください。
+    - `catego">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="    - `date` はYYYY-MM-DD形式で生成時の日付に近い未来の日付（例: 2025-09-20）を使用してください。
+    - `catego">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。IT学習ロードマップ記事生成用のGemini APIプロンプト例をMarkdown形式で作成します。</p>
+<hr />
+<pre><code class="language-markdown">あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件と出力例に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 条件
+- タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。
+    - `date` はYYYY-MM-DD形式で生成時の日付に近い未来の日付（例: 2025-09-20）を使用してください。
+    - `categories` には指定されたプログラミング言語またはIT分野を記載してください。
+    - `tags` には「AI, Gemini, 自動生成」を含め、記事内容に関連するキーワードを2〜3個追加してください。
+- 導入文で「この記事はAIによって自動生成されています。」と明記してください。
+- 読みやすく、やさしい日本語で解説してください。
+- 見出し（`#`, `##`, `###`）や箇条書き（`-`）を効果的に活用してください。
+- 具体例やサンプルコードをMarkdownのコードブロック（例: ```` ```python ```` や ```` ```text ```` など）で含めてください。
+- 記事全体の文字数は1000文字程度を目安としてください。
+- SEOを意識し、指定された言語やテーマに関連するキーワードを本文中に適度な頻度で含めてください。
+
+## 指定内容
+- 言語: {{言語}}
+- テーマ: {{テーマ}}
+
+## 出力例
+```markdown
+---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成, 変数, データ型, プログラミング入門]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？
+
+プログラミング初心者の方がPythonを学ぶ上で、最初につまずきやすいポイントの一つが「変数」と「データ型」かもしれません。しかし、これらはプログラムを作る上で欠かせない基本的な概念です。この記事では、Pythonにおける変数とデータ型の基礎について、やさしい日本語で具体例を交えながら解説します。この記事を読めば、あなたのPython学習がぐっと楽になるはずです。
+
+## 変数とは？情報を一時的に保存する箱
+
+変数は、プログラムの中で一時的にデータをしまっておく「箱」のようなものです。例えば、あなたの名前や年齢、商品の価格など、さまざまな情報を変数という名前の箱に入れておくことができます。
+
+### Pythonでの変数の使い方
+
+Pythonで変数を使うのはとても簡単です。「変数名 = 値」という形で記述します。
+
+```python
+# 'name'という箱に「Taro」という文字列を入れる
+name = &quot;Taro&quot;
+
+# 'age'という箱に「30」という数値を入れる
+age = 30
+
+# 変数の中身を表示してみましょう
+print(name)  # 出力: Taro
+print(age)   # 出力: 30
+</code></pre>
+<p>このように、一度変数に値を入れれば、その変数名を使っていつでもその値を取り出して利用できます。変数の名前は、その箱に何が入っているか分かりやすい名前にすることが大切です。例えば、ユーザーの名前なら<code>user_name</code>、商品の価格なら<code>item_price</code>のようにすると良いでしょう。</p>
+<h2>データ型とは？変数の種類を区別する分類</h2>
+<p>データ型とは、変数に入れるデータの「種類」のことです。Pythonでは、扱うデータによってさまざまな型があります。主なデータ型をいくつか見てみましょう。</p>
+<h3>主なデータ型</h3>
+<ul>
+<li><strong>整数型（int）</strong>: 小数点のない数字（例: 10, -5, 1000）。</li>
+<li><strong>浮動小数点型（float）</strong>: 小数点を含む数字（例: 3.14, 0.5, -9.8）。</li>
+<li><strong>文字列型（str）</strong>: 文字の並び（例: "Hello", 'Python', "これは文字列です"）。シングルクォート（<code>'</code>）またはダブルクォート（<code>"</code>）で囲んで使います。</li>
+<li><strong>真偽値型（bool）</strong>: <code>True</code>（真）か<code>False</code>（偽）のどちらかの値を取ります。条件分岐などで使われます。</li>
+</ul>
+<h3>データ型の確認方法</h3>
+<p>Pythonでは<code>type()</code>関数を使うと、変数がどのデータ型なのかを確認できます。</p>
+<pre><code class="language-python">num_int = 10
+num_float = 3.14
+text_str = &quot;Hello Python&quot;
+is_active = True
+
+print(type(num_int))   # 出力: &lt;class 'int'&gt;
+print(type(num_float))  # 出力: &lt;class 'float'&gt;
+print(type(text_str))  # 出力: &lt;class 'str'&gt;
+print(type(is_active)) # 出力: &lt;class 'bool'&gt;
+</code></pre>
+<p>このように、Pythonは自動的にデータ型を判断してくれます。異なるデータ型を組み合わせる際は注意が必要ですが、まずはこれらの基本的なデータ型があることを覚えておきましょう。</p>
+<h2>まとめ</h2>
+<p>Pythonの「変数」は情報を保存する「箱」であり、「データ型」はその箱に入れる情報の「種類」を区別するものです。これらはプログラミングの基礎中の基礎であり、しっかりと理解することで、より複雑なプログラムも作れるようになります。</p>
+<p>まずは、簡単なプログラムで変数を使って、さまざまなデータを扱ってみることから始めてみましょう。この解説が、あなたのPython学習の一助となれば幸いです。プログラミングの第一歩、頑張ってください！</p>
+<pre><code></code></pre>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
