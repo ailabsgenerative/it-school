@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="## 記事生成条件
+
+1.  **YAML Front Matter**: 記事の冒頭に以下の形式でYAML Front Matterを記載してください。
+  ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="## 記事生成条件
+
+1.  **YAML Front Matter**: 記事の冒頭に以下の形式でYAML Front Matterを記載してください。
+  ">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>以下は、Gemini APIにそのまま利用できるプロンプト例です。
+このプロンプトをGeminiに入力し、「言語」と「テーマ」を指定することで、IT初心者向けの解説記事をMarkdown形式で生成できます。</p>
+<hr />
+<pre><code>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の「記事生成条件」に従い、指定された「言語」と「テーマ」について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+テーマはプログラミングの基礎概念、特定技術の入門、または学習ロードマップなど、IT学習に関するあらゆる内容が指定されます。
+
+## 記事生成条件
+
+1.  **YAML Front Matter**: 記事の冒頭に以下の形式でYAML Front Matterを記載してください。
+    *   `title`: 指定された「言語」と「テーマ」に基づいて、魅力的で分かりやすい記事タイトルを生成してください。
+    *   `date`: `2025-09-20` と記載してください。
+    *   `categories`: 指定された「言語」をリスト形式で記載してください（例: `[Python]`）。
+    *   `tags`: `[AI, Gemini, 自動生成]` と記載してください。
+2.  **導入文**: YAML Front Matterの直後に「この記事はAIによって自動生成されています。」と明記してください。
+3.  **内容の品質と構造**:
+    *   **対象読者**: IT初心者。専門用語は避け、もし使用する場合は必ず分かりやすく解説してください。
+    *   **表現**: 読みやすく、やさしい日本語を使用してください。
+    *   **構成**:
+        *   適切な見出し（`#`は記事のメインタイトル、`##`以降はセクション見出しとして使用）と箇条書き（`-`）を効果的に活用し、論理的で分かりやすい構成にしてください。
+        *   導入でテーマの概要と学習の重要性を説明します。
+        *   主要な概念ごとにセクションを設け、詳しく解説します。
+        *   まとめで、記事の要点を再確認し、次の学習ステップや実践へのモチベーションを促します。
+    *   **具体例**: 理解を深めるため、具体例やサンプルコードを豊富に含めてください。サンプルコードは必ず適切な言語指定付きのコードブロック（例: ```` ```python ````）で囲んでください。
+    *   **文字数**: 記事本文（YAML Front Matterと導入文を除く）は1000文字程度を目安としてください。
+    *   **SEO**: 指定されたテーマに関連するキーワードを自然な形で記事内に含め、検索エンジンからのアクセスを意識した内容にしてください。
+
+## 指定情報
+
+-   **言語**: Python
+-   **テーマ**: 変数とデータ型の基礎
+
+---
+
+## 出力例
+
+```markdown
+---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？
+
+Pythonを学び始める上で、まず理解しておきたいのが「変数」と「データ型」です。これらはプログラミングの基本的な考え方であり、どのようなプログラムでも必ずと言っていいほど登場します。初めてプログラミングに触れる方でも分かりやすいように、具体例を交えながらPythonの変数とデータ型について解説していきます。
+
+## 変数とは？
+
+変数は、データを一時的に保存しておく「箱」のようなものです。プログラムの中で扱う数値や文字、計算結果などに名前を付けて、その名前でいつでも呼び出せるようにする役割があります。
+
+### 変数の宣言と代入
+
+Pythonでは、変数を使い始める前に特別な「宣言」は必要ありません。直接値を代入することで変数が作られます。
+
+```python
+# 'name'という変数に「太郎」という文字列を代入
+name = &quot;太郎&quot;
+
+# 'age'という変数に「30」という数値を代入
+age = 30
+
+# 変数の値を出力
+print(name)  # 出力: 太郎
+print(age)   # 出力: 30
+</code></pre>
+<p>上記の例では、<code>=</code>（イコール）記号を使って、変数に値を「代入」しています。一度代入した値は、後から別の値で上書きすることも可能です。</p>
+<pre><code class="language-python">score = 85
+print(score) # 出力: 85
+
+score = 92 # 値を上書き
+print(score) # 出力: 92
+</code></pre>
+<h2>データ型とは？</h2>
+<p>データ型とは、変数がどのような種類のデータを扱うのかを示すものです。数値なのか、文字なのか、それとも真偽（True/False）なのかによって、コンピュータ内部での扱い方や、そのデータでできる操作が変わってきます。Pythonでは、いくつかの主要なデータ型があります。</p>
+<h3>主要なデータ型</h3>
+<ol>
+<li>
+<p><strong>整数型 (int)</strong>: 負の数、0、正の整数を扱います。小数を含まない数値です。
+    <code>python
+    num_int = 100
+    print(type(num_int)) # 出力: &lt;class 'int'&gt;</code></p>
+</li>
+<li>
+<p><strong>浮動小数点型 (float)</strong>: 小数点を含む数値を扱います。
+    <code>python
+    num_float = 3.14
+    print(type(num_float)) # 出力: &lt;class 'float'&gt;</code></p>
+</li>
+<li>
+<p><strong>文字列型 (str)</strong>: 文字の並びを扱います。シングルクォート <code>'</code> またはダブルクォート <code>"</code> で囲みます。
+    <code>python
+    text = "こんにちは、Python！"
+    print(type(text)) # 出力: &lt;class 'str'&gt;</code></p>
+</li>
+<li>
+<p><strong>真偽値型 (bool)</strong>: <code>True</code>（真）または <code>False</code>（偽）のいずれかの値を扱います。条件分岐などでよく使われます。
+    <code>python
+    is_active = True
+    print(type(is_active)) # 出力: &lt;class 'bool'&gt;</code></p>
+</li>
+</ol>
+<h3>データ型の確認</h3>
+<p>Pythonでは、<code>type()</code>関数を使うことで、変数がどのデータ型であるかを確認できます。</p>
+<pre><code class="language-python">a = 10
+b = 10.5
+c = &quot;Hello&quot;
+d = True
+
+print(type(a)) # &lt;class 'int'&gt;
+print(type(b)) # &lt;class 'float'&gt;
+print(type(c)) # &lt;class 'str'&gt;
+print(type(d)) # &lt;class 'bool'&gt;
+</code></pre>
+<h2>なぜ変数とデータ型を学ぶのか？</h2>
+<p>変数とデータ型を理解することは、プログラムがデータをどのように扱っているのかを把握するために非常に重要です。正しくデータを扱うことで、予期せぬエラーを防ぎ、効率的で分かりやすいコードを書くことができます。例えば、数値計算をする際に文字列型を使おうとするとエラーが発生したり、逆に文字列を結合する際に数値型をそのまま使ってしまうと意図しない結果になったりします。</p>
+<h2>まとめ</h2>
+<p>この記事では、Pythonのプログラミングにおける基本中の基本である「変数」と「データ型」について解説しました。</p>
+<ul>
+<li><strong>変数</strong>はデータを一時的に保存する「箱」のようなものです。</li>
+<li><strong>データ型</strong>は変数がどのような種類のデータを扱うかを示し、Pythonには整数型、浮動小数点型、文字列型、真偽値型などがあります。</li>
+<li><code>type()</code>関数で変数のデータ型を確認できます。</li>
+</ul>
+<p>これらの基礎をしっかり理解することで、今後のPython学習がスムーズに進むでしょう。まずは小さなプログラムを書いて、変数に様々なデータを代入したり、データ型を確認したりして、実際に手を動かしてみましょう！
+```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

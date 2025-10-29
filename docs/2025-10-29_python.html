@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門</title>
+  <meta name="description" content="
+プログラミングを始める上で、最初に理解しておきたい大切な概念が「変数（へんすう）」と「データ型（データがた）」です。これらは、Pythonに限らず多くのプログ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門">
+<meta property="og:description" content="
+プログラミングを始める上で、最初に理解しておきたい大切な概念が「変数（へんすう）」と「データ型（データがた）」です。これらは、Pythonに限らず多くのプログ">
+<meta name="keywords" content="[Python, 変数, データ型, プログラミング入門, 初心者, 基礎, AI, 自動生成]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門
+date: 2024-07-28
+categories: [Python]
+tags: [Python, 変数, データ型, プログラミング入門, 初心者, 基礎, AI, 自動生成]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？</h1>
+<p>プログラミングを始める上で、最初に理解しておきたい大切な概念が「変数（へんすう）」と「データ型（データがた）」です。これらは、Pythonに限らず多くのプログラミング言語に共通する基本中の基本。この二つをしっかり理解することで、プログラムがデータをどのように扱っているのかが分かり、今後の学習がぐっと楽になります。</p>
+<h2>Pythonの変数とは？</h2>
+<p>変数は、プログラムの中で「データを一時的にしまっておく箱」のようなものです。この箱には名前（変数名）をつけることができ、中にしまわれたデータは、必要に応じて取り出したり、新しいデータに入れ替えたりできます。</p>
+<p>例えば、計算結果やユーザーが入力した名前などを一時的に記憶しておくために使います。</p>
+<h3>変数の使い方（代入）</h3>
+<p>Pythonで変数を使うのはとても簡単です。<code>=</code>（イコール）を使って、変数にデータを代入します。</p>
+<pre><code class="language-python"># 'name'という名前の箱に「太郎」という文字列を入れる
+name = &quot;太郎&quot;
+
+# 'age'という名前の箱に「25」という数字を入れる
+age = 25
+
+# 'score'という名前の箱に「98.5」という数字を入れる
+score = 98.5
+
+print(name)  # 出力: 太郎
+print(age)   # 出力: 25
+print(score) # 出力: 98.5
+</code></pre>
+<p>一度代入したデータは、後から別のデータで上書きすることも可能です。</p>
+<pre><code class="language-python">num = 10
+print(num) # 出力: 10
+
+num = 20   # numの中身を20に上書き
+print(num) # 出力: 20
+</code></pre>
+<h2>データ型って何？</h2>
+<p>「データ型」とは、「変数の中に入っているデータの種類」のことです。Pythonでは、数字も文字も、それぞれ異なる種類のデータとして扱われます。例えば、足し算は数字にしかできませんし、文字と数字では扱い方が異なりますよね。</p>
+<p>Pythonでは、主に次のような基本的なデータ型があります。</p>
+<h3>主要なデータ型</h3>
+<ul>
+<li><strong>整数型（<code>int</code>）</strong>: 0, 1, -500 のような小数点を含まない数字です。
+    <code>python
+    my_integer = 100
+    print(type(my_integer)) # 出力: &lt;class 'int'&gt;</code></li>
+<li><strong>浮動小数点型（<code>float</code>）</strong>: 3.14, -0.5, 10.0 のような小数点を含む数字です。
+    <code>python
+    my_float = 3.14
+    print(type(my_float))   # 出力: &lt;class 'float'&gt;</code></li>
+<li><strong>文字列型（<code>str</code>）</strong>: "こんにちは", 'Python', "123" のように、文字の並びです。シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲みます。
+    <code>python
+    my_string = "Hello, Python!"
+    print(type(my_string))  # 出力: &lt;class 'str'&gt;</code></li>
+<li><strong>ブール型（<code>bool</code>）</strong>: <code>True</code>（真）または <code>False</code>（偽）のどちらか一方の値を取るデータ型です。条件分岐などでよく使われます。
+    <code>python
+    is_active = True
+    print(type(is_active)) # 出力: &lt;class 'bool'&gt;</code></li>
+</ul>
+<p><code>type()</code>関数を使うと、変数がどのデータ型であるかを確認できます。これは、プログラムの動作を理解する上で非常に役立ちます。</p>
+<h2>変数とデータ型を使ってみよう！</h2>
+<p>実際に変数とデータ型を使って簡単なプログラムを書いてみましょう。</p>
+<pre><code class="language-python"># ユーザーの情報を変数に格納
+user_name = &quot;ジェミニ&quot;        # 文字列型 (str)
+user_age = 30                # 整数型 (int)
+user_height = 175.5          # 浮動小数点型 (float)
+is_student = False           # ブール型 (bool)
+
+# 変数の内容とデータ型を表示
+print(f&quot;名前: {user_name} ({type(user_name)})&quot;)
+print(f&quot;年齢: {user_age}歳 ({type(user_age)})&quot;)
+print(f&quot;身長: {user_height}cm ({type(user_height)})&quot;)
+print(f&quot;学生である: {is_student} ({type(is_student)})&quot;)
+
+# 年齢を計算で更新
+user_age = user_age + 1 # 1年経過
+print(f&quot;来年の年齢: {user_age}歳&quot;)
+</code></pre>
+<p>このコードでは、名前、年齢、身長、学生かどうかという情報をそれぞれ適切なデータ型で変数に格納し、表示しています。年齢を1年増やす計算も行っていますね。</p>
+<h2>まとめ</h2>
+<p>Pythonの「変数」はデータを一時的に保存する「箱」、そして「データ型」はその箱に入っている「データの種類」です。</p>
+<ul>
+<li><code>=</code>を使って変数にデータを代入する。</li>
+<li><code>int</code>（整数）、<code>float</code>（小数）、<code>str</code>（文字列）、<code>bool</code>（真偽）などが主要なデータ型。</li>
+<li><code>type()</code>関数で変数のデータ型を確認できる。</li>
+</ul>
+<p>これらの基礎をしっかりと押さえることで、今後のPythonプログラミング学習がスムーズに進むでしょう。まずは色々なデータを変数に入れて、<code>type()</code>関数で確認する練習から始めてみてください！</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
