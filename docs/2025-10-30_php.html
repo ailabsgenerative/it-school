@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="## 記事生成の条件
+- YAML Front Matterを記事の冒頭に記載してください。
+    - title: 記事の内容に合わせた適切なタイトル
+  ">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="## 記事生成の条件
+- YAML Front Matterを記事の冒頭に記載してください。
+    - title: 記事の内容に合わせた適切なタイトル
+  ">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>はい、承知いたしました。
+IT学習ロードマップ記事を生成するためのGemini API用プロンプト例を作成します。
+このプロンプトをGemini APIに送信することで、指定された条件に沿った記事が生成されます。</p>
+<hr />
+<pre><code class="language-markdown">あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の「記事生成の条件」と、指定された「生成する記事の情報」に従って、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。
+
+## 記事生成の条件
+- YAML Front Matterを記事の冒頭に記載してください。
+    - title: 記事の内容に合わせた適切なタイトル
+    - date: [記事生成日] （YYYY-MM-DD形式）
+    - categories: [指定されたカテゴリ] （配列形式で複数可）
+    - tags: [指定されたタグ] （配列形式で複数可）
+- 導入文で「この記事はAIによって自動生成されています。」と明記してください。
+- 読みやすく、やさしい日本語で解説してください。
+- 見出し（#、##、###）や箇条書き（- ）を適切に活用し、構造化された分かりやすい記事にしてください。
+- 具体例やサンプルコードを適宜含めてください。サンプルコードはバッククォート3つ（```）で囲んで記述してください。
+- 全体で1000文字程度（Markdown記号やコードブロック内の文字を除く本文の文字数）になるように調整してください。
+- SEOを意識し、指定されたテーマや言語/分野に関連するキーワード（例: [指定されたテーマ名]、[指定された言語/分野名]、[初心者]、[学習]、[入門]、[基礎]など）を記事全体に自然に含めてください。
+
+## 生成する記事の情報
+- **言語/分野**: Python
+- **テーマ**: 変数とデータ型の基礎
+- **記事生成日**: 2025-09-20
+- **カテゴリ**: [Python, プログラミング]
+- **タグ**: [Python, プログラミング, AI, 初心者, 変数, データ型, 基礎]
+
+## 出力例
+---
+title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python, プログラミング]
+tags: [Python, プログラミング, AI, 初心者, 変数, データ型, 基礎]
+---
+
+この記事はAIによって自動生成されています。
+
+# Pythonの変数とデータ型とは？
+
+プログラミングを始める上で、まず最初に学ぶべき大切な概念の一つに「変数」と「データ型」があります。Pythonはとても分かりやすい言語なので、これらの基礎を学ぶのに最適です。この記事では、Pythonにおける変数とデータ型の基本的な概念を、初心者の方にもやさしく解説していきます。
+
+## 変数って何だろう？
+
+変数を簡単に言うと、「データを一時的にしまっておく箱」のようなものです。例えば、あなたの名前や年齢、好きな食べ物など、色々な情報をコンピュータに記憶させたいときに、この「箱」にそれらの情報を入れておきます。そして、必要に応じてその「箱」から情報を取り出したり、中身を入れ替えたりすることができます。
+
+Pythonで変数を使うときは、以下のように書きます。
+
+```python
+# 'name'という箱に「Taro」という文字列を入れる
+name = &quot;Taro&quot; 
+
+# 'age'という箱に「25」という数字を入れる
+age = 25
+
+# 'is_student'という箱に「True」（真偽値）を入れる
+is_student = True
+</code></pre>
+<p>この例では、<code>name</code>、<code>age</code>、<code>is_student</code>が変数名です。<code>=</code>（イコール）記号を使って、右側のデータを左側の変数に代入（入れる）しています。</p>
+<h2>データ型って何だろう？</h2>
+<p>次に、「データ型」についてです。先ほどの「箱」の例で言うと、箱の中に入れるデータには、名前のような「文字」だったり、年齢のような「数字」だったり、はい/いいえを意味する「真偽」だったり、様々な種類がありますよね？ このデータの「種類」のことを「データ型」と呼びます。</p>
+<p>Pythonには主に以下のような基本的なデータ型があります。</p>
+<h3>1. 整数型（int）</h3>
+<p>小数点を含まない数字です。年齢や個数などを表すのに使います。</p>
+<pre><code class="language-python">score = 100
+print(type(score)) # &lt;class 'int'&gt;
+</code></pre>
+<h3>2. 浮動小数点型（float）</h3>
+<p>小数点を含む数字です。身長や体重、価格などを表すのに使います。</p>
+<pre><code class="language-python">height = 1.75
+price = 99.80
+print(type(height)) # &lt;class 'float'&gt;
+</code></pre>
+<h3>3. 文字列型（str）</h3>
+<p>文字や単語、文章などを表します。シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲みます。</p>
+<pre><code class="language-python">message = &quot;こんにちは、Python！&quot;
+fruit = 'Apple'
+print(type(message)) # &lt;class 'str'&gt;
+</code></pre>
+<h3>4. 真偽値型（bool）</h3>
+<p>真実（True）か偽（False）かを表すデータ型です。条件判断などでよく使われます。</p>
+<pre><code class="language-python">is_active = True
+has_error = False
+print(type(is_active)) # &lt;class 'bool'&gt;
+</code></pre>
+<p>Pythonでは、変数を宣言するときにデータ型を明示的に指定する必要がありません。Pythonが自動的に型を判断してくれるため、初心者にも扱いやすいのが特徴です。これを「動的型付け」と呼びます。</p>
+<h2>まとめ</h2>
+<p>この記事では、Pythonプログラミングの基礎である「変数」と「データ型」について解説しました。</p>
+<ul>
+<li><strong>変数</strong>: データを一時的に保存する「箱」</li>
+<li><strong>データ型</strong>: 変数に入れるデータの「種類」（整数、浮動小数点、文字列、真偽値など）</li>
+</ul>
+<p>これらの概念は、これからのプログラミング学習において非常に重要になります。色々なデータを変数に入れて、どんなデータ型になるか、実際にPythonを動かして試してみてください。初心者の方も、焦らず、楽しみながら学習を進めていきましょう！</p>
+<p>```</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
