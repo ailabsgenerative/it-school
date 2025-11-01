@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonのforとwhileループを使いこなそう！繰り返し処理の基本</title>
+  <meta name="description" content="Pythonプログラミングで同じ処理を何度も繰り返したい時に使う「forループ」と「whileループ」。それぞれの特徴と、どのような場面で使い分けるべきかを、初心者にも分かりやすく解説します。">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonのforとwhileループを使いこなそう！繰り返し処理の基本">
+<meta property="og:description" content="Pythonプログラミングで同じ処理を何度も繰り返したい時に使う「forループ」と「whileループ」。それぞれの特徴と、どのような場面で使い分けるべきかを、初心者にも分かりやすく解説します。">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, for, while, ループ, 繰り返し処理, プログラミング初心者]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    <p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonのforとwhileループを使いこなそう！繰り返し処理の基本</h1>
+<p>プログラミングをしていると、「同じ処理を10回繰り返したい」や「リストの全要素を一つずつ表示したい」といった場面が必ず出てきます。そんな時に使うのが「ループ（繰り返し処理）」です。Pythonには主に <code>for</code> ループと <code>while</code> ループの2種類があり、これらを使いこなすことがプログラミング上達の鍵となります。</p>
+<h2>1. <code>for</code> ループ - 決まった回数だけ繰り返す</h2>
+<p><code>for</code> ループは、リストや文字列などの「シーケンス（順序のあるデータの集まり）」の各要素に対して処理を行ったり、決まった回数だけ処理を繰り返したりするのに適しています。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">for 変数 in シーケンス:
+    # 繰り返したい処理
+</code></pre>
+<h3>リストの要素を一つずつ取り出す</h3>
+<p><code>for</code> ループの最も一般的な使い方が、リストの要素を順番に取り出して処理することです。</p>
+<pre><code class="language-python">fruits = [&quot;りんご&quot;, &quot;バナナ&quot;, &quot;オレンジ&quot;]
+
+for fruit in fruits:
+    print(f&quot;今、取り出したフルーツは {fruit} です。&quot;)
+
+# 出力:
+# 今、取り出したフルーツは りんご です。
+# 今、取り出したフルーツは バナナ です。
+# 今、取り出したフルーツは オレンジ です。
+</code></pre>
+<h3><code>range()</code> を使って回数を指定する</h3>
+<p>「10回繰り返す」のように、単純に回数を指定したい場合は <code>range()</code> 関数と組み合わせるのが便利です。</p>
+<pre><code class="language-python"># 5回「こんにちは」と表示する
+for i in range(5):
+    print(f&quot;{i+1}回目のこんにちは！&quot;)
+
+# 出力:
+# 1回目のこんにちは！
+# 2回目のこんにちは！
+# 3回目のこんにちは！
+# 4回目のこんにちは！
+# 5回目のこんにちは！
+</code></pre>
+<p><code>range(5)</code> は <code>0, 1, 2, 3, 4</code> という数値のシーケンスを生成します。</p>
+<h2>2. <code>while</code> ループ - 条件が満たされている間繰り返す</h2>
+<p><code>while</code> ループは、特定の「条件」が真（True）である限り、処理を繰り返し続けます。繰り返し回数が事前に決まっていない場合に特に役立ちます。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">while 条件式:
+    # 繰り返したい処理
+    # (条件式をいつかFalseにするための処理が必要)
+</code></pre>
+<h3>条件が <code>True</code> の間、処理を続ける</h3>
+<pre><code class="language-python">count = 0
+
+while count &lt; 3:
+    print(f&quot;現在のカウントは {count} です。&quot;)
+    count = count + 1  # countを1増やす
+
+print(&quot;ループが終了しました。&quot;)
+
+# 出力:
+# 現在のカウントは 0 です。
+# 現在のカウントは 1 です。
+# 現在のカウントは 2 です。
+# ループが終了しました。
+</code></pre>
+<p>この例では、<code>count</code> が <code>3</code> になった時点で <code>count &lt; 3</code> という条件が偽（False）になるため、ループが終了します。</p>
+<h3>無限ループに注意！</h3>
+<p><code>while</code> ループで最も注意すべきなのが「無限ループ」です。ループ内の処理で条件式が <code>False</code> になるように変更しないと、プログラムが永遠に終了しなくなってしまいます。</p>
+<pre><code class="language-python"># このコードは無限ループになるので注意！
+# while True:
+#     print(&quot;助けて！&quot;)
+</code></pre>
+<p>もし無限ループに陥ってしまったら、<code>Ctrl + C</code> を押してプログラムを強制終了しましょう。</p>
+<h2>3. <code>for</code> と <code>while</code>、どっちを使う？</h2>
+<p>基本的な使い分けの考え方は以下の通りです。</p>
+<ul>
+<li>
+<p><strong><code>for</code> ループを使う場面</strong>:</p>
+<ul>
+<li>リストやタプルの全要素に対して処理をしたい時</li>
+<li>「10回繰り返す」のように、繰り返しの回数が明確に決まっている時</li>
+</ul>
+</li>
+<li>
+<p><strong><code>while</code> ループを使う場面</strong>:</p>
+<ul>
+<li>「ユーザーが特定の文字を入力するまで」のように、いつ終わるか分からない条件で繰り返したい時</li>
+<li>特定の状態になるまで処理を続けたい時</li>
+</ul>
+</li>
+</ul>
+<h2>まとめ</h2>
+<p>今回は、Pythonの繰り返し処理の基本である <code>for</code> ループと <code>while</code> ループについて学びました。</p>
+<ul>
+<li><strong><code>for</code> ループ</strong>: 繰り返しの回数が決まっている場合に便利。</li>
+<li><strong><code>while</code> ループ</strong>: ある条件が満たされている間、処理を続けたい場合に便利。</li>
+</ul>
+<p>ループ処理は、プログラムの自動化の核となる非常に強力な機能です。それぞれの特徴を理解し、場面に応じて適切に使い分けていきましょう。</p>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの関数をマスターしよう！作り方から引数、戻り値まで解説</title>
+  <meta name="description" content="Pythonプログラミングの効率を劇的に向上させる「関数」。この記事では、関数の基本的な作り方（def）から、引数や戻り値（return）の使い方まで、初心者にも分かりやすく解説します。">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの関数をマスターしよう！作り方から引数、戻り値まで解説">
+<meta property="og:description" content="Pythonプログラミングの効率を劇的に向上させる「関数」。この記事では、関数の基本的な作り方（def）から、引数や戻り値（return）の使い方まで、初心者にも分かりやすく解説します。">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, 関数, 引数, 戻り値, def, プログラミング初心者]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    <p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの関数をマスターしよう！作り方から引数、戻り値まで解説</h1>
+<p>Pythonプログラミングを進めていくと、「同じようなコードを何度も書いているな」と感じることがあります。そんな時に絶大な効果を発揮するのが「関数」です。関数とは、一連の処理を一つのまとまりとして名前をつけたものです。</p>
+<p>関数を使いこなせば、コードの再利用性が高まり、プログラム全体が整理されて非常に読みやすくなります。今回は、この関数の作り方と使い方を基礎からしっかり学んでいきましょう。</p>
+<h2>1. 関数とは？なぜ必要なの？</h2>
+<p>関数とは、<strong>「特定の処理を実行するためのコードのまとまり」</strong>です。</p>
+<p>例えば、「自己紹介のメッセージを表示する」という処理をプログラムのあちこちで使いたい場合、その都度 <code>print()</code> 文を書くのは非効率ですし、後から修正するのも大変です。</p>
+<pre><code class="language-python"># 関数を使わない場合
+print(&quot;こんにちは！私の名前は佐藤です。&quot;)
+print(&quot;趣味はプログラミングです。&quot;)
+# ... 他の処理 ...
+print(&quot;こんにちは！私の名前は佐藤です。&quot;)
+print(&quot;趣味はプログラミングです。&quot;)
+</code></pre>
+<p>これを関数としてまとめておけば、呼び出すだけで同じ処理を実行できます。</p>
+<pre><code class="language-python"># 関数を定義する
+def show_introduction():
+    print(&quot;こんにちは！私の名前は佐藤です。&quot;)
+    print(&quot;趣味はプログラミングです。&quot;)
+
+# 関数を呼び出す
+show_introduction()
+# ... 他の処理 ...
+show_introduction()
+</code></pre>
+<p>このように、関数はコードの重複をなくし、プログラムをスッキリさせるために不可欠な機能です。</p>
+<h2>2. 関数の基本的な作り方 (<code>def</code>)</h2>
+<p>Pythonでは、<code>def</code> というキーワードを使って関数を定義します。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">def 関数名():
+    # この関数が呼び出された時に実行する処理
+    # 処理はインデント（字下げ）して書く
+</code></pre>
+<h2>3. 引数（ひきすう）- 関数に情報を渡す</h2>
+<p>先ほどの <code>show_introduction</code> 関数は、いつでも同じ自己紹介しかできません。名前を変えられるように、関数に外から情報を渡す仕組みが「引数」です。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">def 関数名(引数1, 引数2, ...):
+    # 処理
+</code></pre>
+<p><strong>具体例:</strong></p>
+<pre><code class="language-python">def greet(name):  # 'name'が引数
+    print(f&quot;こんにちは、{name}さん！&quot;)
+
+# 関数を呼び出す時に情報を渡す
+greet(&quot;鈴木&quot;)  # 出力: こんにちは、鈴木さん！
+greet(&quot;田中&quot;)  # 出力: こんにちは、田中さん！
+</code></pre>
+<p>引数を使うことで、関数がより柔軟で汎用的なものになります。</p>
+<h3>デフォルト引数 - 引数の初期値を設定する</h3>
+<p>引数には、あらかじめ初期値（デフォルト値）を設定しておくこともできます。</p>
+<pre><code class="language-python">def greet_default(name, message=&quot;元気ですか？&quot;):
+    print(f&quot;{name}さん、{message}&quot;)
+
+greet_default(&quot;佐藤&quot;)          # 出力: 佐藤さん、元気ですか？
+greet_default(&quot;伊藤&quot;, &quot;お疲れ様です！&quot;) # 出力: 伊藤さん、お疲れ様です！
+</code></pre>
+<p>引数が渡されなかった場合はデフォルト値が使われ、渡された場合はその値が優先されます。</p>
+<h2>4. 戻り値（もどりち）- 関数の結果を受け取る</h2>
+<p>関数は、処理を実行するだけでなく、その結果を呼び出し元に返すこともできます。この返される値が「戻り値」です。戻り値は <code>return</code> キーワードを使って指定します。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">def 関数名(引数):
+    # 処理
+    return 戻り値
+</code></pre>
+<p><strong>具体例:</strong></p>
+<pre><code class="language-python">def add(a, b):
+    total = a + b
+    return total  # 計算結果を返す
+
+# 関数を呼び出し、戻り値を変数に受け取る
+sum_result = add(5, 3)
+print(f&quot;5と3の合計は {sum_result} です。&quot;) # 出力: 5と3の合計は 8 です。
+
+# 戻り値を直接使うこともできる
+new_result = add(10, 20) * 2
+print(new_result) # 出力: 60
+</code></pre>
+<p><code>return</code> が実行されると、関数はその時点で終了します。</p>
+<h2>まとめ</h2>
+<p>今回は、Pythonの関数の基本的な使い方を学びました。</p>
+<ul>
+<li><strong>関数</strong>: <code>def</code> で定義する処理のまとまり。</li>
+<li><strong>引数</strong>: 関数に渡す情報。関数を柔軟にする。</li>
+<li><strong>戻り値</strong>: <code>return</code> で返す関数の処理結果。</li>
+</ul>
+<p>関数は、最初は少し難しく感じるかもしれませんが、使いこなせるようになるとプログラミングが何倍も楽になります。まずは簡単な関数からでいいので、ぜひ自分で作って動かしてみてください。</p>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

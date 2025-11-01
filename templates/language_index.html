@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ language_name }} 学習ロードマップ</h2>
+<div class="roadmap-timeline">
+  {% for article in articles %}
+  <div class="roadmap-item">
+    <div class="roadmap-step-number">{{ loop.index }}</div>
+    <div class="roadmap-content">
+      <h3><a href="./{{ article.slug }}.html">{{ article.title }}</a></h3>
+      <p>{{ article.description }}</p> {# description は後でbuild_site.pyで追加 #}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

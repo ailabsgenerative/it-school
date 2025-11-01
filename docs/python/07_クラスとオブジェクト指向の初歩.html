@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonのクラス入門！オブジェクト指向の基本を学ぼう</title>
+  <meta name="description" content="Pythonプログラミングを次のレベルへ進めるための重要な概念、「クラス」と「オブジェクト指向」。この記事では、その基本的な考え方とクラスの作り方を、初心者にも分かりやすく解説します。">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonのクラス入門！オブジェクト指向の基本を学ぼう">
+<meta property="og:description" content="Pythonプログラミングを次のレベルへ進めるための重要な概念、「クラス」と「オブジェクト指向」。この記事では、その基本的な考え方とクラスの作り方を、初心者にも分かりやすく解説します。">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, クラス, オブジェクト指向, OOP, プログラミング初心者]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    <p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonのクラス入門！オブジェクト指向の基本を学ぼう</h1>
+<p>Pythonの基礎を学んでくると、次に出てくる大きなテーマが「クラス」と「オブジェクト指向」です。これらの概念は、より大規模で複雑なプログラムを、整理された分かりやすい形で作成するために欠かせません。少し難しく聞こえるかもしれませんが、基本を掴めば非常に強力なツールになります。</p>
+<h2>1. オブジェクト指向とは？</h2>
+<p>オブジェクト指向プログラミング（OOP）とは、プログラムを<strong>「モノ（オブジェクト）」</strong>の集まりとして捉える考え方です。</p>
+<p>例えば、「犬」という「モノ」を考えてみましょう。犬には「名前」「犬種」「年齢」といった<strong>データ（属性）</strong>があります。また、「鳴く」「走る」「食べる」といった<strong>動作（メソッド）</strong>も行います。</p>
+<p>オブジェクト指向では、このように関連するデータと動作を一つのまとまり（オブジェクト）として扱うことで、プログラムを現実世界のモノのように直感的に設計していきます。</p>
+<h2>2. クラスとオブジェクトの関係</h2>
+<ul>
+<li><strong>クラス (Class)</strong>: オブジェクトを作るための「設計図」や「テンプレート」です。「犬」というクラスを一度定義すれば、その設計図を元に、たくさんの犬のオブジェクトを作ることができます。</li>
+<li><strong>オブジェクト (Object)</strong>: クラスという設計図に基づいて作られた「実体」です。「ポチ」や「ハチ公」といった、具体的な一匹一匹の犬がオブジェクトにあたります。</li>
+</ul>
+<h2>3. Pythonでクラスを作ってみよう</h2>
+<p>それでは、実際にPythonで <code>Dog</code> クラスを作ってみましょう。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">class クラス名:
+    # クラスの定義
+    # ...
+</code></pre>
+<h3><code>__init__</code> メソッド (コンストラクタ)</h3>
+<p><code>__init__</code> は、クラスからオブジェクトが作られる時に<strong>自動的に呼び出される特別なメソッド</strong>です。主に、オブジェクトが持つ属性（データ）の初期設定を行います。</p>
+<p><code>self</code> は、作られるオブジェクト自身を指す特別な変数で、メソッドの最初の引数として必ず書く必要があります。</p>
+<pre><code class="language-python">class Dog:
+    # オブジェクトが作られた時の初期設定
+    def __init__(self, name, breed):
+        # 属性の定義
+        self.name = name
+        self.breed = breed
+        print(f&quot;{self.name}（{self.breed}）が生まれました！&quot;)
+
+# Dogクラスからオブジェクトを作成（インスタンス化）
+dog1 = Dog(&quot;ポチ&quot;, &quot;柴犬&quot;)
+dog2 = Dog(&quot;ハチ&quot;, &quot;秋田犬&quot;)
+
+# オブジェクトの属性にアクセス
+print(f&quot;1匹目の犬の名前は {dog1.name} です。&quot;) # 出力: 1匹目の犬の名前は ポチ です。
+</code></pre>
+<h3>メソッドの追加</h3>
+<p>クラスには、オブジェクトの「動作」を定義するメソッドを追加できます。</p>
+<pre><code class="language-python">class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+        print(f&quot;{self.name}（{self.breed}）が生まれました！&quot;)
+
+    # 鳴くという動作（メソッド）
+    def bark(self):
+        print(f&quot;{self.name}: ワンワン！&quot;)
+
+# オブジェクトを作成
+dog1 = Dog(&quot;ポチ&quot;, &quot;柴犬&quot;)
+
+# メソッドを呼び出す
+dog1.bark() # 出力: ポチ: ワンワン！
+</code></pre>
+<p><code>bark</code> メソッドの中の <code>self.name</code> のように、メソッドは <code>self</code> を通じてそのオブジェクト自身の属性にアクセスできます。</p>
+<h2>4. なぜクラスを使うのか？</h2>
+<p>クラスを使う最大のメリットは、<strong>関連するデータと処理をひとまとめにできる</strong>ことです。</p>
+<ul>
+<li><strong>コードの整理</strong>: <code>Dog</code> に関連する情報や機能はすべて <code>Dog</code> クラスの中に集まっているので、コードの見通しが良くなります。</li>
+<li><strong>再利用性の向上</strong>: 新しい犬を登場させたくなったら、<code>Dog</code> クラスから新しいオブジェクトを作るだけで済みます。</li>
+<li><strong>メンテナンスの容易さ</strong>: 犬の動作を変更したい場合、<code>Dog</code> クラスのメソッドを修正するだけで、すべての犬オブジェクトの動作に反映されます。</li>
+</ul>
+<h2>まとめ</h2>
+<p>今回は、オブジェクト指向の基本的な考え方と、Pythonにおけるクラスの作り方の初歩を学びました。</p>
+<ul>
+<li><strong>オブジェクト指向</strong>: プログラムを「モノ」の集まりとして設計する考え方。</li>
+<li><strong>クラス</strong>: オブジェクトの「設計図」。</li>
+<li><strong>オブジェクト</strong>: クラスから作られた「実体」。</li>
+<li><strong><code>__init__</code></strong>: オブジェクト作成時の初期設定を行う特別なメソッド。</li>
+<li><strong>メソッド</strong>: オブジェクトの動作を定義する関数。</li>
+</ul>
+<p>クラスは、Pythonプログラミングをより本格的に、そして効率的に行うための重要なステップです。まずは簡単なクラスからでいいので、ぜひ自分の手で「設計図」を書いてみてください。</p>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

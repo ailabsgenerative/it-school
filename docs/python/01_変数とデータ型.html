@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門！プログラミングの第一歩を踏み出そう</title>
+  <meta name="description" content="プログラミング学習の第一歩として、Pythonの「変数」と「データ型」は非常に大切な基礎知識です。この記事では、IT初心者の方にも分かりやすく、変数の使い方から主要なデータ型までを徹底解説します。">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門！プログラミングの第一歩を踏み出そう">
+<meta property="og:description" content="プログラミング学習の第一歩として、Pythonの「変数」と「データ型」は非常に大切な基礎知識です。この記事では、IT初心者の方にも分かりやすく、変数の使い方から主要なデータ型までを徹底解説します。">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, 変数, データ型, プログラミング初心者]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    <p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型入門！プログラミングの第一歩を踏み出そう</h1>
+<p>プログラミングの世界へようこそ！Pythonを学び始めるにあたり、最初につまずきやすいけれど最も重要な概念が「変数」と「データ型」です。これらをしっかり理解することで、今後の学習がぐっとスムーズになります。この記事では、初心者の方でも直感的に理解できるよう、具体例を交えながらやさしく解説していきます。</p>
+<h2>1. 変数とは？データを保存する「名前付きの箱」</h2>
+<p>変数とは、一言でいうと<strong>「データを一時的に保存しておくための名前付きの箱」</strong>です。プログラムの中で、数値や文字などの情報を後で使ったり、計算したりするために、この「箱」に入れて保管します。</p>
+<h3>変数の作り方と使い方</h3>
+<p>Pythonでは、変数の使い方は非常にシンプルです。<code>=</code>（イコール）を使って、好きな名前の変数に値を入れる（代入する）だけで作成できます。</p>
+<pre><code class="language-python"># 'name'という名前の変数に「山田さん」という文字列を代入
+name = &quot;山田さん&quot;
+
+# 'age'という名前の変数に「25」という数値を代入
+age = 25
+
+# 変数の中身をprint()で表示してみよう
+print(name)  # 出力: 山田さん
+print(age)   # 出力: 25
+</code></pre>
+<p>一度値を入れた変数の中身は、何度でも更新できます。</p>
+<pre><code class="language-python">score = 80
+print(score)  # 出力: 80
+
+# scoreの中身を95に更新
+score = 95
+print(score)  # 出力: 95
+</code></pre>
+<h3>変数名のルール</h3>
+<p>変数には好きな名前をつけられますが、いくつかのルールがあります。</p>
+<ul>
+<li>使える文字: 英字 (<code>a-z</code>, <code>A-Z</code>)、数字 (<code>0-9</code>)、アンダースコア (<code>_</code>)</li>
+<li>最初の文字: 数字は使えません。</li>
+<li>予約語は使えない: <code>if</code>, <code>for</code>, <code>class</code> など、Pythonで特別な意味を持つ単語（予約語）は変数名にできません。</li>
+<li>大文字と小文字は区別されます (<code>myname</code> と <code>myName</code> は別の変数です)。</li>
+</ul>
+<p>分かりやすい名前をつけることが、後からコードを読み返すときに非常に重要になります。</p>
+<h2>2. データ型とは？データの種類を区別しよう</h2>
+<p>データ型とは、その変数が<strong>「どのような種類のデータを持っているか」</strong>を示すラベルのようなものです。Pythonは賢いので、変数に代入された値から自動的にデータ型を判断してくれます。</p>
+<p>ここでは、プログラミングでよく使われる基本的なデータ型を紹介します。</p>
+<h3>a. 文字列 (string, <code>str</code>)</h3>
+<p>「こんにちは」や「Python」のような文字の並びです。シングルクォーテーション (<code>'</code>) またはダブルクォーテーション (<code>"</code>) で囲んで表現します。</p>
+<pre><code class="language-python">greeting = &quot;こんにちは、世界！&quot;
+language = 'Python'
+
+print(greeting)
+</code></pre>
+<h3>b. 数値 (numeric)</h3>
+<ul>
+<li><strong>整数 (integer, <code>int</code>)</strong>: <code>10</code> や <code>-5</code> のような小数点のない数字です。</li>
+<li><strong>浮動小数点数 (float, <code>float</code>)</strong>: <code>3.14</code> や <code>-0.5</code> のような小数点のある数字です。</li>
+</ul>
+<pre><code class="language-python"># 整数
+count = 10
+
+# 浮動小数点数
+pi = 3.14159
+
+# 数値同士の計算もできる
+total = count * 2
+print(total)  # 出力: 20
+</code></pre>
+<h3>c. 真偽値 (boolean, <code>bool</code>)</h3>
+<p><code>True</code> (真) と <code>False</code> (偽) の2種類しかない、特別なデータ型です。「はい」か「いいえ」を表すスイッチのようなもので、プログラムの条件分岐などで重要な役割を果たします。</p>
+<pre><code class="language-python">is_active = True
+is_logged_in = False
+
+print(is_active) # 出力: True
+</code></pre>
+<h3>d. リスト (list)</h3>
+<p>複数のデータを順番に並べて格納できるデータ型です。角括弧 <code>[]</code> を使い、カンマ <code>,</code> で各データを区切ります。リストの中身は後から変更することができます。</p>
+<pre><code class="language-python">fruits = [&quot;りんご&quot;, &quot;バナナ&quot;, &quot;オレンジ&quot;]
+
+# 最初の要素にアクセス (インデックスは0から始まる)
+print(fruits[0])  # 出力: りんご
+
+# 要素を追加
+fruits.append(&quot;ぶどう&quot;)
+print(fruits)  # 出力: ['りんご', 'バナナ', 'オレンジ', 'ぶどう']
+</code></pre>
+<h2>3. 自分のコードで試してみよう！</h2>
+<p>今回学んだ変数とデータ型は、Pythonプログラミングの根幹をなす非常に重要な要素です。</p>
+<pre><code class="language-python"># 自分の名前と年齢を変数に入れてみよう
+my_name = &quot;鈴木一郎&quot;
+my_age = 32
+
+# 好きな食べ物をリストにしてみよう
+favorite_foods = [&quot;カレー&quot;, &quot;ラーメン&quot;, &quot;寿司&quot;]
+
+# 自己紹介文を作って表示してみよう
+message = f&quot;こんにちは！私の名前は{my_name}です。年齢は{my_age}歳です。&quot;
+print(message)
+print(f&quot;好きな食べ物は{favorite_foods[0]}です。&quot;)
+</code></pre>
+<p>ぜひ、この記事を参考に、ご自身のPCでPythonを動かして、色々な変数やデータ型を試してみてください。実際に手を動かすことが、上達への一番の近道です！</p>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

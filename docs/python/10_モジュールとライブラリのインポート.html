@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonのモジュールとライブラリを使いこなそう！importの基本</title>
+  <meta name="description" content="Pythonの強力な機能を最大限に活用するための「モジュール」と「ライブラリ」。この記事では、import文を使ったモジュールの基本的な使い方を、初心者にも分かりやすく解説します。">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonのモジュールとライブラリを使いこなそう！importの基本">
+<meta property="og:description" content="Pythonの強力な機能を最大限に活用するための「モジュール」と「ライブラリ」。この記事では、import文を使ったモジュールの基本的な使い方を、初心者にも分かりやすく解説します。">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, モジュール, ライブラリ, import, プログラミング初心者]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    <p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonのモジュールとライブラリを使いこなそう！importの基本</h1>
+<p>Pythonが世界中で人気のあるプログラミング言語である理由の一つに、その<strong>豊富な「ライブラリ」</strong>の存在があります。ライブラリとは、便利な機能があらかじめまとめられた「道具箱」のようなものです。この道具箱から必要な道具（機能）を取り出して使うための仕組みが <code>import</code>（インポート）です。</p>
+<p>今回は、Pythonプログラミングの幅を大きく広げる、モジュールとライブラリのインポート方法について学びましょう。</p>
+<h2>1. モジュールとライブラリとは？</h2>
+<ul>
+<li><strong>モジュール (Module)</strong>: Pythonのコードが書かれたファイル（<code>.py</code> ファイル）のことです。関数やクラスなどが定義されています。</li>
+<li><strong>ライブラリ (Library)</strong>: 便利な機能を提供する、複数のモジュールをまとめたものです。「標準ライブラリ」と、後から追加でインストールする「外部ライブラリ」があります。</li>
+</ul>
+<p>例えば、数学的な計算を簡単に行うための <code>math</code> モジュールや、ランダムな数値を生成するための <code>random</code> モジュールは、Pythonに標準で付属している「標準ライブラリ」の一部です。</p>
+<h2>2. <code>import</code> の基本的な使い方</h2>
+<h3><code>import モジュール名</code></h3>
+<p>最も基本的なインポート方法です。モジュール全体を読み込みます。</p>
+<pre><code class="language-python"># mathモジュールをインポート
+import math
+
+# mathモジュールの中の pi (円周率) というデータを使う
+print(math.pi)  # 出力: 3.141592653589793
+
+# mathモジュールの中の sqrt (平方根) という関数を使う
+result = math.sqrt(25)
+print(result)   # 出力: 5.0
+</code></pre>
+<p>このように、<code>モジュール名.機能名</code> の形で、そのモジュールが提供する機能にアクセスします。</p>
+<h3><code>from モジュール名 import 機能名</code></h3>
+<p>モジュールの中から、特定の機能だけを取り出して使いたい場合に便利です。</p>
+<pre><code class="language-python"># randomモジュールから、randintという関数だけをインポート
+from random import randint
+
+# 1から6までのランダムな整数を生成
+dice_roll = randint(1, 6)
+print(f&quot;サイコロの目は {dice_roll} です。&quot;)
+</code></pre>
+<p>この方法だと、<code>random.randint()</code> ではなく <code>randint()</code> のように、モジュール名を省略して直接機能名を書くことができます。</p>
+<h3><code>import モジュール名 as 別名</code></h3>
+<p>モジュール名が長い場合や、他の名前と被ってしまう可能性がある場合に、別名（エイリアス）をつけてインポートすることができます。</p>
+<pre><code class="language-python"># datetimeモジュールを dt という別名でインポート
+import datetime as dt
+
+# 現在の日時を取得
+now = dt.datetime.now()
+print(now)
+</code></pre>
+<p>特に、データ分析でよく使われる <code>numpy</code> や <code>pandas</code> といった外部ライブラリは、それぞれ <code>np</code>, <code>pd</code> という別名でインポートするのが慣習になっています。</p>
+<pre><code class="language-python"># 外部ライブラリの慣習的な例
+# import numpy as np
+# import pandas as pd
+</code></pre>
+<h2>3. 外部ライブラリのインストール</h2>
+<p>Pythonの真の力は、世界中の開発者によって作られた膨大な数の「外部ライブラリ」にあります。これらは、<code>pip</code> というコマンドを使って自分でインストールする必要があります。</p>
+<p><strong>インストールコマンド (ターミナルやコマンドプロンプトで実行):</strong></p>
+<pre><code class="language-bash">pip install ライブラリ名
+</code></pre>
+<p>例えば、ウェブサイトの情報を取得するのに非常に人気のある <code>requests</code> ライブラリをインストールするには、以下のようにします。</p>
+<pre><code class="language-bash">pip install requests
+</code></pre>
+<p>一度インストールすれば、自分のプログラムで <code>import requests</code> のようにして自由に使うことができます。</p>
+<h2>まとめ</h2>
+<p>今回は、Pythonのモジュールとライブラリを <code>import</code> する方法について学びました。</p>
+<ul>
+<li><strong><code>import モジュール名</code></strong>: モジュール全体を読み込む基本形。</li>
+<li><strong><code>from ... import ...</code></strong>: モジュールから特定の機能だけを読み込む。</li>
+<li><strong><code>import ... as ...</code></strong>: モジュールに別名をつけて読み込む。</li>
+<li><strong>外部ライブラリ</strong>: <code>pip</code> コマンドでインストールして、世界中の便利な機能を活用できる。</li>
+</ul>
+<p><code>import</code> を使いこなすことは、Pythonプログラマーとして成長するための重要な一歩です。色々なライブラリを探して、どんなことができるのか試してみるのも楽しいでしょう。</p>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonでファイルの読み書きをマスターしよう！</title>
+  <meta name="description" content="プログラムのデータを永続的に保存するための基本、ファイルの読み書き。この記事では、Pythonでテキストファイルを読み込んだり、新しい内容を書き込んだりする方法を、初心者にも分かりやすく解説します。">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonでファイルの読み書きをマスターしよう！">
+<meta property="og:description" content="プログラムのデータを永続的に保存するための基本、ファイルの読み書き。この記事では、Pythonでテキストファイルを読み込んだり、新しい内容を書き込んだりする方法を、初心者にも分かりやすく解説します。">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, ファイル操作, 読み書き, open, with, プログラミング初心者]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    <p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonでファイルの読み書きをマスターしよう！</h1>
+<p>プログラミングをしていると、プログラムが終了しても消えないようにデータを保存しておきたくなることがあります。例えば、ユーザーの設定や、作成した文章、ゲームのスコアなどです。これを実現するのが「ファイル操作」です。</p>
+<p>今回は、Pythonでテキストファイルの読み書きを行う基本的な方法を学びましょう。</p>
+<h2>1. ファイル操作の基本 - <code>open()</code> と <code>with</code></h2>
+<p>Pythonでファイルを操作するには、まず <code>open()</code> 関数を使って対象のファイルを開く必要があります。そして、操作が終わったら必ずファイルを閉じる必要があります。</p>
+<p>しかし、ファイルの閉じ忘れはエラーの原因になりがちです。そこで、Pythonでは <code>with</code> 文を使うのが一般的です。<code>with</code> 文を使えば、ブロック内の処理が終わった後に自動的にファイルを閉じてくれるので非常に安全です。</p>
+<p><strong>構文:</strong></p>
+<pre><code class="language-python">with open(&quot;ファイル名&quot;, &quot;モード&quot;, encoding=&quot;utf-8&quot;) as f:
+    # ファイルに対する処理
+</code></pre>
+<ul>
+<li><strong>ファイル名</strong>: 操作したいファイルの名前（パス）を指定します。</li>
+<li><strong>モード</strong>: ファイルをどのように開くかを指定します。<ul>
+<li><code>'r'</code>: 読み込み (Read) モード。ファイルの内容を読み込む時に使います。</li>
+<li><code>'w'</code>: 書き込み (Write) モード。ファイルに新しく書き込む時に使います。<strong>注意：ファイルが既に存在する場合、中身はすべて消えて上書きされます。</strong></li>
+<li><code>'a'</code>: 追記 (Append) モード。ファイルが既に存在する場合、末尾に内容を追記します。</li>
+</ul>
+</li>
+<li><strong>encoding="utf-8"</strong>: 日本語などのマルチバイト文字を正しく扱うためのおまじないです。テキストファイルを扱う際は、基本的に指定するようにしましょう。</li>
+<li><code>as f</code>: 開いたファイルを <code>f</code> という名前の変数で扱えるようにします（変数名は任意）。</li>
+</ul>
+<h2>2. ファイルを読み込む</h2>
+<h3>ファイル全体を一度に読み込む (<code>read()</code>)</h3>
+<pre><code class="language-python"># sample.txt の内容:
+# こんにちは、Python！
+# ファイル操作は楽しいです。
+
+with open(&quot;sample.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    content = f.read()
+    print(content)
+
+# 出力:
+# こんにちは、Python！
+# ファイル操作は楽しいです。
+</code></pre>
+<h3>1行ずつ読み込む (<code>for</code> ループ)</h3>
+<p>メモリを効率的に使いたい場合や、巨大なファイルを扱う場合は、<code>for</code> ループを使って1行ずつ処理するのがおすすめです。</p>
+<pre><code class="language-python">with open(&quot;sample.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    for line in f:
+        print(line.strip()) # .strip() で行末の余分な改行文字を削除
+
+# 出力:
+# こんにちは、Python！
+# ファイル操作は楽しいです。
+</code></pre>
+<h2>3. ファイルに書き込む</h2>
+<h3>ファイルに新しい内容を書き込む (<code>write()</code>)</h3>
+<p>書き込みモード (<code>'w'</code>) でファイルを開き、<code>write()</code> メソッドで文字列を書き込みます。</p>
+<pre><code class="language-python">with open(&quot;output.txt&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    f.write(&quot;これは新しいファイルです。\n&quot;) # `\n` は改行を表す
+    f.write(&quot;Pythonからの書き込みテスト。\n&quot;)
+
+# このコードを実行すると、`output.txt` というファイルが作成され、
+# 2行のテキストが書き込まれます。
+</code></pre>
+<p><strong><code>'w'</code> モードは既存のファイルを上書きしてしまう</strong>点に、くれぐれも注意してください。</p>
+<h3>ファイルに内容を追記する</h3>
+<p>既存のファイルの内容を残しつつ、末尾に新しい内容を追加したい場合は、追記モード (<code>'a'</code>) を使います。</p>
+<pre><code class="language-python"># ログを記録するイメージ
+with open(&quot;log.txt&quot;, &quot;a&quot;, encoding=&quot;utf-8&quot;) as f:
+    f.write(&quot;プログラムが正常に実行されました。\n&quot;)
+</code></pre>
+<p>このコードを複数回実行すると、<code>log.txt</code> にどんどん新しい行が追加されていきます。</p>
+<h2>まとめ</h2>
+<p>今回は、Pythonでのファイル操作の基本を学びました。</p>
+<ul>
+<li>ファイル操作は <code>with open(...) as f:</code> を使うのが安全で確実。</li>
+<li><strong>読み込み</strong>は <code>'r'</code> モード。<code>read()</code> や <code>for</code> ループで内容を取得。</li>
+<li><strong>書き込み</strong>は <code>'w'</code> モード。<code>write()</code> で書き込むが、<strong>上書きに注意！</strong></li>
+<li><strong>追記</strong>は <code>'a'</code> モード。<code>write()</code> で末尾に追加する。</li>
+<li>日本語を扱うなら <code>encoding="utf-8"</code> を忘れずに。</li>
+</ul>
+<p>ファイル操作ができるようになると、作れるプログラムの幅が格段に広がります。ぜひ自分の手でファイルを作ったり、読み込んだりして、その動きを確かめてみてください。</p>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
