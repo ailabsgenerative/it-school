@@ -7,4 +7,11 @@
   <li><a href="/{{ lang_slug }}/">{{ lang_name }}</a></li>
   {% endfor %}
 </ul>
+
+<h2>すべての記事</h2>
+<ul>
+  {% for article in articles %}
+  <li><a href="/{{ article.language_slug }}/{{ article.slug }}.html">{{ article.title }}</a></li>
+  {% endfor %}
+</ul>
 {% endblock %}

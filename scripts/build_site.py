@@ -19,13 +19,13 @@ import re
 def make_seo_meta(title, description, tags):
     return f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{description}">\n<meta name="keywords" content="{tags}">'
 
-def process_markdown_file(mdfile_path: Path, env: Environment, base_template) -> dict:
+def process_markdown_file(mdfile_path: Path, env: Environment, base_template, language_slug: str) -> dict:
     """単一のMarkdownファイルを処理し、HTMLを生成してメタデータを返す"""
     with open(mdfile_path, encoding="utf-8") as f:
         mdtext = f.read()
 
     fm = re.match(r"---\n(.*?)---\n", mdtext, re.DOTALL)
-    meta = {"title": "", "description": "", "tags": "", "slug": mdfile_path.stem}
+    meta = {"title": "", "description": "", "tags": "", "slug": mdfile_path.stem, "language_slug": language_slug}
     content_start_index = 0
     if fm:
         for line in fm.group(1).splitlines():
@@ -70,6 +70,7 @@ def build():
     shutil.copy(TEMPLATES_DIR / "style.css", DOCS_DIR / "style.css")
 
     all_languages_data = []
+    all_articles_data = [] # すべての記事のデータを格納するリスト
 
     # 各言語のディレクトリを処理
     for lang_dir in ARTICLES_DIR.iterdir():
@@ -82,7 +83,7 @@ def build():
             articles_in_lang = []
             # 言語ディレクトリ内のMarkdownファイルを処理
             for mdfile in sorted(lang_dir.glob("*.md")):
-                processed_data = process_markdown_file(mdfile, env, base_template)
+                processed_data = process_markdown_file(mdfile, env, base_template, language_slug)
                 
                 # 個別記事のHTMLを保存
                 output_path = DOCS_DIR / language_slug / (processed_data["meta"]["slug"] + ".html")
@@ -90,6 +91,7 @@ def build():
                     f.write(processed_data["html"])
                 
                 articles_in_lang.append(processed_data["meta"])
+                all_articles_data.append(processed_data["meta"]) # すべての記事のリストにも追加
             
             # 言語別インデックスページの生成
             lang_index_html = language_index_template.render(
@@ -102,12 +104,12 @@ def build():
             with open(DOCS_DIR / language_slug / "index.html", "w", encoding="utf-8") as f:
                 f.write(lang_index_html)
             
-            
             all_languages_data.append((language_name, language_slug))
     
     # メインインデックスページの生成
     main_index_html = main_index_template.render(
         languages=all_languages_data,
+        articles=all_articles_data, # すべての記事のデータを渡す
         title="IT学習ブログ - ロードマップ",
         description="IT学習ブログのプログラミング言語別学習ロードマップです。",
         seo=make_seo_meta("IT学習ブログ - ロードマップ", "IT学習ブログのプログラミング言語別学習ロードマップです。", "IT, 学習, プログラミング, ロードマップ")

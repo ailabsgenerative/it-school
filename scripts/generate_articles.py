@@ -2,7 +2,7 @@
 import os
 import datetime
 from pathlib import Path
-import requests
+
 import sys
 from article_topics import TOPICS
 
@@ -16,26 +16,8 @@ def load_prompt() -> str:
 
 def call_gemini_api(prompt: str, language: str, date: str, theme: str) -> str:
     """Gemini APIに記事生成を依頼"""
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        # ダミーモード: APIキーがなければサンプル記事を返す
-        return f"""---\ntitle: {language}の{theme}入門 ({date})\ndate: {date}\ncategories: [{language}]\ntags: [AI, Gemini, 自動生成, {language}, {theme}]\n---\n\nこの記事はAI（Gemini API/ダミーモード）によって自動生成されています。\n\n# {language}の{theme}とは？\n\n（ここに{language}の{theme}に関する概要や学習ポイントがダミーで生成されます）\n"""
-    # TODO: Gemini APIのエンドポイント・パラメータは本番用に調整
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
-    headers = {"Content-Type": "application/json"}
-    data = {
-        "contents": [{
-            "parts": [{"text": prompt.format(language=language, date=date, theme=theme)}]
-        }]
-    }
-    params = {"key": api_key}
-    resp = requests.post(url, headers=headers, json=data, params=params)
-    resp.raise_for_status()
-    # Gemini APIのレスポンスから記事本文を抽出（仮実装）
-    result = resp.json()
-    # TODO: 本番はresultから適切に本文抽出
-    return result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get(
-        "text", "")
+    # ダミーモード: APIキーがなければサンプル記事を返す
+    return f"""---\ntitle: {language}の{theme}入門 ({date})\ndate: {date}\ncategories: [{language}]\ntags: [AI, Gemini, 自動生成, {language}, {theme}]\n---\n\nこの記事はAI（Gemini API/ダミーモード）によって自動生成されています。\n\n# {language}の{theme}とは？\n\n（ここに{language}の{theme}に関する概要や学習ポイントがダミーで生成されます）\n"""
 
 
 

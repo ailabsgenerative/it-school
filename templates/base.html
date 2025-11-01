@@ -12,7 +12,11 @@
 <body>
   <header><h1><a href="/">IT学習ブログ</a></h1></header>
   <main>
-    {{ content | safe }}
+    {% if content %}
+      {{ content | safe }}
+    {% else %}
+      {% block content %}{% endblock %}
+    {% endif %}
   </main>
   <footer><small>© 2025 IT School Blog</small></footer>
 </body>
