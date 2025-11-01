@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの変数とデータ型入門</title>
+  <meta name="description" content="
+こんにちは！プログラミング学習を始めたいと思っている皆さん、Pythonは初心者にとって非常に学びやすい言語です。今回は、Pythonプログラミングの土台とな">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの変数とデータ型入門">
+<meta property="og:description" content="
+こんにちは！プログラミング学習を始めたいと思っている皆さん、Pythonは初心者にとって非常に学びやすい言語です。今回は、Pythonプログラミングの土台とな">
+<meta name="keywords" content="[AI, Gemini, 自動生成]">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <hr />
+<p>title: Pythonの変数とデータ型入門
+date: 2025-09-20
+categories: [Python]
+tags: [AI, Gemini, 自動生成]</p>
+<hr />
+<p>この記事はAIによって自動生成されています。</p>
+<h1>Pythonの変数とデータ型とは？初心者向け徹底解説</h1>
+<p>こんにちは！プログラミング学習を始めたいと思っている皆さん、Pythonは初心者にとって非常に学びやすい言語です。今回は、Pythonプログラミングの土台となる「変数」と「データ型」について、やさしく丁寧に解説していきます。この二つを理解すれば、あなたのプログラミング学習は大きく前進するでしょう。</p>
+<h2>変数とは？コンピュータが情報を覚える「箱」</h2>
+<p>プログラミングにおける「変数」とは、コンピュータが一時的に情報を記憶しておくための「箱」や「入れ物」のようなものです。</p>
+<p>例えば、あなたが計算用紙に数字をメモする時、<code>A = 10</code> のように書きますよね？この <code>A</code> が変数だと思ってください。<code>10</code> という数字を <code>A</code> という名前の箱に入れておき、後からいつでも取り出して使うことができます。</p>
+<h3>なぜ変数が必要なの？</h3>
+<p>変数は、以下のような場面で大活躍します。</p>
+<ul>
+<li><strong>値を使い回す</strong>: 同じ数字や文字を何度も使う場合に、変数に入れておけば、何度も同じ内容を書く手間が省けます。</li>
+<li><strong>わかりやすい名前にする</strong>: 複雑な計算結果や意味のあるデータを、人間が理解しやすい名前にして保存できます。</li>
+<li><strong>値を変更する</strong>: プログラムの途中で、保存している値を別のものに更新できます。</li>
+</ul>
+<h3>Pythonでの変数の使い方</h3>
+<p>Pythonで変数を使うのはとても簡単です。<code>変数名 = 値</code> の形で、好きな名前（変数名）を付けて、覚えさせたい値（データ）を代入します。</p>
+<pre><code class="language-python"># 'message' という変数に「こんにちは、Python！」という文字列を代入
+message = &quot;こんにちは、Python！&quot;
+
+# 'number' という変数に数字の 100 を代入
+number = 100
+
+# 変数の中身を表示してみましょう
+print(message)
+print(number)
+
+# 変数の値を更新することもできます
+number = 200
+print(number)
+</code></pre>
+<p><strong>実行結果:</strong></p>
+<pre><code>こんにちは、Python！
+100
+200
+</code></pre>
+<p>変数の名前は、アルファベットや数字、アンダースコア（_）を使って自由に付けられますが、いくつかルールがあります。例えば、数字から始めることはできませんし、Pythonの予約語（<code>print</code>など、特別な意味を持つ言葉）は使えません。</p>
+<h2>データ型とは？変数に入れる「情報の種類」</h2>
+<p>次に、「データ型」について説明します。データ型とは、変数が持っている情報が「どんな種類のものか」を示すものです。例えば、数字なのか、文章なのか、True/Falseのような真偽なのか、といった具合です。</p>
+<p>コンピュータは、情報の種類によって処理の仕方が異なります。そのため、データ型を正しく認識することが非常に重要です。</p>
+<h3>Pythonの主なデータ型</h3>
+<p>Pythonでは、主なデータ型として以下のようなものがあります。Pythonは賢いので、変数を代入するだけで自動的にデータ型を判別してくれますが、それぞれの種類を理解しておくことは大切です。</p>
+<ol>
+<li><strong>整数型 (int)</strong>: 負の数も含む、小数点のない数字です。<ul>
+<li>例: <code>10</code>, <code>0</code>, <code>-5</code></li>
+</ul>
+</li>
+<li><strong>浮動小数点数型 (float)</strong>: 小数点を含む数字です。<ul>
+<li>例: <code>3.14</code>, <code>0.5</code>, <code>-1.0</code></li>
+</ul>
+</li>
+<li><strong>文字列型 (str)</strong>: 文字や記号の並びです。シングルクォーテーション（<code>'</code>）またはダブルクォーテーション（<code>"</code>）で囲みます。<ul>
+<li>例: <code>'Hello'</code>, <code>"Python プログラミング"</code>, <code>'123'</code> (数字に見えても、クォーテーションで囲むと文字列です)</li>
+</ul>
+</li>
+<li><strong>真偽値型 (bool)</strong>: <code>True</code>（真）か <code>False</code>（偽）のどちらかを表す型です。<ul>
+<li>例: <code>True</code>, <code>False</code></li>
+</ul>
+</li>
+</ol>
+<h3>データ型を確認してみよう</h3>
+<p>Pythonでは、<code>type()</code> 関数を使うと、変数のデータ型を簡単に確認できます。</p>
+<pre><code class="language-python"># それぞれのデータ型を見てみましょう
+integer_number = 10
+print(type(integer_number)) # &lt;class 'int'&gt;
+
+float_number = 3.14
+print(type(float_number))   # &lt;class 'float'&gt;
+
+text_string = &quot;Pythonを学習中&quot;
+print(type(text_string))    # &lt;class 'str'&gt;
+
+is_learning = True
+print(type(is_learning))    # &lt;class 'bool'&gt;
+</code></pre>
+<p><strong>実行結果:</strong></p>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;
+</code></pre>
+<p>このように、Pythonが自動で型を判別してくれているのがわかりますね。</p>
+<h2>まとめ：変数とデータ型はプログラミングの基本中の基本！</h2>
+<p>今回は、Pythonの「変数」と「データ型」という二つの重要な概念について学びました。</p>
+<ul>
+<li><strong>変数</strong>：情報を一時的に保存する「箱」。</li>
+<li><strong>データ型</strong>：保存されている情報が「どんな種類か」を示すもの。</li>
+</ul>
+<p>これらは、どのようなプログラミング言語でも共通して登場する、非常に基本的な概念です。しっかりと理解することで、今後の学習がぐっとスムーズになります。</p>
+<p>まずは、色々な値を変数に代入してみて、<code>print()</code> や <code>type()</code> 関数を使って中身や型を確認する練習をしてみましょう。実践を重ねることで、自然と身についていきますよ！Python学習の第一歩、お疲れ様でした！</p>
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

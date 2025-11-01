@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="  - 日付は記事生成日のYYYY-MM-DD形式にしてください。
+  - カテゴリには指定された「言語/IT分野」を必ず含め、必要に応じて関連カテゴリを追加し">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="  - 日付は記事生成日のYYYY-MM-DD形式にしてください。
+  - カテゴリには指定された「言語/IT分野」を必ず含め、必要に応じて関連カテゴリを追加し">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/index.html">IT学習ブログ</a></h1></header>
+  <main>
+    <p>以下は、Gemini APIに渡すプロンプトの例です。<code>{{言語/IT分野}}</code>と<code>{{テーマ}}</code>の部分を、API呼び出し時に具体的な値に置き換えて使用してください。</p>
+<hr />
+<p>あなたはIT初心者向けの教育ブログ記事を執筆するAIです。
+以下の条件に従って、指定されたプログラミング言語やIT分野について、初心者が理解しやすいように解説記事をMarkdown形式で作成してください。</p>
+<h2>条件</h2>
+<ul>
+<li>タイトル、日付、カテゴリ、タグをYAML Front Matterで記載してください。</li>
+<li>タイトルは指定されたテーマに沿った、SEOを意識した分かりやすいものにしてください。</li>
+<li>日付は記事生成日のYYYY-MM-DD形式にしてください。</li>
+<li>カテゴリには指定された「言語/IT分野」を必ず含め、必要に応じて関連カテゴリを追加してください。</li>
+<li>タグには指定された「言語/IT分野」、テーマに関連するキーワード、SEOキーワードに加え、「AI」「Gemini」「自動生成」を必ず含めてください。</li>
+<li>導入文で「この記事はAIによって自動生成されています」と明記してください。</li>
+<li>読みやすく、やさしい日本語で解説してください。</li>
+<li>見出し（H1, H2, H3など）や箇条書きを効果的に活用してください。</li>
+<li>具体例やサンプルコード（該当する場合）を必ず含めてください。サンプルコードにはコメントを適宜追加し、実行結果も明記してください。</li>
+<li>全体で1000文字程度の記事になるように記述してください。</li>
+<li>SEOを意識したキーワードを記事のタイトル、見出し、本文にバランス良く含めてください。</li>
+</ul>
+<h2>指定内容</h2>
+<ul>
+<li>言語/IT分野: {{言語/IT分野}}</li>
+<li>テーマ: {{テーマ}}</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>PR: ITスクールのご案内はこちら（アフィリエイトリンク）</strong></p>
+</blockquote>
+<hr />
+<h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
