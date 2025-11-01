@@ -30,46 +30,49 @@
 <h2>3. Pythonでクラスを作ってみよう</h2>
 <p>それでは、実際にPythonで <code>Dog</code> クラスを作ってみましょう。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">class クラス名:
-    # クラスの定義
-    # ...
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">class</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">クラス名</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># クラスの定義</span>
+    <span style="color: #959077"># ...</span>
+</code></pre></div>
+
 <h3><code>__init__</code> メソッド (コンストラクタ)</h3>
 <p><code>__init__</code> は、クラスからオブジェクトが作られる時に<strong>自動的に呼び出される特別なメソッド</strong>です。主に、オブジェクトが持つ属性（データ）の初期設定を行います。</p>
 <p><code>self</code> は、作られるオブジェクト自身を指す特別な変数で、メソッドの最初の引数として必ず書く必要があります。</p>
-<pre><code class="language-python">class Dog:
-    # オブジェクトが作られた時の初期設定
-    def __init__(self, name, breed):
-        # 属性の定義
-        self.name = name
-        self.breed = breed
-        print(f&quot;{self.name}（{self.breed}）が生まれました！&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">class</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Dog</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># オブジェクトが作られた時の初期設定</span>
+    <span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">__init__</span><span style="color: #F8F8F2">(self,</span> <span style="color: #F8F8F2">name,</span> <span style="color: #F8F8F2">breed):</span>
+        <span style="color: #959077"># 属性の定義</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">name</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">name</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">breed</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">breed</span>
+        <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;{</span><span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}（{</span><span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">breed</span><span style="color: #E6DB74">}）が生まれました！&quot;</span><span style="color: #F8F8F2">)</span>
 
-# Dogクラスからオブジェクトを作成（インスタンス化）
-dog1 = Dog(&quot;ポチ&quot;, &quot;柴犬&quot;)
-dog2 = Dog(&quot;ハチ&quot;, &quot;秋田犬&quot;)
+<span style="color: #959077"># Dogクラスからオブジェクトを作成（インスタンス化）</span>
+<span style="color: #F8F8F2">dog1</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">Dog(</span><span style="color: #E6DB74">&quot;ポチ&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;柴犬&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">dog2</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">Dog(</span><span style="color: #E6DB74">&quot;ハチ&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;秋田犬&quot;</span><span style="color: #F8F8F2">)</span>
 
-# オブジェクトの属性にアクセス
-print(f&quot;1匹目の犬の名前は {dog1.name} です。&quot;) # 出力: 1匹目の犬の名前は ポチ です。
-</code></pre>
+<span style="color: #959077"># オブジェクトの属性にアクセス</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;1匹目の犬の名前は {</span><span style="color: #F8F8F2">dog1</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">} です。&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #959077"># 出力: 1匹目の犬の名前は ポチ です。</span>
+</code></pre></div>
+
 <h3>メソッドの追加</h3>
 <p>クラスには、オブジェクトの「動作」を定義するメソッドを追加できます。</p>
-<pre><code class="language-python">class Dog:
-    def __init__(self, name, breed):
-        self.name = name
-        self.breed = breed
-        print(f&quot;{self.name}（{self.breed}）が生まれました！&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">class</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Dog</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">__init__</span><span style="color: #F8F8F2">(self,</span> <span style="color: #F8F8F2">name,</span> <span style="color: #F8F8F2">breed):</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">name</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">name</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">breed</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">breed</span>
+        <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;{</span><span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}（{</span><span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">breed</span><span style="color: #E6DB74">}）が生まれました！&quot;</span><span style="color: #F8F8F2">)</span>
 
-    # 鳴くという動作（メソッド）
-    def bark(self):
-        print(f&quot;{self.name}: ワンワン！&quot;)
+    <span style="color: #959077"># 鳴くという動作（メソッド）</span>
+    <span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">bark</span><span style="color: #F8F8F2">(self):</span>
+        <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;{</span><span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}: ワンワン！&quot;</span><span style="color: #F8F8F2">)</span>
 
-# オブジェクトを作成
-dog1 = Dog(&quot;ポチ&quot;, &quot;柴犬&quot;)
+<span style="color: #959077"># オブジェクトを作成</span>
+<span style="color: #F8F8F2">dog1</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">Dog(</span><span style="color: #E6DB74">&quot;ポチ&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;柴犬&quot;</span><span style="color: #F8F8F2">)</span>
 
-# メソッドを呼び出す
-dog1.bark() # 出力: ポチ: ワンワン！
-</code></pre>
+<span style="color: #959077"># メソッドを呼び出す</span>
+<span style="color: #F8F8F2">dog1</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">bark()</span> <span style="color: #959077"># 出力: ポチ: ワンワン！</span>
+</code></pre></div>
+
 <p><code>bark</code> メソッドの中の <code>self.name</code> のように、メソッドは <code>self</code> を通じてそのオブジェクト自身の属性にアクセスできます。</p>
 <h2>4. なぜクラスを使うのか？</h2>
 <p>クラスを使う最大のメリットは、<strong>関連するデータと処理をひとまとめにできる</strong>ことです。</p>

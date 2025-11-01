@@ -26,42 +26,45 @@
 <li><strong><code>except</code> ブロック</strong>: <code>try</code> ブロック内でエラーが発生した場合に、実行したい処理をこの中に書きます。</li>
 </ul>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">try:
-    # エラーが発生するかもしれない処理
-except:
-    # エラーが発生した時の処理
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">try</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># エラーが発生するかもしれない処理</span>
+<span style="color: #66D9EF">except</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># エラーが発生した時の処理</span>
+</code></pre></div>
+
 <p><strong>具体例: ゼロ除算エラー</strong></p>
-<pre><code class="language-python">try:
-    num = 10 / 0  # ここでエラーが発生！
-    print(num)
-except:
-    print(&quot;エラーが発生しました。0で割ることはできません。&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">try</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">num</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">10</span> <span style="color: #FF4689">/</span> <span style="color: #AE81FF">0</span>  <span style="color: #959077"># ここでエラーが発生！</span>
+    <span style="color: #F8F8F2">print(num)</span>
+<span style="color: #66D9EF">except</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;エラーが発生しました。0で割ることはできません。&quot;</span><span style="color: #F8F8F2">)</span>
 
-print(&quot;プログラムは停止せずに、ここまで実行されます。&quot;)
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;プログラムは停止せずに、ここまで実行されます。&quot;</span><span style="color: #F8F8F2">)</span>
 
-# 出力:
-# エラーが発生しました。0で割ることはできません。
-# プログラムは停止せずに、ここまで実行されます。
-</code></pre>
+<span style="color: #959077"># 出力:</span>
+<span style="color: #959077"># エラーが発生しました。0で割ることはできません。</span>
+<span style="color: #959077"># プログラムは停止せずに、ここまで実行されます。</span>
+</code></pre></div>
+
 <p><code>try</code> ブロックでエラーが発生すると、Pythonは即座に <code>except</code> ブロックにジャンプします。そのため、プログラムがクラッシュすることなく、後続の処理を続けることができます。</p>
 <h2>2. 特定のエラーをキャッチする</h2>
 <p><code>except</code> の後にエラーの種類（例外クラス）を指定することで、特定のエラーだけを狙ってキャッチすることができます。</p>
-<pre><code class="language-python">try:
-    num_str = input(&quot;数字を入力してください: &quot;)
-    num = int(num_str)
-    result = 100 / num
-    print(f&quot;100を{num}で割った結果は {result} です。&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">try</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">num_str</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">input(</span><span style="color: #E6DB74">&quot;数字を入力してください: &quot;</span><span style="color: #F8F8F2">)</span>
+    <span style="color: #F8F8F2">num</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">int(num_str)</span>
+    <span style="color: #F8F8F2">result</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">100</span> <span style="color: #FF4689">/</span> <span style="color: #F8F8F2">num</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;100を{</span><span style="color: #F8F8F2">num</span><span style="color: #E6DB74">}で割った結果は {</span><span style="color: #F8F8F2">result</span><span style="color: #E6DB74">} です。&quot;</span><span style="color: #F8F8F2">)</span>
 
-except ValueError:
-    print(&quot;エラー: 数字以外が入力されました。&quot;)
+<span style="color: #66D9EF">except</span> <span style="color: #A6E22E">ValueError</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;エラー: 数字以外が入力されました。&quot;</span><span style="color: #F8F8F2">)</span>
 
-except ZeroDivisionError:
-    print(&quot;エラー: 0で割ることはできません。&quot;)
+<span style="color: #66D9EF">except</span> <span style="color: #A6E22E">ZeroDivisionError</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;エラー: 0で割ることはできません。&quot;</span><span style="color: #F8F8F2">)</span>
 
-except Exception as e:
-    print(f&quot;予期せぬエラーが発生しました: {e}&quot;)
-</code></pre>
+<span style="color: #66D9EF">except</span> <span style="color: #A6E22E">Exception</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">e:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;予期せぬエラーが発生しました: {</span><span style="color: #F8F8F2">e</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
 <p>この例では、
 *   もしユーザーが「abc」のような文字を入力すると <code>ValueError</code> が発生し、最初の <code>except</code> ブロックが実行されます。
 *   もしユーザーが「0」を入力すると <code>ZeroDivisionError</code> が発生し、2番目の <code>except</code> ブロックが実行されます。
@@ -70,26 +73,28 @@ except Exception as e:
 <p><code>try-except</code> 文には、<code>else</code> と <code>finally</code> というブロックを追加することもできます。</p>
 <h3><code>else</code> - エラーがなかった場合に実行</h3>
 <p><code>else</code> ブロックは、<code>try</code> ブロックで<strong>エラーが発生しなかった場合</strong>にのみ実行されます。</p>
-<pre><code class="language-python">try:
-    num = int(input(&quot;割る数を入力してください: &quot;))
-    result = 100 / num
-except ValueError:
-    print(&quot;数字を入力してください。&quot;)
-else:
-    # エラーがなかった時だけ実行
-    print(f&quot;計算成功！結果は {result} です。&quot;)
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">try</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">num</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">int(input(</span><span style="color: #E6DB74">&quot;割る数を入力してください: &quot;</span><span style="color: #F8F8F2">))</span>
+    <span style="color: #F8F8F2">result</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">100</span> <span style="color: #FF4689">/</span> <span style="color: #F8F8F2">num</span>
+<span style="color: #66D9EF">except</span> <span style="color: #A6E22E">ValueError</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;数字を入力してください。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">else</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># エラーがなかった時だけ実行</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;計算成功！結果は {</span><span style="color: #F8F8F2">result</span><span style="color: #E6DB74">} です。&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
 <h3><code>finally</code> - 常に最後に実行</h3>
 <p><code>finally</code> ブロックは、<strong>エラーが発生したかどうかに関わらず、必ず最後に実行</strong>されます。ファイルを開いた後に必ず閉じたい場合など、後片付け処理によく使われます。</p>
-<pre><code class="language-python">try:
-    f = open(&quot;somefile.txt&quot;, &quot;r&quot;)
-    # ... ファイル処理 ...
-except FileNotFoundError:
-    print(&quot;ファイルが見つかりません。&quot;)
-finally:
-    # エラーがあってもなくても、必ず実行
-    print(&quot;処理を終了します。&quot;)
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">try</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">f</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&quot;somefile.txt&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;r&quot;</span><span style="color: #F8F8F2">)</span>
+    <span style="color: #959077"># ... ファイル処理 ...</span>
+<span style="color: #66D9EF">except</span> <span style="color: #A6E22E">FileNotFoundError</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;ファイルが見つかりません。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">finally</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># エラーがあってもなくても、必ず実行</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;処理を終了します。&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
 <h2>まとめ</h2>
 <p>今回は、エラーに強いプログラムを作るための例外処理について学びました。</p>
 <ul>

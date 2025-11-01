@@ -23,9 +23,10 @@
 <p>Pythonでファイルを操作するには、まず <code>open()</code> 関数を使って対象のファイルを開く必要があります。そして、操作が終わったら必ずファイルを閉じる必要があります。</p>
 <p>しかし、ファイルの閉じ忘れはエラーの原因になりがちです。そこで、Pythonでは <code>with</code> 文を使うのが一般的です。<code>with</code> 文を使えば、ブロック内の処理が終わった後に自動的にファイルを閉じてくれるので非常に安全です。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">with open(&quot;ファイル名&quot;, &quot;モード&quot;, encoding=&quot;utf-8&quot;) as f:
-    # ファイルに対する処理
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&quot;ファイル名&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;モード&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;utf-8&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #959077"># ファイルに対する処理</span>
+</code></pre></div>
+
 <ul>
 <li><strong>ファイル名</strong>: 操作したいファイルの名前（パス）を指定します。</li>
 <li><strong>モード</strong>: ファイルをどのように開くかを指定します。<ul>
@@ -39,45 +40,49 @@
 </ul>
 <h2>2. ファイルを読み込む</h2>
 <h3>ファイル全体を一度に読み込む (<code>read()</code>)</h3>
-<pre><code class="language-python"># sample.txt の内容:
-# こんにちは、Python！
-# ファイル操作は楽しいです。
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># sample.txt の内容:</span>
+<span style="color: #959077"># こんにちは、Python！</span>
+<span style="color: #959077"># ファイル操作は楽しいです。</span>
 
-with open(&quot;sample.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
-    content = f.read()
-    print(content)
+<span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&quot;sample.txt&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;r&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;utf-8&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #F8F8F2">content</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">read()</span>
+    <span style="color: #F8F8F2">print(content)</span>
 
-# 出力:
-# こんにちは、Python！
-# ファイル操作は楽しいです。
-</code></pre>
+<span style="color: #959077"># 出力:</span>
+<span style="color: #959077"># こんにちは、Python！</span>
+<span style="color: #959077"># ファイル操作は楽しいです。</span>
+</code></pre></div>
+
 <h3>1行ずつ読み込む (<code>for</code> ループ)</h3>
 <p>メモリを効率的に使いたい場合や、巨大なファイルを扱う場合は、<code>for</code> ループを使って1行ずつ処理するのがおすすめです。</p>
-<pre><code class="language-python">with open(&quot;sample.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
-    for line in f:
-        print(line.strip()) # .strip() で行末の余分な改行文字を削除
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&quot;sample.txt&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;r&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;utf-8&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">line</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">f:</span>
+        <span style="color: #F8F8F2">print(line</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">strip())</span> <span style="color: #959077"># .strip() で行末の余分な改行文字を削除</span>
 
-# 出力:
-# こんにちは、Python！
-# ファイル操作は楽しいです。
-</code></pre>
+<span style="color: #959077"># 出力:</span>
+<span style="color: #959077"># こんにちは、Python！</span>
+<span style="color: #959077"># ファイル操作は楽しいです。</span>
+</code></pre></div>
+
 <h2>3. ファイルに書き込む</h2>
 <h3>ファイルに新しい内容を書き込む (<code>write()</code>)</h3>
 <p>書き込みモード (<code>'w'</code>) でファイルを開き、<code>write()</code> メソッドで文字列を書き込みます。</p>
-<pre><code class="language-python">with open(&quot;output.txt&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
-    f.write(&quot;これは新しいファイルです。\n&quot;) # `\n` は改行を表す
-    f.write(&quot;Pythonからの書き込みテスト。\n&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&quot;output.txt&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;w&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;utf-8&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #F8F8F2">f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">write(</span><span style="color: #E6DB74">&quot;これは新しいファイルです。</span><span style="color: #AE81FF">\n</span><span style="color: #E6DB74">&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #959077"># `\n` は改行を表す</span>
+    <span style="color: #F8F8F2">f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">write(</span><span style="color: #E6DB74">&quot;Pythonからの書き込みテスト。</span><span style="color: #AE81FF">\n</span><span style="color: #E6DB74">&quot;</span><span style="color: #F8F8F2">)</span>
 
-# このコードを実行すると、`output.txt` というファイルが作成され、
-# 2行のテキストが書き込まれます。
-</code></pre>
+<span style="color: #959077"># このコードを実行すると、`output.txt` というファイルが作成され、</span>
+<span style="color: #959077"># 2行のテキストが書き込まれます。</span>
+</code></pre></div>
+
 <p><strong><code>'w'</code> モードは既存のファイルを上書きしてしまう</strong>点に、くれぐれも注意してください。</p>
 <h3>ファイルに内容を追記する</h3>
 <p>既存のファイルの内容を残しつつ、末尾に新しい内容を追加したい場合は、追記モード (<code>'a'</code>) を使います。</p>
-<pre><code class="language-python"># ログを記録するイメージ
-with open(&quot;log.txt&quot;, &quot;a&quot;, encoding=&quot;utf-8&quot;) as f:
-    f.write(&quot;プログラムが正常に実行されました。\n&quot;)
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># ログを記録するイメージ</span>
+<span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&quot;log.txt&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;a&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;utf-8&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #F8F8F2">f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">write(</span><span style="color: #E6DB74">&quot;プログラムが正常に実行されました。</span><span style="color: #AE81FF">\n</span><span style="color: #E6DB74">&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
 <p>このコードを複数回実行すると、<code>log.txt</code> にどんどん新しい行が追加されていきます。</p>
 <h2>まとめ</h2>
 <p>今回は、Pythonでのファイル操作の基本を学びました。</p>

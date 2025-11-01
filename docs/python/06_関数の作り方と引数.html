@@ -22,76 +22,84 @@
 <h2>1. 関数とは？なぜ必要なの？</h2>
 <p>関数とは、<strong>「特定の処理を実行するためのコードのまとまり」</strong>です。</p>
 <p>例えば、「自己紹介のメッセージを表示する」という処理をプログラムのあちこちで使いたい場合、その都度 <code>print()</code> 文を書くのは非効率ですし、後から修正するのも大変です。</p>
-<pre><code class="language-python"># 関数を使わない場合
-print(&quot;こんにちは！私の名前は佐藤です。&quot;)
-print(&quot;趣味はプログラミングです。&quot;)
-# ... 他の処理 ...
-print(&quot;こんにちは！私の名前は佐藤です。&quot;)
-print(&quot;趣味はプログラミングです。&quot;)
-</code></pre>
-<p>これを関数としてまとめておけば、呼び出すだけで同じ処理を実行できます。</p>
-<pre><code class="language-python"># 関数を定義する
-def show_introduction():
-    print(&quot;こんにちは！私の名前は佐藤です。&quot;)
-    print(&quot;趣味はプログラミングです。&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 関数を使わない場合</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;こんにちは！私の名前は佐藤です。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;趣味はプログラミングです。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #959077"># ... 他の処理 ...</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;こんにちは！私の名前は佐藤です。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;趣味はプログラミングです。&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
 
-# 関数を呼び出す
-show_introduction()
-# ... 他の処理 ...
-show_introduction()
-</code></pre>
+<p>これを関数としてまとめておけば、呼び出すだけで同じ処理を実行できます。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 関数を定義する</span>
+<span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">show_introduction</span><span style="color: #F8F8F2">():</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;こんにちは！私の名前は佐藤です。&quot;</span><span style="color: #F8F8F2">)</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;趣味はプログラミングです。&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 関数を呼び出す</span>
+<span style="color: #F8F8F2">show_introduction()</span>
+<span style="color: #959077"># ... 他の処理 ...</span>
+<span style="color: #F8F8F2">show_introduction()</span>
+</code></pre></div>
+
 <p>このように、関数はコードの重複をなくし、プログラムをスッキリさせるために不可欠な機能です。</p>
 <h2>2. 関数の基本的な作り方 (<code>def</code>)</h2>
 <p>Pythonでは、<code>def</code> というキーワードを使って関数を定義します。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">def 関数名():
-    # この関数が呼び出された時に実行する処理
-    # 処理はインデント（字下げ）して書く
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">関数名</span><span style="color: #F8F8F2">():</span>
+    <span style="color: #959077"># この関数が呼び出された時に実行する処理</span>
+    <span style="color: #959077"># 処理はインデント（字下げ）して書く</span>
+</code></pre></div>
+
 <h2>3. 引数（ひきすう）- 関数に情報を渡す</h2>
 <p>先ほどの <code>show_introduction</code> 関数は、いつでも同じ自己紹介しかできません。名前を変えられるように、関数に外から情報を渡す仕組みが「引数」です。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">def 関数名(引数1, 引数2, ...):
-    # 処理
-</code></pre>
-<p><strong>具体例:</strong></p>
-<pre><code class="language-python">def greet(name):  # 'name'が引数
-    print(f&quot;こんにちは、{name}さん！&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">関数名</span><span style="color: #F8F8F2">(引数1,</span> <span style="color: #F8F8F2">引数2,</span> <span style="color: #FF4689">...</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #959077"># 処理</span>
+</code></pre></div>
 
-# 関数を呼び出す時に情報を渡す
-greet(&quot;鈴木&quot;)  # 出力: こんにちは、鈴木さん！
-greet(&quot;田中&quot;)  # 出力: こんにちは、田中さん！
-</code></pre>
+<p><strong>具体例:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">greet</span><span style="color: #F8F8F2">(name):</span>  <span style="color: #959077"># &#39;name&#39;が引数</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;こんにちは、{</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}さん！&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 関数を呼び出す時に情報を渡す</span>
+<span style="color: #F8F8F2">greet(</span><span style="color: #E6DB74">&quot;鈴木&quot;</span><span style="color: #F8F8F2">)</span>  <span style="color: #959077"># 出力: こんにちは、鈴木さん！</span>
+<span style="color: #F8F8F2">greet(</span><span style="color: #E6DB74">&quot;田中&quot;</span><span style="color: #F8F8F2">)</span>  <span style="color: #959077"># 出力: こんにちは、田中さん！</span>
+</code></pre></div>
+
 <p>引数を使うことで、関数がより柔軟で汎用的なものになります。</p>
 <h3>デフォルト引数 - 引数の初期値を設定する</h3>
 <p>引数には、あらかじめ初期値（デフォルト値）を設定しておくこともできます。</p>
-<pre><code class="language-python">def greet_default(name, message=&quot;元気ですか？&quot;):
-    print(f&quot;{name}さん、{message}&quot;)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">greet_default</span><span style="color: #F8F8F2">(name,</span> <span style="color: #F8F8F2">message</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;元気ですか？&quot;</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;{</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}さん、{</span><span style="color: #F8F8F2">message</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
 
-greet_default(&quot;佐藤&quot;)          # 出力: 佐藤さん、元気ですか？
-greet_default(&quot;伊藤&quot;, &quot;お疲れ様です！&quot;) # 出力: 伊藤さん、お疲れ様です！
-</code></pre>
+<span style="color: #F8F8F2">greet_default(</span><span style="color: #E6DB74">&quot;佐藤&quot;</span><span style="color: #F8F8F2">)</span>          <span style="color: #959077"># 出力: 佐藤さん、元気ですか？</span>
+<span style="color: #F8F8F2">greet_default(</span><span style="color: #E6DB74">&quot;伊藤&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;お疲れ様です！&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #959077"># 出力: 伊藤さん、お疲れ様です！</span>
+</code></pre></div>
+
 <p>引数が渡されなかった場合はデフォルト値が使われ、渡された場合はその値が優先されます。</p>
 <h2>4. 戻り値（もどりち）- 関数の結果を受け取る</h2>
 <p>関数は、処理を実行するだけでなく、その結果を呼び出し元に返すこともできます。この返される値が「戻り値」です。戻り値は <code>return</code> キーワードを使って指定します。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">def 関数名(引数):
-    # 処理
-    return 戻り値
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">関数名</span><span style="color: #F8F8F2">(引数):</span>
+    <span style="color: #959077"># 処理</span>
+    <span style="color: #66D9EF">return</span> <span style="color: #F8F8F2">戻り値</span>
+</code></pre></div>
+
 <p><strong>具体例:</strong></p>
-<pre><code class="language-python">def add(a, b):
-    total = a + b
-    return total  # 計算結果を返す
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">add</span><span style="color: #F8F8F2">(a,</span> <span style="color: #F8F8F2">b):</span>
+    <span style="color: #F8F8F2">total</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">a</span> <span style="color: #FF4689">+</span> <span style="color: #F8F8F2">b</span>
+    <span style="color: #66D9EF">return</span> <span style="color: #F8F8F2">total</span>  <span style="color: #959077"># 計算結果を返す</span>
 
-# 関数を呼び出し、戻り値を変数に受け取る
-sum_result = add(5, 3)
-print(f&quot;5と3の合計は {sum_result} です。&quot;) # 出力: 5と3の合計は 8 です。
+<span style="color: #959077"># 関数を呼び出し、戻り値を変数に受け取る</span>
+<span style="color: #F8F8F2">sum_result</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">add(</span><span style="color: #AE81FF">5</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">3</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;5と3の合計は {</span><span style="color: #F8F8F2">sum_result</span><span style="color: #E6DB74">} です。&quot;</span><span style="color: #F8F8F2">)</span> <span style="color: #959077"># 出力: 5と3の合計は 8 です。</span>
 
-# 戻り値を直接使うこともできる
-new_result = add(10, 20) * 2
-print(new_result) # 出力: 60
-</code></pre>
+<span style="color: #959077"># 戻り値を直接使うこともできる</span>
+<span style="color: #F8F8F2">new_result</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">add(</span><span style="color: #AE81FF">10</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">20</span><span style="color: #F8F8F2">)</span> <span style="color: #FF4689">*</span> <span style="color: #AE81FF">2</span>
+<span style="color: #F8F8F2">print(new_result)</span> <span style="color: #959077"># 出力: 60</span>
+</code></pre></div>
+
 <p><code>return</code> が実行されると、関数はその時点で終了します。</p>
 <h2>まとめ</h2>
 <p>今回は、Pythonの関数の基本的な使い方を学びました。</p>

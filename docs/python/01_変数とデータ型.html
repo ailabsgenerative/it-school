@@ -22,24 +22,26 @@
 <p>変数とは、一言でいうと<strong>「データを一時的に保存しておくための名前付きの箱」</strong>です。プログラムの中で、数値や文字などの情報を後で使ったり、計算したりするために、この「箱」に入れて保管します。</p>
 <h3>変数の作り方と使い方</h3>
 <p>Pythonでは、変数の使い方は非常にシンプルです。<code>=</code>（イコール）を使って、好きな名前の変数に値を入れる（代入する）だけで作成できます。</p>
-<pre><code class="language-python"># 'name'という名前の変数に「山田さん」という文字列を代入
-name = &quot;山田さん&quot;
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># &#39;name&#39;という名前の変数に「山田さん」という文字列を代入</span>
+<span style="color: #F8F8F2">name</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;山田さん&quot;</span>
 
-# 'age'という名前の変数に「25」という数値を代入
-age = 25
+<span style="color: #959077"># &#39;age&#39;という名前の変数に「25」という数値を代入</span>
+<span style="color: #F8F8F2">age</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">25</span>
 
-# 変数の中身をprint()で表示してみよう
-print(name)  # 出力: 山田さん
-print(age)   # 出力: 25
-</code></pre>
+<span style="color: #959077"># 変数の中身をprint()で表示してみよう</span>
+<span style="color: #F8F8F2">print(name)</span>  <span style="color: #959077"># 出力: 山田さん</span>
+<span style="color: #F8F8F2">print(age)</span>   <span style="color: #959077"># 出力: 25</span>
+</code></pre></div>
+
 <p>一度値を入れた変数の中身は、何度でも更新できます。</p>
-<pre><code class="language-python">score = 80
-print(score)  # 出力: 80
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">score</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">80</span>
+<span style="color: #F8F8F2">print(score)</span>  <span style="color: #959077"># 出力: 80</span>
 
-# scoreの中身を95に更新
-score = 95
-print(score)  # 出力: 95
-</code></pre>
+<span style="color: #959077"># scoreの中身を95に更新</span>
+<span style="color: #F8F8F2">score</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">95</span>
+<span style="color: #F8F8F2">print(score)</span>  <span style="color: #959077"># 出力: 95</span>
+</code></pre></div>
+
 <h3>変数名のルール</h3>
 <p>変数には好きな名前をつけられますが、いくつかのルールがあります。</p>
 <ul>
@@ -54,58 +56,63 @@ print(score)  # 出力: 95
 <p>ここでは、プログラミングでよく使われる基本的なデータ型を紹介します。</p>
 <h3>a. 文字列 (string, <code>str</code>)</h3>
 <p>「こんにちは」や「Python」のような文字の並びです。シングルクォーテーション (<code>'</code>) またはダブルクォーテーション (<code>"</code>) で囲んで表現します。</p>
-<pre><code class="language-python">greeting = &quot;こんにちは、世界！&quot;
-language = 'Python'
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">greeting</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;こんにちは、世界！&quot;</span>
+<span style="color: #F8F8F2">language</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&#39;Python&#39;</span>
 
-print(greeting)
-</code></pre>
+<span style="color: #F8F8F2">print(greeting)</span>
+</code></pre></div>
+
 <h3>b. 数値 (numeric)</h3>
 <ul>
 <li><strong>整数 (integer, <code>int</code>)</strong>: <code>10</code> や <code>-5</code> のような小数点のない数字です。</li>
 <li><strong>浮動小数点数 (float, <code>float</code>)</strong>: <code>3.14</code> や <code>-0.5</code> のような小数点のある数字です。</li>
 </ul>
-<pre><code class="language-python"># 整数
-count = 10
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 整数</span>
+<span style="color: #F8F8F2">count</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">10</span>
 
-# 浮動小数点数
-pi = 3.14159
+<span style="color: #959077"># 浮動小数点数</span>
+<span style="color: #F8F8F2">pi</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">3.14159</span>
 
-# 数値同士の計算もできる
-total = count * 2
-print(total)  # 出力: 20
-</code></pre>
+<span style="color: #959077"># 数値同士の計算もできる</span>
+<span style="color: #F8F8F2">total</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">count</span> <span style="color: #FF4689">*</span> <span style="color: #AE81FF">2</span>
+<span style="color: #F8F8F2">print(total)</span>  <span style="color: #959077"># 出力: 20</span>
+</code></pre></div>
+
 <h3>c. 真偽値 (boolean, <code>bool</code>)</h3>
 <p><code>True</code> (真) と <code>False</code> (偽) の2種類しかない、特別なデータ型です。「はい」か「いいえ」を表すスイッチのようなもので、プログラムの条件分岐などで重要な役割を果たします。</p>
-<pre><code class="language-python">is_active = True
-is_logged_in = False
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">is_active</span> <span style="color: #FF4689">=</span> <span style="color: #66D9EF">True</span>
+<span style="color: #F8F8F2">is_logged_in</span> <span style="color: #FF4689">=</span> <span style="color: #66D9EF">False</span>
 
-print(is_active) # 出力: True
-</code></pre>
+<span style="color: #F8F8F2">print(is_active)</span> <span style="color: #959077"># 出力: True</span>
+</code></pre></div>
+
 <h3>d. リスト (list)</h3>
 <p>複数のデータを順番に並べて格納できるデータ型です。角括弧 <code>[]</code> を使い、カンマ <code>,</code> で各データを区切ります。リストの中身は後から変更することができます。</p>
-<pre><code class="language-python">fruits = [&quot;りんご&quot;, &quot;バナナ&quot;, &quot;オレンジ&quot;]
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">fruits</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">[</span><span style="color: #E6DB74">&quot;りんご&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;バナナ&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;オレンジ&quot;</span><span style="color: #F8F8F2">]</span>
 
-# 最初の要素にアクセス (インデックスは0から始まる)
-print(fruits[0])  # 出力: りんご
+<span style="color: #959077"># 最初の要素にアクセス (インデックスは0から始まる)</span>
+<span style="color: #F8F8F2">print(fruits[</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">])</span>  <span style="color: #959077"># 出力: りんご</span>
 
-# 要素を追加
-fruits.append(&quot;ぶどう&quot;)
-print(fruits)  # 出力: ['りんご', 'バナナ', 'オレンジ', 'ぶどう']
-</code></pre>
+<span style="color: #959077"># 要素を追加</span>
+<span style="color: #F8F8F2">fruits</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">append(</span><span style="color: #E6DB74">&quot;ぶどう&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(fruits)</span>  <span style="color: #959077"># 出力: [&#39;りんご&#39;, &#39;バナナ&#39;, &#39;オレンジ&#39;, &#39;ぶどう&#39;]</span>
+</code></pre></div>
+
 <h2>3. 自分のコードで試してみよう！</h2>
 <p>今回学んだ変数とデータ型は、Pythonプログラミングの根幹をなす非常に重要な要素です。</p>
-<pre><code class="language-python"># 自分の名前と年齢を変数に入れてみよう
-my_name = &quot;鈴木一郎&quot;
-my_age = 32
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 自分の名前と年齢を変数に入れてみよう</span>
+<span style="color: #F8F8F2">my_name</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;鈴木一郎&quot;</span>
+<span style="color: #F8F8F2">my_age</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">32</span>
 
-# 好きな食べ物をリストにしてみよう
-favorite_foods = [&quot;カレー&quot;, &quot;ラーメン&quot;, &quot;寿司&quot;]
+<span style="color: #959077"># 好きな食べ物をリストにしてみよう</span>
+<span style="color: #F8F8F2">favorite_foods</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">[</span><span style="color: #E6DB74">&quot;カレー&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;ラーメン&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;寿司&quot;</span><span style="color: #F8F8F2">]</span>
 
-# 自己紹介文を作って表示してみよう
-message = f&quot;こんにちは！私の名前は{my_name}です。年齢は{my_age}歳です。&quot;
-print(message)
-print(f&quot;好きな食べ物は{favorite_foods[0]}です。&quot;)
-</code></pre>
+<span style="color: #959077"># 自己紹介文を作って表示してみよう</span>
+<span style="color: #F8F8F2">message</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">f&quot;こんにちは！私の名前は{</span><span style="color: #F8F8F2">my_name</span><span style="color: #E6DB74">}です。年齢は{</span><span style="color: #F8F8F2">my_age</span><span style="color: #E6DB74">}歳です。&quot;</span>
+<span style="color: #F8F8F2">print(message)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;好きな食べ物は{</span><span style="color: #F8F8F2">favorite_foods[</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">]</span><span style="color: #E6DB74">}です。&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
 <p>ぜひ、この記事を参考に、ご自身のPCでPythonを動かして、色々な変数やデータ型を試してみてください。実際に手を動かすことが、上達への一番の近道です！</p>
 <hr />
 <h2>この記事はAI（Gemini API）によって自動生成されています。内容の正確性は保証されません。</h2>

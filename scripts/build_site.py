@@ -42,7 +42,7 @@ def process_markdown_file(mdfile_path: Path, env: Environment, base_template, la
         meta["description"] = (first_paragraph[:150] + '...') if len(first_paragraph) > 150 else first_paragraph
 
 
-    html_content = markdown.markdown(article_content, extensions=["fenced_code", "tables"])
+    html_content = markdown.markdown(article_content, extensions=["fenced_code", "tables", "codehilite"], extension_configs={"codehilite": {"noclasses": True, "pygments_style": "monokai"}})
     seo = make_seo_meta(meta["title"], meta["description"], meta["tags"])
 
     return {

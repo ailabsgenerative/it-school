@@ -22,68 +22,74 @@
 <h2>1. <code>if</code> 文の基本的な書き方</h2>
 <p><code>if</code> 文の最もシンプルな形は、「もし条件が真（True）ならば、特定の処理を実行する」というものです。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">if 条件式:
-    # 条件式がTrueのときに実行される処理
-    # この部分はインデント（字下げ）して書く
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">条件式:</span>
+    <span style="color: #959077"># 条件式がTrueのときに実行される処理</span>
+    <span style="color: #959077"># この部分はインデント（字下げ）して書く</span>
+</code></pre></div>
+
 <p><strong>ポイント:</strong>
 *   <code>条件式</code> の後には必ず <code>:</code> (コロン) をつけます。
 *   <code>if</code> の処理ブロックは、インデント（通常は半角スペース4つ）で区切られます。このインデントが非常に重要です。</p>
 <p><strong>具体例:</strong></p>
-<pre><code class="language-python">age = 20
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">age</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">20</span>
 
-if age &gt;= 18:
-    print(&quot;あなたは成人です。&quot;)
-# 出力: あなたは成人です。
+<span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">age</span> <span style="color: #FF4689">&gt;=</span> <span style="color: #AE81FF">18</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;あなたは成人です。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #959077"># 出力: あなたは成人です。</span>
 
-temperature = 30
+<span style="color: #F8F8F2">temperature</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">30</span>
 
-if temperature &gt; 25:
-    print(&quot;今日は暑いので、エアコンをつけましょう。&quot;)
-# 出力: 今日は暑いので、エアコンをつけましょう。
-</code></pre>
+<span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">temperature</span> <span style="color: #FF4689">&gt;</span> <span style="color: #AE81FF">25</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;今日は暑いので、エアコンをつけましょう。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #959077"># 出力: 今日は暑いので、エアコンをつけましょう。</span>
+</code></pre></div>
+
 <h2>2. <code>else</code> - 条件に合わなかった場合の処理</h2>
 <p><code>if</code> の条件が偽（False）だった場合に実行したい処理があるなら、<code>else</code> を使います。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">if 条件式:
-    # 条件式がTrueのときに実行される処理
-else:
-    # 条件式がFalseのときに実行される処理
-</code></pre>
-<p><strong>具体例:</strong></p>
-<pre><code class="language-python">age = 16
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">条件式:</span>
+    <span style="color: #959077"># 条件式がTrueのときに実行される処理</span>
+<span style="color: #66D9EF">else</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># 条件式がFalseのときに実行される処理</span>
+</code></pre></div>
 
-if age &gt;= 18:
-    print(&quot;あなたは成人です。&quot;)
-else:
-    print(&quot;あなたは未成年です。&quot;)
-# 出力: あなたは未成年です。
-</code></pre>
+<p><strong>具体例:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">age</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">16</span>
+
+<span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">age</span> <span style="color: #FF4689">&gt;=</span> <span style="color: #AE81FF">18</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;あなたは成人です。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">else</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;あなたは未成年です。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #959077"># 出力: あなたは未成年です。</span>
+</code></pre></div>
+
 <p><code>if</code> と <code>else</code> を使うことで、「Aであるか、さもなければBである」という二者択一の処理を簡単に書くことができます。</p>
 <h2>3. <code>elif</code> - 複数の条件をチェックする</h2>
 <p>3つ以上の条件で分岐させたい場合は、<code>elif</code> (else if の略) を使います。<code>if</code> の条件が偽（False）だった場合に、次の <code>elif</code> の条件をチェックします。</p>
 <p><strong>構文:</strong></p>
-<pre><code class="language-python">if 条件式1:
-    # 条件式1がTrueのときの処理
-elif 条件式2:
-    # 条件式1がFalseで、条件式2がTrueのときの処理
-else:
-    # すべての条件がFalseだったときの処理
-</code></pre>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">条件式1:</span>
+    <span style="color: #959077"># 条件式1がTrueのときの処理</span>
+<span style="color: #66D9EF">elif</span> <span style="color: #F8F8F2">条件式2:</span>
+    <span style="color: #959077"># 条件式1がFalseで、条件式2がTrueのときの処理</span>
+<span style="color: #66D9EF">else</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #959077"># すべての条件がFalseだったときの処理</span>
+</code></pre></div>
+
 <p><strong>具体例:</strong></p>
-<pre><code class="language-python">score = 85
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">score</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">85</span>
 
-if score &gt;= 90:
-    print(&quot;評価は「優」です。素晴らしい！&quot;)
-elif score &gt;= 80:
-    print(&quot;評価は「良」です。良い調子ですね！&quot;)
-elif score &gt;= 60:
-    print(&quot;評価は「可」です。もう少し頑張りましょう。&quot;)
-else:
-    print(&quot;評価は「不可」です。再挑戦が必要です。&quot;)
+<span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">score</span> <span style="color: #FF4689">&gt;=</span> <span style="color: #AE81FF">90</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;評価は「優」です。素晴らしい！&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">elif</span> <span style="color: #F8F8F2">score</span> <span style="color: #FF4689">&gt;=</span> <span style="color: #AE81FF">80</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;評価は「良」です。良い調子ですね！&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">elif</span> <span style="color: #F8F8F2">score</span> <span style="color: #FF4689">&gt;=</span> <span style="color: #AE81FF">60</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;評価は「可」です。もう少し頑張りましょう。&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">else</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;評価は「不可」です。再挑戦が必要です。&quot;</span><span style="color: #F8F8F2">)</span>
 
-# 出力: 評価は「良」です。良い調子ですね！
-</code></pre>
+<span style="color: #959077"># 出力: 評価は「良」です。良い調子ですね！</span>
+</code></pre></div>
+
 <p><code>elif</code> はいくつでも追加できるので、複雑な条件分岐も表現できます。</p>
 <h2>4. 条件式で使える比較演算子</h2>
 <p><code>if</code> 文の条件式では、値と値を比較するための「比較演算子」がよく使われます。</p>

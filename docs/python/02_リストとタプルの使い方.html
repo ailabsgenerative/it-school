@@ -26,29 +26,30 @@
 *   <strong>角括弧 <code>[]</code> を使う</strong>: <code>[要素1, 要素2, 要素3]</code> のように作成します。
 *   <strong>異なるデータ型もOK</strong>: <code>[1, "apple", True]</code> のように、数値や文字列などを混在させられます。</p>
 <h3>リストの基本的な使い方</h3>
-<pre><code class="language-python"># 買い物リストを作成
-shopping_list = [&quot;にんじん&quot;, &quot;たまねぎ&quot;, &quot;じゃがいも&quot;]
-print(shopping_list)
-# 出力: ['にんじん', 'たまねぎ', 'じゃがいも']
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 買い物リストを作成</span>
+<span style="color: #F8F8F2">shopping_list</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">[</span><span style="color: #E6DB74">&quot;にんじん&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;たまねぎ&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;じゃがいも&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">print(shopping_list)</span>
+<span style="color: #959077"># 出力: [&#39;にんじん&#39;, &#39;たまねぎ&#39;, &#39;じゃがいも&#39;]</span>
 
-# インデックスを使って要素にアクセス (0から始まる)
-print(shopping_list[0])  # 出力: にんじん
+<span style="color: #959077"># インデックスを使って要素にアクセス (0から始まる)</span>
+<span style="color: #F8F8F2">print(shopping_list[</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">])</span>  <span style="color: #959077"># 出力: にんじん</span>
 
-# 要素を変更する
-shopping_list[1] = &quot;ピーマン&quot;
-print(shopping_list)
-# 出力: ['にんじん', 'ピーマン', 'じゃがいも']
+<span style="color: #959077"># 要素を変更する</span>
+<span style="color: #F8F8F2">shopping_list[</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">]</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;ピーマン&quot;</span>
+<span style="color: #F8F8F2">print(shopping_list)</span>
+<span style="color: #959077"># 出力: [&#39;にんじん&#39;, &#39;ピーマン&#39;, &#39;じゃがいも&#39;]</span>
 
-# 要素を追加する (append)
-shopping_list.append(&quot;カレールー&quot;)
-print(shopping_list)
-# 出力: ['にんじん', 'ピーマン', 'じゃがいも', 'カレールー']
+<span style="color: #959077"># 要素を追加する (append)</span>
+<span style="color: #F8F8F2">shopping_list</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">append(</span><span style="color: #E6DB74">&quot;カレールー&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(shopping_list)</span>
+<span style="color: #959077"># 出力: [&#39;にんじん&#39;, &#39;ピーマン&#39;, &#39;じゃがいも&#39;, &#39;カレールー&#39;]</span>
 
-# 要素を削除する (remove)
-shopping_list.remove(&quot;ピーマン&quot;)
-print(shopping_list)
-# 出力: ['にんじん', 'じゃがいも', 'カレールー']
-</code></pre>
+<span style="color: #959077"># 要素を削除する (remove)</span>
+<span style="color: #F8F8F2">shopping_list</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">remove(</span><span style="color: #E6DB74">&quot;ピーマン&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(shopping_list)</span>
+<span style="color: #959077"># 出力: [&#39;にんじん&#39;, &#39;じゃがいも&#39;, &#39;カレールー&#39;]</span>
+</code></pre></div>
+
 <p>リストは、後から内容が変わる可能性がある動的なデータを扱うのに最適です。</p>
 <h2>2. タプル (tuple) とは？ - 変更不可能なデータの集まり</h2>
 <p>タプルは、リストと非常によく似ていますが、一つだけ決定的な違いがあります。それは<strong>「一度作成したら中身を変更できない (Immutable)」</strong>という点です。</p>
@@ -57,17 +58,18 @@ print(shopping_list)
 *   <strong>順序がある</strong>: リストと同様に、順序が保持され、インデックスでアクセスできます。
 *   <strong>丸括弧 <code>()</code> を使う</strong>: <code>(要素1, 要素2, 要素3)</code> のように作成します。</p>
 <h3>タプルの基本的な使い方</h3>
-<pre><code class="language-python"># 座標データをタプルで作成
-point = (10, 20)
-print(point)
-# 出力: (10, 20)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 座標データをタプルで作成</span>
+<span style="color: #F8F8F2">point</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">(</span><span style="color: #AE81FF">10</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">20</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(point)</span>
+<span style="color: #959077"># 出力: (10, 20)</span>
 
-# インデックスを使って要素にアクセス
-print(point[0])  # 出力: 10
+<span style="color: #959077"># インデックスを使って要素にアクセス</span>
+<span style="color: #F8F8F2">print(point[</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">])</span>  <span style="color: #959077"># 出力: 10</span>
 
-# タプルの要素は変更できない
-# point[0] = 15  # この行はエラーになります！
-</code></pre>
+<span style="color: #959077"># タプルの要素は変更できない</span>
+<span style="color: #959077"># point[0] = 15  # この行はエラーになります！</span>
+</code></pre></div>
+
 <p>タプルは、プログラムの途中で変わってほしくない固定のデータを扱うのに適しています。例えば、設定値や定数などです。</p>
 <h2>3. リストとタプル、いつどっちを使う？</h2>
 <p>この2つの使い分けは、プログラミングにおいて非常に重要です。</p>
