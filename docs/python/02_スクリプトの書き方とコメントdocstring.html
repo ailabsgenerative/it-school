@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <meta name="description" content="{
+  "article_body": "```markdown
+# Pythonのスクリプトの書き方とコメント／docstring">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="{
+  "article_body": "```markdown
+# Pythonのスクリプトの書き方とコメント／docstring">
+<meta name="keywords" content="">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    
+      <p>{
+  "article_body": "```markdown</p>
+<h1>Pythonのスクリプトの書き方とコメント／docstring</h1>
+<h2>1. はじめに</h2>
+<p>Pythonプログラミングを学ぶ上で、コードを単に書くだけでなく、誰が読んでも理解しやすく、後から見返したときにも保守しやすい形で残すことは非常に重要です。この記事では、Pythonコードをファイルに保存して実行する「スクリプト」の基本的な書き方と、コードの可読性を高めるための「コメント」および「docstring」の使い方について解説します。</p>
+<p>これらのテクニックを身につけることで、あなたのコードはよりプロフェッショナルで、他の開発者と協力しやすくなります。</p>
+<h2>2. 具体的な使い方や概念の説明</h2>
+<h3>Pythonスクリプトの作成と実行</h3>
+<p>Pythonスクリプトは、単純なテキストファイルです。拡張子を <code>.py</code> にして保存することで、Pythonのプログラムとして認識されます。</p>
+<p><strong>ステップ1: ファイルの作成</strong>
+まず、<code>hello.py</code> という名前のファイルを作成し、以下のコードを記述します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># hello.py</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;Hello, World!&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #F8F8F2">name</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;Alice&quot;</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;こんにちは、{</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}さん！&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<p><strong>ステップ2: スクリプトの実行</strong>
+作成したファイルは、ターミナル（コマンドプロンプト）から <code>python</code> コマンドを使って実行します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #F8F8F2"> </span>python<span style="color: #F8F8F2"> </span>hello.py
+</code></pre></div>
+
+<p><strong>実行結果:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>Hello, World!
+こんにちは、Aliceさん！
+</code></pre></div>
+
+<p>このように、複数の処理をファイルにまとめて記述し、一括で実行するのがスクリプトの基本的な使い方です。</p>
+<h3>コメントでコードを説明する</h3>
+<p>コメントは、Pythonのインタプリタに無視されるテキストで、コード内にメモを残すために使用します。コードが何をしているのか、なぜそのような記述をしたのかを説明するのに役立ちます。</p>
+<p>コメントは <code>#</code> 記号を使って記述します。</p>
+<p><strong>一行コメント</strong>
+<code>#</code> からその行の終わりまでがコメントになります。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># この行はコメントです。プログラムの実行には影響しません。</span>
+
+<span style="color: #959077"># ユーザーに挨拶を表示する</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;Hello, Python!&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<p><strong>インラインコメント</strong>
+コードと同じ行に記述することもできます。短い注釈を入れたい場合に便利です。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">x</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">10</span>  <span style="color: #959077"># xはユーザーのスコアを保持する変数</span>
+</code></pre></div>
+
+<p>コメントは、複雑なロジックや、一読しただけでは意図が分かりにくいコードに対して「なぜ」こう書いたのかを説明するために使うのが効果的です。</p>
+<h3>docstringでドキュメントを記述する</h3>
+<p>docstring（ドキュメンテーション文字列）は、モジュール、関数、クラス、メソッドの定義の直後に置かれる特別なコメントです。<code>"""</code>（トリプルクォート）で囲んで記述します。</p>
+<p>docstringの目的は、そのコードブロックが「何をするのか」を説明することです。これは、コードの仕様書のような役割を果たします。</p>
+<p><strong>関数のdocstringの例:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">add</span><span style="color: #F8F8F2">(a,</span> <span style="color: #F8F8F2">b):</span>
+<span style="color: #F8F8F2">    </span><span style="color: #E6DB74">&quot;&quot;&quot;二つの数値を受け取り、その合計を返す関数です。</span>
+
+<span style="color: #E6DB74">    Args:</span>
+<span style="color: #E6DB74">        a (int or float): 一つ目の数値</span>
+<span style="color: #E6DB74">        b (int or float): 二つ目の数値</span>
+
+<span style="color: #E6DB74">    Returns:</span>
+<span style="color: #E6DB74">        int or float: 二つの数値の合計</span>
+<span style="color: #E6DB74">    &quot;&quot;&quot;</span>
+    <span style="color: #66D9EF">return</span> <span style="color: #F8F8F2">a</span> <span style="color: #FF4689">+</span> <span style="color: #F8F8F2">b</span>
+
+<span style="color: #959077"># docstringの確認</span>
+<span style="color: #F8F8F2">print(add</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">__doc__)</span>
+</code></pre></div>
+
+<p><strong>docstringの利点:</strong>
+1.  <strong><code>help()</code>関数で参照できる:</strong> Pythonの組み込み関数 <code>help()</code> を使うと、その関数のdocstringを整形して表示できます。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>```python
+help(add)
+```
+
+これにより、対話環境で関数の使い方をすぐに確認できます。
+</code></pre></div>
+
+<ol>
+<li><strong>ドキュメント自動生成ツールが利用できる:</strong> <a href="https://www.sphinx-doc.org/">Sphinx</a> のようなツールがdocstringを読み取り、プロジェクトの公式ドキュメントを自動で生成してくれます。</li>
+</ol>
+<p>コメントがコードの「実装の詳細」を説明するのに対し、docstringはコードの「使い方や目的」を説明するもの、と覚えておくと良いでしょう。</p>
+<h2>3. まとめ</h2>
+<p>今回は、Pythonの基本的なコーディングスタイルについて学びました。</p>
+<ul>
+<li><strong>スクリプト:</strong> <code>.py</code> ファイルにコードを記述し、まとめて実行する方法。</li>
+<li><strong>コメント (<code>#</code>):</strong> コードの意図や複雑な部分を説明するためのメモ。</li>
+<li><strong>docstring (<code>"""..."""</code>):</strong> 関数やクラスが何をするものなのかを説明する公式なドキュメント。</li>
+</ul>
+<p>読みやすく、保守しやすいコードを書くことは、優れたプログラマーになるための第一歩です。今日から、自分の書くコードに適切なコメントとdocstringを追加する習慣をつけましょう。
+```"
+}</p>
+    
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonのテストとデバッグの基本入門</title>
+  <meta name="description" content="```markdown
+# Pythonのテストとデバッグの基本を学ぼう">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonのテストとデバッグの基本入門">
+<meta property="og:description" content="```markdown
+# Pythonのテストとデバッグの基本を学ぼう">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, テストとデバッグの基本]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    
+      <div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2"># Pythonのテストとデバッグの基本を学ぼう</span>
+
+<span style="color: #959077">## 1. はじめに</span>
+
+プログラミングにおいて、「テスト」と「デバッグ」は、書いたコードが正しく動作することを保証し、問題が発生した際に原因を特定するための不可欠なスキルです。特に、複数人で開発するプロジェクトや、長期間メンテナンスするソフトウェアでは、その重要性がさらに増します。
+
+この記事では、Pythonプログラミングの初心者に向けて、標準ライブラリだけで始められるテストとデバッグの基本的な方法を、具体的なコードを交えながら解説します。
+
+<span style="color: #959077">## 2. 具体的な使い方や概念の説明</span>
+
+<span style="color: #959077">### 2.1. テスト: コードの正しさを自動でチェックする</span>
+
+テストとは、関数やクラスが期待通りに動作するかどうかを確認するコードを書き、それを自動で実行することです。手動で毎回確認する手間を省き、コードの変更によって意図しない問題（デグレード）が発生していないかを素早く検知できます。
+
+Pythonには、テストを簡単に行うための`unittest`という標準ライブラリが用意されています。
+
+<span style="color: #959077">#### `unittest`を使ったテストの例</span>
+
+まずは、テスト対象となる簡単な足し算を行う関数を作成します。
+
+<span style="color: #F8F8F2; font-weight: bold">**`my_calculator.py`**</span>
+```python
+def add(a, b):
+    &quot;&quot;&quot;二つの数値を足し算して結果を返す関数&quot;&quot;&quot;
+    return a + b
+</code></pre></div>
+
+<p>次に、この<code>add</code>関数が正しく動作するかをテストするためのコードを書きます。</p>
+<p><strong><code>test_calculator.py</code></strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> unittest</span>
+<span style="color: #FF4689">from</span><span style="color: #F8F8F2"> my_calculator </span><span style="color: #FF4689">import</span> <span style="color: #F8F8F2">add</span>
+
+<span style="color: #66D9EF">class</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">TestMyCalculator</span><span style="color: #F8F8F2">(unittest</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">TestCase):</span>
+
+    <span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">test_add</span><span style="color: #F8F8F2">(self):</span>
+<span style="color: #F8F8F2">        </span><span style="color: #E6DB74">&quot;&quot;&quot;add関数のテスト&quot;&quot;&quot;</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">assertEqual(add(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">2</span><span style="color: #F8F8F2">),</span> <span style="color: #AE81FF">3</span><span style="color: #F8F8F2">)</span>  <span style="color: #959077"># 1 + 2 が 3 と等しいかチェック</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">assertEqual(add(</span><span style="color: #FF4689">-</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">1</span><span style="color: #F8F8F2">),</span> <span style="color: #AE81FF">0</span><span style="color: #F8F8F2">)</span> <span style="color: #959077"># -1 + 1 が 0 と等しいかチェック</span>
+        <span style="color: #F8F8F2">self</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">assertEqual(add(</span><span style="color: #FF4689">-</span><span style="color: #AE81FF">5</span><span style="color: #F8F8F2">,</span> <span style="color: #FF4689">-</span><span style="color: #AE81FF">5</span><span style="color: #F8F8F2">),</span> <span style="color: #FF4689">-</span><span style="color: #AE81FF">10</span><span style="color: #F8F8F2">)</span> <span style="color: #959077"># -5 + -5 が -10 と等しいかチェック</span>
+
+<span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">__name__</span> <span style="color: #FF4689">==</span> <span style="color: #E6DB74">&#39;__main__&#39;</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">unittest</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">main()</span>
+</code></pre></div>
+
+<p><strong>解説:</strong>
+- <code>unittest.TestCase</code>を継承したクラスを作成します。
+- <code>test_</code>で始まる名前のメソッドを定義すると、そのメソッドがテストとして実行されます。
+- <code>self.assertEqual(a, b)</code>は、<code>a</code>と<code>b</code>の値が等しいことを期待するメソッドです。もし値が異なれば、テストは失敗（Failed）となります。</p>
+<p><strong>テストの実行:</strong></p>
+<p>ターミナル（コマンドプロンプト）で以下のコマンドを実行します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python<span style="color: #F8F8F2"> </span>-m<span style="color: #F8F8F2"> </span>unittest<span style="color: #F8F8F2"> </span>test_calculator.py
+</code></pre></div>
+
+<p><strong>実行結果:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">.</span>
+<span style="color: #F8F8F2">----------------------------------------------------------------------</span>
+<span style="color: #959077">Ran 1 test in 0</span><span style="color: #FF4689">.</span><span style="color: #959077">000s</span>
+
+<span style="color: #959077">OK</span>
+</code></pre></div>
+
+<p><code>OK</code>と表示されれば、テストは成功です。これにより、<code>add</code>関数が私たちの期待通りに動作していることが自動で確認できました。</p>
+<h3>2.2. デバッグ: バグの原因を見つけ出す</h3>
+<p>デバッグとは、プログラムが期待通りに動作しない（バグがある）場合に、その原因を特定し、修正する作業のことです。<code>print()</code>関数を使って変数の値を確認することも簡易的なデバッグですが、より高機能なデバッガを使うと、プログラムを途中で止めながら、一行ずつ実行したり、変数の状態を詳しく調べたりできます。</p>
+<p>Pythonには、<code>pdb</code> (The Python Debugger) という標準のデバッグライブラリが付属しています。</p>
+<h4><code>pdb</code>を使ったデバッグの例</h4>
+<p>ここに、意図的にバグを仕込んだコードがあります。数値のリストを受け取り、合計を計算するつもりが、文字列として連結してしまいます。</p>
+<p><strong><code>buggy_script.py</code></strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> pdb</span>
+
+<span style="color: #66D9EF">def</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">sum_numbers</span><span style="color: #F8F8F2">(numbers):</span>
+    <span style="color: #F8F8F2">total</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">0</span>
+    <span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">num</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">numbers:</span>
+        <span style="color: #959077"># ここでデバッガを起動する</span>
+        <span style="color: #F8F8F2">pdb</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">set_trace()</span>
+        <span style="color: #F8F8F2">total</span> <span style="color: #FF4689">+=</span> <span style="color: #F8F8F2">num</span>
+    <span style="color: #66D9EF">return</span> <span style="color: #F8F8F2">total</span>
+
+<span style="color: #F8F8F2">result</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">sum_numbers([</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&#39;2&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">3</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&#39;4&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">5</span><span style="color: #F8F8F2">])</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;計算結果: {</span><span style="color: #F8F8F2">result</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<p><strong>解説:</strong>
+- <code>import pdb</code>でライブラリを読み込みます。
+- <code>pdb.set_trace()</code>と書いた行で、プログラムの実行が一時停止し、デバッガが起動します。</p>
+<p><strong>デバッグの実行:</strong></p>
+<p>このスクリプトを普通に実行します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python<span style="color: #F8F8F2"> </span>buggy_script.py
+</code></pre></div>
+
+<p>すると、<code>pdb.set_trace()</code>の場所で実行が止まり、ターミナルが対話モードになります。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2"> </span><span style="color: #FF4689">/</span><span style="color: #F8F8F2">path</span><span style="color: #FF4689">/</span><span style="color: #F8F8F2">to</span><span style="color: #FF4689">/</span><span style="color: #F8F8F2">your</span><span style="color: #FF4689">/</span><span style="color: #A6E22E">project</span><span style="color: #FF4689">/</span><span style="color: #F8F8F2">buggy_script.py(</span><span style="color: #AE81FF">7</span><span style="color: #F8F8F2">)sum_numbers()</span>
+<span style="color: #FF4689">-&gt;</span><span style="color: #F8F8F2"> total </span><span style="color: #FF4689">+=</span><span style="color: #F8F8F2"> num</span>
+<span style="color: #F8F8F2">(Pdb) </span>
+</code></pre></div>
+
+<p>ここで、様々なコマンドを使ってデバッグができます。</p>
+<ul>
+<li><strong><code>l</code> (list):</strong> 現在の箇所の周辺のソースコードを表示します。</li>
+<li><strong><code>n</code> (next):</strong> 次の行へ処理を進めます。</li>
+<li><strong><code>p &lt;変数名&gt;</code> (print):</strong> 変数の現在の値を表示します。</li>
+<li><strong><code>c</code> (continue):</strong> 次のブレークポイントまで、またはプログラムが終了するまで実行を再開します。</li>
+<li><strong><code>q</code> (quit):</strong> デバッガを終了します。</li>
+</ul>
+<p><strong>デバッグ操作の例:</strong></p>
+<ol>
+<li><code>(Pdb) p num</code> と入力すると、変数<code>num</code>の現在の値が表示されます。最初は<code>1</code>です。</li>
+<li><code>(Pdb) n</code> で次の行に進み、ループの先頭に戻ります。</li>
+<li><code>(Pdb) p num</code> を実行すると、次の<code>num</code>は文字列の<code>'2'</code>であることがわかります。</li>
+<li><code>(Pdb) p total</code> を実行すると、<code>total</code>が<code>1</code>であることがわかります。</li>
+<li><code>(Pdb) n</code> で<code>total += num</code>を実行しようとすると、<code>TypeError</code>が発生します。数値の<code>total</code>と文字列の<code>num</code>を足そうとしたためです。</li>
+</ol>
+<p>このように、<code>pdb</code>を使うことで、プログラムの実行をステップごとに追いながら、変数の状態をリアルタイムで確認し、バグの原因を効率的に突き止めることができます。</p>
+<h2>3. まとめ</h2>
+<p>今回は、Pythonにおけるテストとデバッグの基本について学びました。</p>
+<ul>
+<li><strong>テスト (<code>unittest</code>)</strong>: コードが正しく動作することを保証するための自動化された仕組み。品質の高いコードを維持するために不可欠です。</li>
+<li><strong>デバッグ (<code>pdb</code>)</strong>: バグの原因を効率的に特定するための強力なツール。プログラムを一行ずつ実行しながら、内部の状態を詳しく調査できます。</li>
+</ul>
+<p>これらのツールを使いこなすことは、一人前のプログラマーになるための重要なステップです。最初は難しく感じるかもしれませんが、まずは簡単なコードで試してみて、少しずつ慣れていきましょう！
+```</p>
+    
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

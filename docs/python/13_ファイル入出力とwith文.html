@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonのファイル入出力とwith文入門</title>
+  <meta name="description" content="```markdown
+# Pythonのファイル操作をマスターしよう！基本の入出力と安全なwith文の使い方">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonのファイル入出力とwith文入門">
+<meta property="og:description" content="```markdown
+# Pythonのファイル操作をマスターしよう！基本の入出力と安全なwith文の使い方">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, ファイル入出力とwith文]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    
+      <div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2"># Pythonのファイル操作をマスターしよう！基本の入出力と安全なwith文の使い方</span>
+
+<span style="color: #959077">## 1. はじめに</span>
+
+プログラミングをしていると、「プログラムの実行結果を保存したい」「設定ファイルを読み込みたい」「大量のデータを処理したい」といった様々な場面でファイルを扱いたくなります。このように、プログラムがファイルからデータを読み込んだり、ファイルにデータを書き出したりすることを**ファイル入出力(I/O)**と呼びます。
+
+Pythonでは、このファイル入出力が非常に簡単に行えるように設計されています。そして、ファイルを安全かつ確実に扱うために推奨されているのが`with`文です。この記事では、Pythonにおける基本的なファイルの読み書きの方法と、なぜ`with`文を使うべきなのかを、初心者にも分かりやすく解説します。
+
+<span style="color: #959077">## 2. ファイル入出力の基本と`with`文</span>
+
+Pythonでファイルを操作するには、まず`open()`関数を使って対象のファイルを開く必要があります。そして、操作が終わったら必ず`close()`メソッドでファイルを閉じるのがお作法です。しかし、手動で`close()`を管理していると、予期せぬエラーが発生した際にファイルが閉じられず、データが破損するなどの問題が起こる可能性があります。
+
+そこで登場するのが`with`文です。`with`文のブロック内でファイル操作を行うと、処理が正常に終わった場合でも、途中でエラーが発生した場合でも、**ブロックを抜ける際に自動的にファイルを閉じてくれます**。これにより、より安全で簡潔なコードを書くことができます。
+
+<span style="color: #959077">### ファイルへの書き込み (`&#39;w&#39;`)</span>
+
+まずは、ファイルにテキストを書き込んでみましょう。`open()`関数の第2引数に`&#39;w&#39;`（書き込みモード）を指定します。
+
+<span style="color: #F8F8F2; font-weight: bold">**注意:**</span> <span style="color: #E6DB74">`&#39;w&#39;`</span>モードは、ファイルが既に存在する場合、中身をすべて上書きします。新しいファイルを作成するか、中身が消えても良い場合に使用してください。
+
+```python
+<span style="color: #F8F8F2"># &#39;my_file.txt&#39;という名前のファイルを書き込みモードで開く</span>
+with open(&#39;my_file.txt&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f:
+    f.write(&#39;こんにちは、Python！\n&#39;)
+    f.write(&#39;これは新しいファイルです。\n&#39;)
+
+<span style="color: #F8F8F2"># withブロックを抜けると、ファイルは自動的に閉じられる</span>
+
+print(&quot;ファイルへの書き込みが完了しました。&quot;)
+</code></pre></div>
+
+<p>このコードを実行すると、同じディレクトリに<code>my_file.txt</code>が作成され、指定したテキストが書き込まれます。<code>encoding='utf-8'</code>は、日本語などの非ASCII文字を正しく扱うためのおまじないだと考えておくと良いでしょう。</p>
+<h3>ファイルからの読み込み (<code>'r'</code>)</h3>
+<p>次に、先ほど作成したファイルの内容を読み込んでみましょう。モードを<code>'r'</code>（読み込みモード）にしてファイルを開き、<code>read()</code>メソッドで内容を取得します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># &#39;my_file.txt&#39;を読み込みモードで開く</span>
+<span style="color: #66D9EF">try</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&#39;my_file.txt&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&#39;r&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&#39;utf-8&#39;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+        <span style="color: #F8F8F2">content</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">read()</span> <span style="color: #959077"># ファイルの全内容を一つの文字列として読み込む</span>
+        <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&#39;--- ファイルの内容 ---&#39;</span><span style="color: #F8F8F2">)</span>
+        <span style="color: #F8F8F2">print(content)</span>
+        <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&#39;--------------------&#39;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">except</span> <span style="color: #A6E22E">FileNotFoundError</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&#39;エラー: my_file.txt が見つかりません。&#39;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># withブロックを抜けると、ファイルは自動的に閉じられる</span>
+</code></pre></div>
+
+<p><code>read()</code>はファイル全体を一度に読み込みますが、他にも一行ずつ読み込む<code>readline()</code>や、全ての行をリストとして読み込む<code>readlines()</code>といった便利なメソッドもあります。</p>
+<h3>ファイルへの追記 (<code>'a'</code>)</h3>
+<p>既存のファイルの中身を消さずに、末尾に新しい内容を付け加えたい場合は<code>'a'</code>（追記モード）を使います。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># &#39;my_file.txt&#39;に追記モードで新しい行を追加する</span>
+<span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&#39;my_file.txt&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&#39;a&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&#39;utf-8&#39;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #F8F8F2">f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">write(</span><span style="color: #E6DB74">&#39;この行を追記します。</span><span style="color: #AE81FF">\n</span><span style="color: #E6DB74">&#39;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;ファイルへの追記が完了しました。&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 追記後の内容を確認</span>
+<span style="color: #66D9EF">with</span> <span style="color: #F8F8F2">open(</span><span style="color: #E6DB74">&#39;my_file.txt&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&#39;r&#39;</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">encoding</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&#39;utf-8&#39;</span><span style="color: #F8F8F2">)</span> <span style="color: #66D9EF">as</span> <span style="color: #F8F8F2">f:</span>
+    <span style="color: #F8F8F2">print(f</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">read())</span>
+</code></pre></div>
+
+<p>これを実行すると、<code>my_file.txt</code>の内容が消えることなく、新しい行が末尾に追加されていることが確認できます。</p>
+<h2>3. まとめ</h2>
+<p>今回は、Pythonにおけるファイル入出力の基本と、<code>with</code>文を使った安全なファイル操作の方法について学びました。</p>
+<ul>
+<li><strong>ファイル入出力</strong>は、プログラムでデータを永続化するための基本的な機能です。</li>
+<li>ファイル操作には<code>open()</code>関数を使います。</li>
+<li><strong><code>with</code>文</strong>を使うことで、ファイルの<code>close()</code>処理が自動化され、コードが安全かつシンプルになります。</li>
+<li>用途に応じて、書き込み(<code>'w'</code>)、読み込み(<code>'r'</code>)、追記(<code>'a'</code>)のモードを使い分けましょう。</li>
+</ul>
+<p><code>with</code>文を使ったファイル操作は、現代のPythonプログラミングにおける標準的な作法です。この書き方に慣れて、安全で効率的なデータ操作を行いましょう！
+```</p>
+    
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの標準ライブラリの定番機能入門</title>
+  <meta name="description" content="```markdown
+# Pythonの宝箱！標準ライブラリの定番機能を使ってみよう">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの標準ライブラリの定番機能入門">
+<meta property="og:description" content="```markdown
+# Pythonの宝箱！標準ライブラリの定番機能を使ってみよう">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, 標準ライブラリの定番機能]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    
+      <div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2"># Pythonの宝箱！標準ライブラリの定番機能を使ってみよう</span>
+
+<span style="color: #959077">## 1. はじめに</span>
+
+Pythonをインストールすると、実はたくさんの便利な「お道具箱」が一緒に付いてきます。それが「標準ライブラリ」です。標準ライブラリは、Pythonに初めから組み込まれているモジュール（機能のまとまり）の集まりで、別途インストールすることなく、誰でもすぐに利用できます。
+
+数学計算、ランダムな数値の生成、日付や時刻の操作、ファイルシステムの操作など、プログラミングでよく必要とされる機能が豊富に揃っています。この記事では、数ある標準ライブラリの中から、特に利用頻度が高く、初心者が覚えておくと便利な定番機能について、具体的な使い方をサンプルコードと共に解説します。
+
+<span style="color: #959077">## 2. 具体的な使い方や概念の説明</span>
+
+標準ライブラリの機能を使うには、`import`というキーワードを使って、利用したいモジュールをプログラムに読み込むことから始めます。
+
+```python
+import モジュール名
+</code></pre></div>
+
+<p>それでは、具体的なモジュールを見ていきましょう。</p>
+<h3><code>math</code>モジュール: 数学計算の達人</h3>
+<p>平方根や三角関数など、少し高度な数学計算を行いたいときに便利なのが<code>math</code>モジュールです。</p>
+<p><strong>サンプルコード:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> math</span>
+
+<span style="color: #959077"># 平方根を求める (√16)</span>
+<span style="color: #F8F8F2">result_sqrt</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">math</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">sqrt(</span><span style="color: #AE81FF">16</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;16の平方根は: {</span><span style="color: #F8F8F2">result_sqrt</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 円周率π</span>
+<span style="color: #F8F8F2">pi_value</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">math</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">pi</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;円周率は: {</span><span style="color: #F8F8F2">pi_value</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 半径5の円の面積を計算</span>
+<span style="color: #F8F8F2">radius</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">5</span>
+<span style="color: #F8F8F2">area</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">radius</span> <span style="color: #FF4689">*</span> <span style="color: #F8F8F2">radius</span> <span style="color: #FF4689">*</span> <span style="color: #F8F8F2">math</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">pi</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;半径{</span><span style="color: #F8F8F2">radius</span><span style="color: #E6DB74">}の円の面積は: {</span><span style="color: #F8F8F2">area</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<h3><code>random</code>モジュール: 偶然をプログラムする</h3>
+<p>ゲームのサイコロのようにランダムな数値を生成したり、リストからランダムに要素を選んだりしたい場合に<code>random</code>モジュールが役立ちます。</p>
+<p><strong>サンプルコード:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> random</span>
+
+<span style="color: #959077"># 1から6までのランダムな整数を生成（サイコロ）</span>
+<span style="color: #F8F8F2">dice_roll</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">random</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">randint(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">6</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;サイコロの目は: {</span><span style="color: #F8F8F2">dice_roll</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># リストからランダムに要素を1つ選ぶ（おみくじ）</span>
+<span style="color: #F8F8F2">fortunes</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">[</span><span style="color: #E6DB74">&quot;大吉&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;中吉&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;小吉&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;凶&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">my_fortune</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">random</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">choice(fortunes)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;今日の運勢は: {</span><span style="color: #F8F8F2">my_fortune</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<h3><code>datetime</code>モジュール: 日付と時刻を自在に操る</h3>
+<p>現在の日付や時刻を取得したり、特定の日付を表現したり、日付の計算を行ったりするには<code>datetime</code>モジュールが不可欠です。</p>
+<p><strong>サンプルコード:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> datetime</span>
+
+<span style="color: #959077"># 現在の日付と時刻を取得</span>
+<span style="color: #F8F8F2">now</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">datetime</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">datetime</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">now()</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;現在の日時: {</span><span style="color: #F8F8F2">now</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 日付と時刻を分かりやすい形式で表示</span>
+<span style="color: #F8F8F2">formatted_time</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">now</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">strftime(</span><span style="color: #E6DB74">&quot;%Y年%m月%d日 %H:%M:%S&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;フォーマット後の日時: {</span><span style="color: #F8F8F2">formatted_time</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 今日の日付だけを取得</span>
+<span style="color: #F8F8F2">today</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">datetime</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">date</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">today()</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;今日の日付: {</span><span style="color: #F8F8F2">today</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<h3><code>os</code>モジュール: コンピュータと対話する</h3>
+<p>ファイルやディレクトリ（フォルダ）を操作するなど、オペレーティングシステム（OS）の機能を利用したいときに使うのが<code>os</code>モジュールです。特に、ファイルパスを扱う<code>os.path</code>は非常によく使われます。</p>
+<p><strong>サンプルコード:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> os</span>
+
+<span style="color: #959077"># カレントディレクトリ（今いる場所）のファイル一覧を取得</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;カレントディレクトリのファイル一覧:&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">file_name</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">os</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">listdir(</span><span style="color: #E6DB74">&quot;.&quot;</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #F8F8F2">print(file_name)</span>
+
+<span style="color: #959077"># OSに依存しない安全なファイルパスの作成</span>
+<span style="color: #959077"># &quot;data&quot;フォルダの中の&quot;file.txt&quot;を指すパスを作る</span>
+<span style="color: #F8F8F2">file_path</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">os</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">path</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">join(</span><span style="color: #E6DB74">&quot;data&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;file.txt&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;作成されたパス: {</span><span style="color: #F8F8F2">file_path</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<h3><code>json</code>モジュール: データ交換の標準形式を扱う</h3>
+<p><code>json</code>（ジェイソン）は、異なるプログラム間でデータをやり取りするためによく使われる、軽量なデータ形式です。Pythonの辞書やリストをJSON形式の文字列に変換したり、その逆を行ったりできます。</p>
+<p><strong>サンプルコード:</strong></p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> json</span>
+
+<span style="color: #959077"># Pythonの辞書データ</span>
+<span style="color: #F8F8F2">user_data</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">{</span>
+    <span style="color: #E6DB74">&quot;id&quot;</span><span style="color: #F8F8F2">:</span> <span style="color: #AE81FF">101</span><span style="color: #F8F8F2">,</span>
+    <span style="color: #E6DB74">&quot;name&quot;</span><span style="color: #F8F8F2">:</span> <span style="color: #E6DB74">&quot;Taro Yamada&quot;</span><span style="color: #F8F8F2">,</span>
+    <span style="color: #E6DB74">&quot;email&quot;</span><span style="color: #F8F8F2">:</span> <span style="color: #E6DB74">&quot;taro@example.com&quot;</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #959077"># 辞書をJSON形式の文字列に変換</span>
+<span style="color: #F8F8F2">json_string</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">json</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">dumps(user_data,</span> <span style="color: #F8F8F2">indent</span><span style="color: #FF4689">=</span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">,</span> <span style="color: #F8F8F2">ensure_ascii</span><span style="color: #FF4689">=</span><span style="color: #66D9EF">False</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;--- JSON文字列 ---&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(json_string)</span>
+
+<span style="color: #959077"># JSON形式の文字列をPythonの辞書に変換</span>
+<span style="color: #F8F8F2">parsed_data</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">json</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">loads(json_string)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;--- Pythonの辞書 ---&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;名前: {</span><span style="color: #F8F8F2">parsed_data[</span><span style="color: #E6DB74">&#39;name&#39;</span><span style="color: #F8F8F2">]</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<h2>3. まとめ</h2>
+<p>この記事では、Pythonの標準ライブラリの中から、以下の5つの基本的なモジュールを紹介しました。</p>
+<ul>
+<li><strong><code>math</code></strong>: 数学計算を簡単にする</li>
+<li><strong><code>random</code></strong>: ランダムな値を作り出す</li>
+<li><strong><code>datetime</code></strong>: 日付や時刻を扱う</li>
+<li><strong><code>os</code></strong>: ファイルやディレクトリを操作する</li>
+<li><strong><code>json</code></strong>: 他のプログラムとデータを交換する</li>
+</ul>
+<p>標準ライブラリには、ここで紹介した以外にも数多くの便利なモジュールが存在します。公式ドキュメントを眺めて、「こんなこともできるんだ！」と発見するのもPython学習の楽しみの一つです。まずは今回学んだ機能を使いこなし、Pythonプログラミングの効率と楽しさを実感してみてください。
+```</p>
+    
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

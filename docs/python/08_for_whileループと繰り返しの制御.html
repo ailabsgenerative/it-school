@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonのfor/whileループと繰り返しの制御入門</title>
+  <meta name="description" content="```markdown
+# Pythonのfor/whileループと繰り返しの制御を学ぼう">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonのfor/whileループと繰り返しの制御入門">
+<meta property="og:description" content="```markdown
+# Pythonのfor/whileループと繰り返しの制御を学ぼう">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, for/whileループと繰り返しの制御]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    
+      <div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2"># Pythonのfor/whileループと繰り返しの制御を学ぼう</span>
+
+<span style="color: #959077">## はじめに</span>
+
+プログラミングをしていると、「同じ処理を何度も繰り返したい」という場面に頻繁に出会います。例えば、リストの各要素を順番に処理したり、特定の条件が満たされるまで処理を続けたりする場合です。そんなときに活躍するのが「ループ（繰り返し）処理」です。
+
+Pythonには、主に <span style="color: #E6DB74">`for`</span> ループと <span style="color: #E6DB74">`while`</span> ループという2つの強力なループ構文が用意されています。これらの使い方をマスターすれば、コードをより簡潔に、効率的に書くことができるようになります。
+
+この記事では、`for` と <span style="color: #E6DB74">`while`</span> の基本的な使い方から、`break` や <span style="color: #E6DB74">`continue`</span> を使ったループの制御方法まで、サンプルコードを交えながら分かりやすく解説します。
+
+---
+
+<span style="color: #959077">## forループ：決まった回数や要素の数だけ繰り返す</span>
+
+<span style="color: #E6DB74">`for`</span> ループは、リストや文字列、あるいは <span style="color: #E6DB74">`range()`</span> 関数で生成される数値の列など、複数の要素を持つデータ（イテラブルオブジェクト）から要素を1つずつ取り出して処理を繰り返すのに便利です。
+
+<span style="color: #959077">### 基本的な構文</span>
+
+```python
+for 変数 in イテラブルオブジェクト:
+    # 繰り返したい処理
+</code></pre></div>
+
+<h3><code>range()</code> を使った繰り返し</h3>
+<p>決まった回数だけ処理を繰り返したい場合に最もよく使われるのが <code>range()</code> 関数です。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 0から4まで5回繰り返す</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;range(5)の場合:&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">i</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">range(</span><span style="color: #AE81FF">5</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;現在の数値は {</span><span style="color: #F8F8F2">i</span><span style="color: #E6DB74">} です&quot;</span><span style="color: #F8F8F2">)</span>
+
+<span style="color: #959077"># 1から5まで繰り返す</span>
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;</span><span style="color: #AE81FF">\n</span><span style="color: #E6DB74">range(1, 6)の場合:&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">i</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">range(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">6</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;現在の数値は {</span><span style="color: #F8F8F2">i</span><span style="color: #E6DB74">} です&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<h3>リストの要素を使った繰り返し</h3>
+<p>リストやタプルの各要素に対して同じ処理を行いたい場合に <code>for</code> ループは真価を発揮します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">fruits</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">[</span><span style="color: #E6DB74">&quot;apple&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;banana&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;cherry&quot;</span><span style="color: #F8F8F2">]</span>
+
+<span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">fruit</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">fruits:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;I like {</span><span style="color: #F8F8F2">fruit</span><span style="color: #E6DB74">}!&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<hr />
+<h2>whileループ：特定の条件が満たされるまで繰り返す</h2>
+<p><code>while</code> ループは、指定した条件式が <code>True</code> の間、処理を繰り返し実行します。繰り返しの回数が事前に決まっていない場合に特に有効です。</p>
+<h3>基本的な構文</h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">while</span> <span style="color: #F8F8F2">条件式:</span>
+    <span style="color: #959077"># 繰り返したい処理</span>
+    <span style="color: #959077"># (条件式を変化させる処理も忘れずに)</span>
+</code></pre></div>
+
+<h3>カウンターを使った繰り返し</h3>
+<p>カウンター変数を使い、その値が特定の数になるまで処理を繰り返す例です。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">count</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">0</span>
+<span style="color: #66D9EF">while</span> <span style="color: #F8F8F2">count</span> <span style="color: #FF4689">&lt;</span> <span style="color: #AE81FF">5</span><span style="color: #F8F8F2">:</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;現在のカウントは {</span><span style="color: #F8F8F2">count</span><span style="color: #E6DB74">} です&quot;</span><span style="color: #F8F8F2">)</span>
+    <span style="color: #F8F8F2">count</span> <span style="color: #FF4689">+=</span> <span style="color: #AE81FF">1</span>  <span style="color: #959077"># カウントを1増やす (これを忘れると無限ループになる！)</span>
+
+<span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;ループが終了しました。&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<hr />
+<h2>ループの制御：break と continue</h2>
+<p>ループの途中で処理の流れをコントロールしたい場合があります。そのために <code>break</code> と <code>continue</code> という2つの命令が用意されています。</p>
+<h3><code>break</code>：ループを中断する</h3>
+<p><code>break</code> は、ループ処理をその場で完全に終了させたいときに使います。特定の条件が満たされたら、それ以上ループを続ける必要がない場合に使用します。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 1から9までの数値で、5を見つけたらループを抜ける</span>
+<span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">i</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">range(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">10</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">i</span> <span style="color: #FF4689">==</span> <span style="color: #AE81FF">5</span><span style="color: #F8F8F2">:</span>
+        <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">&quot;5を見つけたので、ループを中断します。&quot;</span><span style="color: #F8F8F2">)</span>
+        <span style="color: #66D9EF">break</span>
+    <span style="color: #F8F8F2">print(i)</span>
+</code></pre></div>
+
+<h3><code>continue</code>：現在の回の処理をスキップする</h3>
+<p><code>continue</code> は、現在の回の処理だけをスキップして、次の回の処理に進みたいときに使います。例えば、特定の条件に一致する要素だけ処理を省略したい場合などに便利です。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 1から9までの数値で、偶数だけをスキップして奇数のみ表示する</span>
+<span style="color: #66D9EF">for</span> <span style="color: #F8F8F2">i</span> <span style="color: #FF4689">in</span> <span style="color: #F8F8F2">range(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">,</span> <span style="color: #AE81FF">10</span><span style="color: #F8F8F2">):</span>
+    <span style="color: #66D9EF">if</span> <span style="color: #F8F8F2">i</span> <span style="color: #FF4689">%</span> <span style="color: #AE81FF">2</span> <span style="color: #FF4689">==</span> <span style="color: #AE81FF">0</span><span style="color: #F8F8F2">:</span>  <span style="color: #959077"># 偶数かどうかを判定</span>
+        <span style="color: #66D9EF">continue</span>  <span style="color: #959077"># 偶数なら、この後のprint処理をスキップして次のループへ</span>
+    <span style="color: #F8F8F2">print(</span><span style="color: #E6DB74">f&quot;奇数です: {</span><span style="color: #F8F8F2">i</span><span style="color: #E6DB74">}&quot;</span><span style="color: #F8F8F2">)</span>
+</code></pre></div>
+
+<hr />
+<h2>まとめ</h2>
+<p>今回は、Pythonにおける繰り返し処理の基本である <code>for</code> ループと <code>while</code> ループについて学びました。</p>
+<ul>
+<li><strong><code>for</code> ループ</strong>: リストの要素数や <code>range()</code> で指定した回数など、<strong>繰り返しの数が決まっている場合</strong>に使うと便利です。</li>
+<li><strong><code>while</code> ループ</strong>: ある<strong>特定の条件が満たされるまで</strong>処理を続けたい場合に適しています。</li>
+<li><strong><code>break</code></strong>: ループを<strong>完全に中断</strong>したいときに使います。</li>
+<li><strong><code>continue</code></strong>: 現在の回の処理だけを<strong>スキップ</strong>したいときに使います。</li>
+</ul>
+<p>ループ処理は、プログラミングの基本であり、あらゆる場面で応用できる非常に重要な概念です。まずは簡単なコードからで良いので、実際に手を動かして、その動作を確かめてみてください。
+```</p>
+    
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>

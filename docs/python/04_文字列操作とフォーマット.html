@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pythonの文字列操作とフォーマット入門</title>
+  <meta name="description" content="```markdown
+# Pythonの文字列操作とフォーマットをマスターしよう！">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pythonの文字列操作とフォーマット入門">
+<meta property="og:description" content="```markdown
+# Pythonの文字列操作とフォーマットをマスターしよう！">
+<meta name="keywords" content="[AI, Gemini, 自動生成, Python, 文字列操作とフォーマット]">
+</head>
+<body>
+  <header><h1><a href="/">IT学習ブログ</a></h1></header>
+  <main>
+    
+      <div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2"># Pythonの文字列操作とフォーマットをマスターしよう！</span>
+
+<span style="color: #959077">## 1. はじめに</span>
+
+プログラミングの世界では、文字データを扱う場面が非常に多くあります。Pythonでは、これらの文字データを「文字列」として簡単に操作できます。この記事では、Pythonプログラミングの基本中の基本である「文字列操作」と、見やすい形で文字列を組み立てる「フォーマット」について、初心者にも分かりやすく解説します。
+
+<span style="color: #959077">## 2. 文字列の基本操作</span>
+
+まずは、文字列を結合したり、特定の部分を抜き出したりといった基本的な操作方法を学びましょう。
+
+<span style="color: #959077">### 文字列の結合</span>
+
+<span style="color: #E6DB74">`+`</span> 演算子を使うと、複数の文字列を簡単につなぎ合わせることができます。
+
+```python
+<span style="color: #F8F8F2"># 文字列を結合する</span>
+greeting = &quot;こんにちは、&quot; + &quot;Python!&quot;
+print(greeting)  # 出力: こんにちは、Python!
+
+name = &quot;鈴木&quot;
+message = name + &quot;さん、ようこそ。&quot;
+print(message)   # 出力: 鈴木さん、ようこそ。
+</code></pre></div>
+
+<h3>文字列の繰り返し</h3>
+<p><code>*</code> 演算子を使うと、同じ文字列を繰り返すことができます。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 文字列を繰り返す</span>
+<span style="color: #F8F8F2">separator</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;-&quot;</span> <span style="color: #FF4689">*</span> <span style="color: #AE81FF">20</span>
+<span style="color: #F8F8F2">print(separator)</span>  <span style="color: #959077"># 出力: --------------------</span>
+</code></pre></div>
+
+<h3>文字列の一部を取り出す（スライシング）</h3>
+<p>文字列から特定の部分だけを抜き出すことを「スライシング」と呼びます。インデックス（位置番号）を使って範囲を指定します。インデックスは<code>0</code>から始まることに注意してください。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">text</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;Hello, World!&quot;</span>
+
+<span style="color: #959077"># 最初の5文字を取得 (0から4番目まで)</span>
+<span style="color: #F8F8F2">print(text[</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">:</span><span style="color: #AE81FF">5</span><span style="color: #F8F8F2">])</span>  <span style="color: #959077"># 出力: Hello</span>
+
+<span style="color: #959077"># 7番目から最後まで取得</span>
+<span style="color: #F8F8F2">print(text[</span><span style="color: #AE81FF">7</span><span style="color: #F8F8F2">:])</span>   <span style="color: #959077"># 出力: World!</span>
+
+<span style="color: #959077"># 後ろから3文字を取得</span>
+<span style="color: #F8F8F2">print(text[</span><span style="color: #FF4689">-</span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2">:])</span>  <span style="color: #959077"># 出力: ld!</span>
+</code></pre></div>
+
+<h2>3. 知っていると便利な文字列メソッド</h2>
+<p>Pythonには、文字列操作を簡単に行うための便利な機能（メソッド）がたくさん用意されています。</p>
+<ul>
+<li><code>len()</code>: 文字列の長さを調べる</li>
+<li><code>.upper()</code> / <code>.lower()</code>: 大文字・小文字に変換する</li>
+<li><code>.replace()</code>: 特定の文字列を別の文字列に置換する</li>
+<li><code>.split()</code>: 文字列を指定した区切り文字で分割し、リストを作成する</li>
+<li><code>.strip()</code>: 両端の不要な空白や改行を削除する</li>
+</ul>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># 文字列メソッドの例</span>
+<span style="color: #F8F8F2">phrase</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;  Python is fun!  &quot;</span>
+
+<span style="color: #959077"># 長さを調べる</span>
+<span style="color: #F8F8F2">print(len(phrase))</span>  <span style="color: #959077"># 出力: 18</span>
+
+<span style="color: #959077"># 大文字に変換</span>
+<span style="color: #F8F8F2">print(phrase</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">upper())</span>  <span style="color: #959077"># 出力:   PYTHON IS FUN!  </span>
+
+<span style="color: #959077"># 文字列を置換</span>
+<span style="color: #F8F8F2">print(phrase</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">replace(</span><span style="color: #E6DB74">&quot;fun&quot;</span><span style="color: #F8F8F2">,</span> <span style="color: #E6DB74">&quot;awesome&quot;</span><span style="color: #F8F8F2">))</span>  <span style="color: #959077"># 出力:   Python is awesome!  </span>
+
+<span style="color: #959077"># 両端の空白を削除</span>
+<span style="color: #F8F8F2">cleaned_phrase</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">phrase</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">strip()</span>
+<span style="color: #F8F8F2">print(cleaned_phrase)</span>  <span style="color: #959077"># 出力: Python is fun!</span>
+
+<span style="color: #959077"># スペースで分割してリストにする</span>
+<span style="color: #F8F8F2">words</span> <span style="color: #FF4689">=</span> <span style="color: #F8F8F2">cleaned_phrase</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">split(</span><span style="color: #E6DB74">&#39; &#39;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">print(words)</span>  <span style="color: #959077"># 出力: [&#39;Python&#39;, &#39;is&#39;, &#39;fun!&#39;]</span>
+</code></pre></div>
+
+<h2>4. 文字列のフォーマット</h2>
+<p>変数と文字列を組み合わせて、動的なメッセージを作成したい場合がよくあります。Pythonにはいくつかのフォーマット方法がありますが、現在最も推奨されているのは「f-string」です。</p>
+<h3>f-string（フォーマット済み文字列リテラル）</h3>
+<p>文字列の前に <code>f</code> を付け、変数名を <code>{}</code> で囲むだけで、簡単に文字列内に変数の値を埋め込むことができます。直感的で読みやすいのが特徴です。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># f-stringを使ったフォーマット</span>
+<span style="color: #F8F8F2">name</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;佐藤&quot;</span>
+<span style="color: #F8F8F2">age</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">25</span>
+
+<span style="color: #959077"># 変数を埋め込んだメッセージを作成</span>
+<span style="color: #F8F8F2">profile_message</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">f&quot;{</span><span style="color: #F8F8F2">name</span><span style="color: #E6DB74">}さんは、今年で{</span><span style="color: #F8F8F2">age</span><span style="color: #E6DB74">}歳になります。&quot;</span>
+<span style="color: #F8F8F2">print(profile_message)</span>  <span style="color: #959077"># 出力: 佐藤さんは、今年で25歳になります。</span>
+
+<span style="color: #959077"># f-string内で計算も可能</span>
+<span style="color: #F8F8F2">item</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;リンゴ&quot;</span>
+<span style="color: #F8F8F2">price</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">150</span>
+<span style="color: #F8F8F2">count</span> <span style="color: #FF4689">=</span> <span style="color: #AE81FF">3</span>
+<span style="color: #F8F8F2">total_price_message</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">f&quot;{</span><span style="color: #F8F8F2">item</span><span style="color: #E6DB74">}を{</span><span style="color: #F8F8F2">count</span><span style="color: #E6DB74">}個買うと、合計{</span><span style="color: #F8F8F2">price </span><span style="color: #FF4689">*</span><span style="color: #F8F8F2"> count</span><span style="color: #E6DB74">}円です。&quot;</span>
+<span style="color: #F8F8F2">print(total_price_message)</span> <span style="color: #959077"># 出力: リンゴを3個買うと、合計450円です。</span>
+</code></pre></div>
+
+<h3>その他のフォーマット方法</h3>
+<p>f-string以外にも、<code>.format()</code> メソッドや <code>%</code> 演算子を使った方法もありますが、特別な理由がない限りはf-stringを使うのが良いでしょう。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #959077"># .format() メソッド</span>
+<span style="color: #F8F8F2">message1</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;{}さんは{}歳です。&quot;</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">format(name,</span> <span style="color: #F8F8F2">age)</span>
+<span style="color: #F8F8F2">print(message1)</span>
+
+<span style="color: #959077"># % 演算子 (古いスタイル)</span>
+<span style="color: #F8F8F2">message2</span> <span style="color: #FF4689">=</span> <span style="color: #E6DB74">&quot;%sさんは%d歳です。&quot;</span> <span style="color: #FF4689">%</span> <span style="color: #F8F8F2">(name,</span> <span style="color: #F8F8F2">age)</span>
+<span style="color: #F8F8F2">print(message2)</span>
+</code></pre></div>
+
+<h2>5. まとめ</h2>
+<p>今回は、Pythonにおける文字列の基本的な操作とフォーマットについて学びました。</p>
+<ul>
+<li><code>+</code> で文字列を結合できる。</li>
+<li><code>[ ]</code> を使ったスライシングで、文字列の一部を抜き出せる。</li>
+<li><code>.upper()</code>, <code>.replace()</code>, <code>.split()</code> などの便利なメソッドがたくさんある。</li>
+<li>変数を含む文字列を組み立てるには、<code>f-string</code> が最も簡単で推奨される方法である。</li>
+</ul>
+<p>文字列操作は、あらゆるプログラムの基礎となります。ファイルから読み込んだデータを処理したり、ユーザーへのメッセージを表示したりと、用途は無限大です。この記事を参考に、ぜひ実際にコードを書いて試してみてください！
+```</p>
+    
+  </main>
+  <footer><small>© 2025 IT School Blog</small></footer>
+</body>
+</html>
